@@ -1,21 +1,31 @@
-import React, { Component } from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Home from "./pages/Home";
+import Profile from "./pages/Profile";
+import Auth from "./pages/Auth";
+import NoMatch from "./pages/NoMatch";
+import TopNav from "./components/TopNav";
+import Footer from "./components/Footer";
+import { Container } from 'reactstrap';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+function App() {
+  return (
+      <Router>
+        <>
+          <TopNav />
+          <Container>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/signup" render={(props) => <Auth {...props} action="signup" />} />
+              <Route exact path="/login" render={(props) => <Auth {...props} action="login" />} />
+              <Route exact path="/profile" component={Profile} />
+              <Route component={NoMatch} />
+            </Switch>
+          </Container>
+          <Footer />
+        </>
+      </Router>
+  );
 }
 
 export default App;
