@@ -8,6 +8,7 @@ import UserProvider from "../../contexts/UserProvider";
 const Profile = () => {
     const {loggedIn, user} = useContext(UserProvider.context);
     console.log(user);
+    
     return (
         <div className="profilePage">
             {loggedIn ? (
