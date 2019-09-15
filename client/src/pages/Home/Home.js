@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import { Button } from "reactstrap";
 import API from "../../utils/API";
 import Joke from "../../components/Joke"
