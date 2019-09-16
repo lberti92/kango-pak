@@ -1,14 +1,16 @@
 import React, {useContext, useState} from "react";
 import { Button, Form, FormGroup, Label, Input, Alert } from 'reactstrap';
 import { Link } from "react-router-dom";
-import UserProvider from "../../contexts/UserProvider";
+// import UserProvider from "../../contexts/UserProvider";
 import { useForm } from "../../useForm";
 import API from "../../utils/API";
+import { set } from "mongoose";
 
-function Login(props) {
+const Login = () => {
     // const {currentUser, setCurrentUser} = useState(null);
     // const {loggedIn, user} = useContext(UserProvider.context);
     const [values, handleChange] = useForm({ username: "", password: "" });
+    const [message, setMessage] = useState("")
 
     const handleLogin = event => {
         event.preventDefault();
@@ -22,7 +24,7 @@ function Login(props) {
               window.location.href = '/profile';
             }
             else if (userData.data.message) {
-              console.log(userData.data.message)
+              setMessage(userData.data.message)
             }
           });
         }
@@ -32,8 +34,8 @@ function Login(props) {
         <div className="loginBox">
             <h2 className="loginTitle title-font">Login</h2>
             <hr/>
-            {props.message ? (
-                <Alert className="animated fadeIn" color="danger">{props.message}</Alert>
+            {message ? (
+                <Alert className="animated fadeIn" color="danger">{message}</Alert>
             ) : (<></>)}
             <Form>
                 <FormGroup>
