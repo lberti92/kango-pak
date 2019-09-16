@@ -1,96 +1,124 @@
-import React, { Component } from "react";
-import { Button, Form, FormGroup, Label, Input, FormText, Alert } from 'reactstrap';
+import React, { useEffect, useState } from "react";
+import { Form, InputGroup, Col, Button } from "react-bootstrap";
+import { Formik } from "formik";
+import { string, object, bool}from "yup";
+import API from "../../utils/API";
+import { useForm } from "../../useForm";
 import { Link } from "react-router-dom";
 
-class Signup extends Component {
-    state = {
-        validUsername: false,
-        validPassword: false,
-        confirmPassword: false
-    }
-    
-    componentDidUpdate() {
-        this.validatePassword();
-        this.confirmPassword();
-        this.validateUsername();
-    }
+const schema = object({
+  name: string().required(),
+  username: string().required(),
+  password: string().required(),
+  confirmPassword: string().required()
+});
 
-    validateUsername() {
-        if (this.props.username.length > 1 && !this.state.validUsername) {
-            this.setState({
-                validUsername: true
-            });
+function Signup() {
+    const handleSignup = values => {
+        // event.preventDefault();
+        if (values.username && values.password) {
+          API.signup({
+            username: values.username,
+            password: values.password
+          }).then(user => {
+            if (user.data.loggedIn) {
+            //   this.setState({
+            //     loggedIn: true,
+            //     user: user.data.user
+            //   });
+              console.log("log in successful");
+              window.location.href = '/profile';
+            } else {
+              console.log("something went wrong :(")
+              console.log(user.data);
+            //   this.setState({
+            //     message: user.data
+            //   })
+            }
+          });
         }
-        if (this.props.username.length < 1 && this.state.validUsername) {
-            this.setState({
-                validUsername: false
-            });
-        }
-    }
+      }
 
-    validatePassword() {
-        let strongPassword = new RegExp(/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/);
-        let valid = strongPassword.test(this.props.password);
-        if (!this.state.validPassword && valid) {
-            this.setState({
-                validPassword: true
-            });
-        }
-        if (this.state.validPassword && !valid) {
-            this.setState({
-                validPassword: false,
-            });
-        }
-    }
+  return (
+    <Formik
+      validationSchema={schema}
+      onSubmit={values => handleSignup(values)}
+      initialValues={{
+        name: 'Mark'
+      }}
+    >
+      {({
+        handleSubmit,
+        handleChange,
+        handleBlur,
+        values,
+        touched,
+        isValid,
+        errors,
+      }) => (
+        <Form noValidate onSubmit={handleSubmit}>
+          <Form.Row>
+            <Form.Group controlId="validationFormik01">
+              <Form.Label>Name</Form.Label>
+              <Form.Control
+                type="text"
+                name="name"
+                value={values.name}
+                onChange={handleChange}
+                isValid={touched.name && !errors.name}
+              />
+              <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+            </Form.Group>
+            </Form.Row>
+            <Form.Row>
+            <Form.Group  controlId="validationFormik02">
+              <Form.Label>Username</Form.Label>
+              <Form.Control
+                type="text"
+                name="username"
+                value={values.username}
+                onChange={handleChange}
+                isValid={touched.username && !errors.username}
+              />
+              <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+            </Form.Group>
+          </Form.Row>
+          <Form.Row>
+            <Form.Group controlId="validationFormik03">
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="password"
+                name="password"
+                value={values.password}
+                onChange={handleChange}
+                isInvalid={!!errors.password}
+              />
 
-    confirmPassword() {
-        if (this.props.password === this.props.confirmPassword && !this.state.confirmPassword && this.props.password) {
-            this.setState({
-                confirmPassword: true
-            });
-        }
-        if (this.props.password !== this.props.confirmPassword && this.state.confirmPassword) {
-            this.setState({
-                confirmPassword: false
-            });
-        }
-    }
-
-    render() {
-        return (
-            <div>
-                <h2 className="loginTitle title-font">Signup</h2>
-                <hr />
-                {this.props.message?(
-                    <Alert className="animated fadeIn" color="danger">{this.props.message}</Alert>
-                ): (<></>)}
-                <Form>
-                    <FormGroup>
-                        <Label for="username">Username</Label>
-                        <Input type="text" name="username" id="username" placeholder="username" value={this.props.username} onChange={this.props.handleInputChange} valid={this.state.validUsername} />
-                    </FormGroup>
-                    <FormGroup>
-                        <Label for="password">Password</Label>
-                        <Input type="password" name="password" id="password" placeholder="password" value={this.props.password} onChange={this.props.handleInputChange} valid={this.state.validPassword} />
-                    </FormGroup>
-                    <FormGroup>
-                        <Label for="confirmPassword">Confirm Password</Label>
-                        <Input type="password" name="confirmPassword" id="confirmPassword" placeholder="confirm password" value={this.props.confirmPassword} onChange={this.props.handleInputChange} valid={this.state.confirmPassword} />
-                        <FormText>at least 8 characters, 1 capital & 1 number</FormText>
-                    </FormGroup>
-                    {/* if all fields are valid, allow the user to submit the form */}
-                    {(this.state.validUsername && this.state.validPassword && this.state.confirmPassword) ? (
-                        <Button onClick={this.props.handleSignup} color="success" block>Signup</Button>
-                    ) : (
-                        <Button onClick={this.props.handleSignup} color="danger" block disabled>Signup</Button>
-                    )}
-                    <p className="signupLink">
-                        <Link to="/login">already have an account?  Sign in here</Link>
-                    </p>
-                </Form>
-            </div>
-        );
-    }
+              <Form.Control.Feedback type="invalid">
+                {errors.password}
+              </Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group  controlId="validationFormik04">
+              <Form.Label>Confirm Password</Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="password"
+                name="confirmPassword"
+                value={values.confirmPassword}
+                onChange={handleChange}
+                isInvalid={!!errors.confirmPassword}
+              />
+              <Form.Control.Feedback type="invalid">
+                {errors.confirmPassword}
+              </Form.Control.Feedback>
+            </Form.Group>
+          </Form.Row>
+          <Button type="submit">Submit form</Button>
+        </Form>
+      )}
+    </Formik>
+  );
 }
 
 export default Signup;
