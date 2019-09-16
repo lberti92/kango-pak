@@ -1,0 +1,30 @@
+import React, { createContext, useState, useEffect } from "react";
+import API from "../utils/API";
+const context = createContext(null);
+
+// wrapper to go around components to get data
+const UserProvider = ({ children }) => {
+  const [user, setUser] = useState({});
+
+//  life cycles
+  useEffect(() => {
+      API.isLoggedIn()
+        //   .then(res => console.log(res.data))
+          .then(res => setUser(res.data))
+          .catch(err => {
+              console.log(err);
+          });
+        //   empty array is only run when it is mounted and unmounted
+  }, []);
+
+  return (
+      <context.Provider value={user}>
+          {children}
+      </context.Provider>
+  );
+};
+
+// render all of the children
+UserProvider.context = context;
+
+export default UserProvider;
