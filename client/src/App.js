@@ -19,7 +19,6 @@ function App() {
           <Container>
             <Switch>
               <Route exact path="/" component={Home} />
-              
               <Route exact path="/signup" render={(props) => <Auth action="signup" />} />
               <Route exact path="/login" render={(props) => <Auth action="login" />} />
               <Route exact path="/profile" component={Profile} />
