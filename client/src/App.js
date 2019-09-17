@@ -20,16 +20,10 @@ function App() {
           <Container>
             <Switch>
               <Route exact path="/" component={Home} />
-              
               <Route exact path="/signup" render={(props) => <Auth action="signup" />} />
-<<<<<<< HEAD
-              <Route exact path="/login" render={(props) => <Auth  action="login" />} />
-=======
               <Route exact path="/login" render={(props) => <Auth action="login" />} />
->>>>>>> hooks-setup
               <Route exact path="/profile" component={Profile} />
               {/* <Route component={NoMatch} /> */}
-              
             </Switch>
           </Container>
           </UserProvider>
