@@ -8,6 +8,7 @@ import Navigation from "./components/TopNav";
 import Footer from "./components/Footer";
 import UserProvider from "./contexts/UserProvider";
 import { Container } from 'reactstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {
@@ -21,7 +22,11 @@ function App() {
               <Route exact path="/" component={Home} />
               
               <Route exact path="/signup" render={(props) => <Auth action="signup" />} />
+<<<<<<< HEAD
               <Route exact path="/login" render={(props) => <Auth  action="login" />} />
+=======
+              <Route exact path="/login" render={(props) => <Auth action="login" />} />
+>>>>>>> hooks-setup
               <Route exact path="/profile" component={Profile} />
               {/* <Route component={NoMatch} /> */}
               
