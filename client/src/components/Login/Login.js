@@ -36,15 +36,15 @@ const Login = () => {
             <Form>
                 <FormGroup>
                     <Label for="username">Username</Label>
-                    <Input type="text" name="username" id="username" placeholder="username" value={values.username} onChange={handleChange} />
+                    <Input type="text" name="username" id="username" placeholder="Username" value={values.username} onChange={handleChange} />
                 </FormGroup>
                 <FormGroup>
                     <Label for="password">Password</Label>
-                    <Input type="password" name="password" id="password" placeholder="password" value={values.password} onChange={handleChange} />
+                    <Input type="password" name="password" id="password" placeholder="Password" value={values.password} onChange={handleChange} />
                 </FormGroup>
                 <Button id="loginBtn"  onClick={handleLogin} block>Login</Button>
                 <p className="signupLink">
-                    <Link to="/signup">dont have an account?  Sign up here</Link>
+                    <Link to="/signup">Don't have an account? Sign up here!</Link>
                 </p>
             </Form>
         </div>
