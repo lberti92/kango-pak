@@ -4,24 +4,30 @@ import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Auth from "./pages/Auth";
 import NoMatch from "./pages/NoMatch";
-import TopNav from "./components/TopNav";
+import Navigation from "./components/TopNav";
 import Footer from "./components/Footer";
+import UserProvider from "./contexts/UserProvider";
 import { Container } from 'reactstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
       <Router>
         <>
-          <TopNav />
+        <UserProvider>
+          <Navigation />
           <Container>
             <Switch>
               <Route exact path="/" component={Home} />
-              <Route exact path="/signup" render={(props) => <Auth {...props} action="signup" />} />
-              <Route exact path="/login" render={(props) => <Auth {...props} action="login" />} />
+              
+              <Route exact path="/signup" render={(props) => <Auth action="signup" />} />
+              <Route exact path="/login" render={(props) => <Auth action="login" />} />
               <Route exact path="/profile" component={Profile} />
-              <Route component={NoMatch} />
+              {/* <Route component={NoMatch} /> */}
+              
             </Switch>
           </Container>
+          </UserProvider>
           <Footer />
         </>
       </Router>
