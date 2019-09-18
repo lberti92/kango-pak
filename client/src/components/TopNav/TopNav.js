@@ -1,8 +1,7 @@
 import React, { useContext } from "react";
 import API from "../../utils/API";
-import { Nav, Navbar, NavDropdown, FormControl, Form, Button } from 'react-bootstrap';
+import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { FaUserAlt } from "react-icons/fa";
-// import { LinkContainer } from 'react-router-bootstrap';
 import UserProvider from "../../contexts/UserProvider";
 
 const Navigation = () => {
