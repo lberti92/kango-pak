@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
 @import "./sass/variable.scss";
 
 html, body {
@@ -18,3 +18,5 @@ html, body {
         margin-top: 25px;
     }
 }
+
+@import '~bootstrap/scss/bootstrap.scss';

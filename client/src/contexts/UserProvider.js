@@ -4,18 +4,16 @@ const context = createContext(null);
 
 // wrapper to go around components to get data
 const UserProvider = ({ children }) => {
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState({loggedIn: false, user: {}});
 
 //  life cycles
   useEffect(() => {
       API.isLoggedIn()
-        //   .then(res => console.log(res.data))
           .then(res => setUser(res.data))
           .catch(err => {
               console.log(err);
           });
-        //   empty array is only run when it is mounted and unmounted
-  }, []);
+  }, [user.loggedIn]);
 
   return (
       <context.Provider value={user}>
