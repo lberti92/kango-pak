@@ -8,10 +8,9 @@ import UserProvider from "../../contexts/UserProvider";
 const Profile = () => {
     const {loggedIn, user} = useContext(UserProvider.context);
     console.log(user);
-    
     return (
         <div className="profilePage">
-            {loggedIn ? (
+            {loggedIn === true ? (
                 <div className="profileBox">
                     <h1 id="userTitle">Welcome {user.username}</h1>
                 </div>
