@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import { Button } from "reactstrap";
 import API from "../../utils/API";
-import Joke from "../../components/Joke"
+import Questions from "../../components/Questions/Questions"
 import "./Home.scss";
 
 class Home extends Component {
@@ -42,10 +42,9 @@ class Home extends Component {
   render() {
     return (
       <div className="homeBox">
-        <Joke joke={this.state.joke}/>
-        {this.state.loggedIn ? (
-          <Button onClick={e=> {this.getJoke()}} color="warning" block>Get New Joke</Button>
-        ) : (<></>)}
+        <Questions>
+          
+        </Questions>
       </div>
     );
   }
