@@ -3,9 +3,11 @@
 
 html, body {
     background: $background-color;
-    height: 100%;
-    margin: 0;
-    position: relative;
+    height: 100vh;
+}
+body {
+    display: flex;
+    flex-direction: column;
 }
 
 .notFound {

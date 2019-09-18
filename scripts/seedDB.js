@@ -72,7 +72,7 @@ const womenSeed = [
         weight: ".3"
     },
     {
-        name: "Wool knit hat",
+        name: "Wool Knit Hat",
         weight: ".35"
     },
     {
