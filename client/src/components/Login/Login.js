@@ -1,9 +1,8 @@
-import React, {useContext, useState} from "react";
+import React, {useState} from "react";
 import { Button, Form, FormGroup, Label, Input, Alert } from 'reactstrap';
 import { Link } from "react-router-dom";
 import { useForm } from "../../useForm";
 import API from "../../utils/API";
-import { set } from "mongoose";
 
 const Login = () => {
     const [values, handleChange] = useForm({ username: "", password: "" });

@@ -1,8 +1,7 @@
-import React, {useState, useContext} from "react";
+import React, {useContext} from "react";
 import "./Profile.scss";
 import { Button } from "reactstrap";
 import { Link } from "react-router-dom"
-import API from "../../utils/API"
 import UserProvider from "../../contexts/UserProvider";
 
 const Profile = () => {
