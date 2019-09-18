@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 mongoose.pluralize(null);
 
-const changeableSchema = new Schema ({
+const seasonalSchema = new Schema ({
     name: {
         type: String,
         required: true,
@@ -10,6 +10,6 @@ const changeableSchema = new Schema ({
     }
 })
 
-const Changeable = mongoose.model("Changeable", changeableSchema);
+const Seasonal = mongoose.model("Seasonal", seasonalSchema);
 
-module.exports = Changeable;
+module.exports = Seasonal;

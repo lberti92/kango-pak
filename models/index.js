@@ -1,12 +1,12 @@
 module.exports = {
     User: require("./Users"),
     Todo: require("./Todos"),
-    Accessory: require("./Accessories"),
     Men: require("./Men"),
     Women: require("./Women"),
-    Changeable: require("./Changeable"),
+    Neutral: require("./Neutral"),
     Cold: require("./Cold"),
     Desert: require("./Desert"),
     Tropical: require("./Tropical"),
-    Warm: require("./Warm")
+    Warm: require("./Warm"),
+    Seasonal: require("./Seasonal")
   };

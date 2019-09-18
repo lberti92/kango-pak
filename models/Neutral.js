@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const accessoriesSchema = new Schema({
+const neutralSchema = new Schema ({
     name: {
         type: String,
         required: true,
@@ -9,10 +9,10 @@ const accessoriesSchema = new Schema({
     },
     weight: {
         type: String,
-        true: true
+        required: true
     }
 })
 
-const Accessory = mongoose.model("Accessory", accessoriesSchema);
+const Neutral = mongoose.model("Neutral", neutralSchema);
 
-module.exports = Accessory;
+module.exports = Neutral;
