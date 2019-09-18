@@ -10,22 +10,22 @@ import UserProvider from "./contexts/UserProvider";
 import { Container } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import ApolloClient from "apollo-client";
-import { InMemoryCache } from "apollo-cache-inmemory";
-import { createHttpLink } from "apollo-link-http";
-import { ApolloProvider } from "@apollo/react-hooks";
-const httpLink = createHttpLink({
-  uri: "/graphql"
-});
-const client = new ApolloClient({
-  link: httpLink,
-  cache: new InMemoryCache()
-});
+// import ApolloClient from "apollo-client";
+// import { InMemoryCache } from "apollo-cache-inmemory";
+// import { createHttpLink } from "apollo-link-http";
+// import { ApolloProvider } from "@apollo/react-hooks";
+// const httpLink = createHttpLink({
+//   uri: "/graphql"
+// });
+// const client = new ApolloClient({
+//   link: httpLink,
+//   cache: new InMemoryCache()
+// });
 
 
 function App() {
   return (
-    <ApolloProvider client={client}>
+    // <ApolloProvider client={client}>
       <Router>
         <>
         <UserProvider>
@@ -43,7 +43,7 @@ function App() {
           <Footer />
         </>
       </Router>
-      </ApolloProvider>
+      // </ApolloProvider>
   );
 }
 

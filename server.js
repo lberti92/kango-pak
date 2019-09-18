@@ -8,6 +8,19 @@ const session = require("express-session");
 const passport = require("passport");
 const logger = require("morgan");
 const flash = require('connect-flash');
+// const cors = require("cors");
+// for graphql middleware
+const graphqlHTTP = require("express-graphql");
+const schema = require("./graphql/schema/schema");
+
+// graphqlHTTP is a function that handles the request
+app.use("/graphql", graphqlHTTP({
+    schema,
+    // interact with graphiql when go to /graphql on the server
+    graphiql: true
+}));
+// allow cross origin requests
+// app.use(cors);
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -30,7 +43,7 @@ if (process.env.NODE_ENV === "production") {
 
 app.use(routes);
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/react-auth-simple", { useNewUrlParser: true }, function(err) {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/kangopak", { useNewUrlParser: true }, function(err) {
     if (err) throw err;
     console.log(`mongoose connection successful`.yellow);
     app.listen(PORT, (err)=> {
@@ -38,6 +51,3 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/react-auth-simp
         console.log(`connected on port ${PORT}`.cyan)
     });
 });
-
-
-
