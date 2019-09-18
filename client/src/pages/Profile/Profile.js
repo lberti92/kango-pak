@@ -1,17 +1,15 @@
-import React, {useState, useContext} from "react";
+import React, {useContext} from "react";
 import "./Profile.scss";
 import { Button } from "reactstrap";
 import { Link } from "react-router-dom"
-import API from "../../utils/API"
 import UserProvider from "../../contexts/UserProvider";
 
 const Profile = () => {
     const {loggedIn, user} = useContext(UserProvider.context);
     console.log(user);
-    
     return (
         <div className="profilePage">
-            {loggedIn ? (
+            {loggedIn === true ? (
                 <div className="profileBox">
                     <h1 id="userTitle">Welcome {user.username}</h1>
                 </div>
@@ -19,7 +17,7 @@ const Profile = () => {
                 <div className="noUser">
                     {user ? (
                         <>
-                            <h1>please log in</h1>
+                            <h1>Please log in</h1>
                             <Link className="loginLink" to="/login"><Button className="loginBtn" color="info" block>Login</Button></Link>
                         </>
                     ) : (

@@ -19,19 +19,17 @@ const usersSchema = new Schema({
     },
     required: [true, "password is required"]
   },
-  admin: {
-    type: Boolean,
-    unique: false,
-    required: true,
-    default: false
+  name: {
+    type: String,
+    required: true
   },
   createdAt: {
     type: Date,
     default: Date.now()
   },
-  todos: [{
+  trips: [{
     type: Schema.Types.ObjectId,
-    ref: 'Todo'
+    ref: 'Trips'
   }]
 });
 

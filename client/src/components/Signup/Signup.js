@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { Form, InputGroup, Col, Button } from "react-bootstrap";
+import React from "react";
+import { Form, Button } from "react-bootstrap";
 import { Formik } from "formik";
 import { string, object, bool}from "yup";
 import API from "../../utils/API";
-import { useForm } from "../../useForm";
-import { Link } from "react-router-dom";
+
+
 
 const schema = object({
   name: string().required(),
@@ -15,25 +15,17 @@ const schema = object({
 
 function Signup() {
     const handleSignup = values => {
-        // event.preventDefault();
         if (values.username && values.password) {
           API.signup({
             username: values.username,
             password: values.password
           }).then(user => {
             if (user.data.loggedIn) {
-            //   this.setState({
-            //     loggedIn: true,
-            //     user: user.data.user
-            //   });
               console.log("log in successful");
               window.location.href = '/profile';
             } else {
               console.log("something went wrong :(")
               console.log(user.data);
-            //   this.setState({
-            //     message: user.data
-            //   })
             }
           });
         }
