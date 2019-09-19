@@ -4,7 +4,14 @@ import { Formik } from "formik";
 import { string, object, bool}from "yup";
 import API from "../../utils/API";
 
+import gql from "graphql-tag";
+import { userQuery, useMutation } from "@apollo/react-hooks";
 
+const ADD_USER = gql`
+ mutation addUser($username: String!, $password: String!, $name: String!) {
+   username name
+ }
+`
 
 const schema = object({
   name: string().required(),
@@ -14,11 +21,13 @@ const schema = object({
 });
 
 function Signup() {
+  
     const handleSignup = values => {
         if (values.username && values.password) {
           API.signup({
             username: values.username,
-            password: values.password
+            password: values.password,
+            name: values.name
           }).then(user => {
             if (user.data.loggedIn) {
               console.log("log in successful");
@@ -32,6 +41,7 @@ function Signup() {
       }
 
   return (
+    
     <Formik
       validationSchema={schema}
       onSubmit={values => handleSignup(values)}

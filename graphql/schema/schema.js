@@ -96,6 +96,7 @@ const Mutation = new GraphQLObjectType({
                 password: args.password,
                 name: args.name
             })
+            user.password = user.generateHash(args.password);
             // save to the mongo db and return the object that was inserted
             return user.save()
         }
