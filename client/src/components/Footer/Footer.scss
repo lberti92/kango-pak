@@ -2,6 +2,8 @@
 
 .footer {
     width: 100%;
+    display: flex;
+    max-height: auto;
     margin-top: 50px;
     flex-shrink: 0;
     background: $primary-color;
@@ -15,7 +17,6 @@
         font-size: 15px;
         margin: 0 auto;
         text-align: center;
-        display: inline-block;
     }
 
     .gh-icon {
@@ -31,6 +32,15 @@
     }
 
 
+}
+
+@media (min-width: 650px ) {
+    footer {
+        display: flex;
+
+    }
+
+    
 }
 
 // #reactLogo {

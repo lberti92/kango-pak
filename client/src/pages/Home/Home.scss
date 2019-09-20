@@ -1,13 +1,25 @@
-@import "../../sass/variable.scss";
 
-.homeBox {
+.carousel {
+    max-height: 80%;
+    width: 80%;
     margin: 0 auto;
-    margin-top: 20px;
-    width: 500px;
-    font-family: $text-font;
+    padding-top: 10px;
+}
 
-    button {
-        font-size: 1.3em;
-        font-weight: bold;
-    }
+.label {
+    color: white;
+    font-family: Josefin Sans, sans-serif;
+    font-size: 45px;
+}
+
+.label-text-dark {
+    color: black;
+    font-size: 35px;
+    font-family: Josefin Sans, sans-serif;
+
+}
+
+.carousel-caption {
+    top: 0;
+    bottom: auto;
 }

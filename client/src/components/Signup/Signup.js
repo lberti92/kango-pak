@@ -1,7 +1,7 @@
 import React from "react";
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, Container } from "react-bootstrap";
 import { Formik } from "formik";
-import { string, object, bool}from "yup";
+import { string, object, bool} from "yup";
 import API from "../../utils/API";
 
 
@@ -32,11 +32,12 @@ function Signup() {
       }
 
   return (
+    <Container className="container-fluid">
     <Formik
       validationSchema={schema}
       onSubmit={values => handleSignup(values)}
       initialValues={{
-        name: 'Mark'
+        name: ''
       }}
     >
       {({
@@ -48,13 +49,14 @@ function Signup() {
         isValid,
         errors,
       }) => (
-        <Form noValidate onSubmit={handleSubmit}>
+        <Form noValidate onSubmit={handleSubmit} className="signupBox">
           <Form.Row>
             <Form.Group controlId="validationFormik01">
               <Form.Label>Name</Form.Label>
               <Form.Control
                 type="text"
                 name="name"
+                placeholder="Username"
                 value={values.name}
                 onChange={handleChange}
                 isValid={touched.name && !errors.name}
@@ -68,6 +70,7 @@ function Signup() {
               <Form.Control
                 type="text"
                 name="username"
+                placeholder="Username"
                 value={values.username}
                 onChange={handleChange}
                 isValid={touched.username && !errors.username}
@@ -80,7 +83,7 @@ function Signup() {
               <Form.Label>Password</Form.Label>
               <Form.Control
                 type="password"
-                placeholder="password"
+                placeholder="Password"
                 name="password"
                 value={values.password}
                 onChange={handleChange}
@@ -95,7 +98,7 @@ function Signup() {
               <Form.Label>Confirm Password</Form.Label>
               <Form.Control
                 type="password"
-                placeholder="password"
+                placeholder="Confirm Password"
                 name="confirmPassword"
                 value={values.confirmPassword}
                 onChange={handleChange}
@@ -106,10 +109,11 @@ function Signup() {
               </Form.Control.Feedback>
             </Form.Group>
           </Form.Row>
-          <Button type="submit">Submit form</Button>
+          <Button className="signupBtn" type="submit">Submit</Button>
         </Form>
       )}
     </Formik>
+    </Container>
   );
 }
 

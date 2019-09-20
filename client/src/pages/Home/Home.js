@@ -1,44 +1,69 @@
-import React, { Component, useState } from "react";
-import { Button } from "reactstrap";
-import API from "../../utils/API";
-import Header  from "../../components/Header/Header";
-
-import Questions from "../../components/Questions/Questions"
+import React, { useState } from "react";
+import { Container, Carousel, Image} from "react-bootstrap";
 import "./Home.scss";
+import Footer from "../../components/Footer";
 
-class Home extends Component {
+function Home() {
 
-  state = {
-    loggedIn: false,
-  };
+    const [index, setIndex] = useState(0);
+    const [direction, setDirection] = useState(null);
 
-  componentDidMount() {
-    this.loggedIn();
-  }
+    const handleSelect = (selectedIndex, e) => {
+        setIndex(selectedIndex);
+        setDirection(e.direction);
+    }
 
-  loggedIn = () => {
-    API.isLoggedIn().then(user => {
-      if (user.data.loggedIn) {
-        this.setState({
-          loggedIn: true
-        });
-      }
-    }).catch(err => {
-      console.log(err);
-    });
-  }
+        return (
+            <>
+          <Container className="container-carousel">
+            <Carousel activeIndex={index} direction={direction} onSelect={handleSelect}>
+                <Carousel.Item className="carousel">
+                    <Image
+                        className="d-block w-100"
+                        src="https://images.unsplash.com/photo-1469796466635-455ede028aca?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"
+                        alt="First slide"
+                        fluid
+                        rounded
+                
+                    />
+                    <Carousel.Caption>
+                        <h3 className="label">Welcome to KanGoPak</h3>
+                        <p className="label-text-dark">A new way to prepare for all the places you want to go</p>
+                    </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <Image
+                        className="d-block w-100"
+                        src="https://images.unsplash.com/photo-1465865523598-a834aac5d3fa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"
+                        alt="Second slide"
+                        fluid
+                        rounded
+                    />
 
-  render() {
-    return (
-      <>
-      <Header />
-      <div className="homeBox">
-        <Questions>
-        </Questions>
-      </div>
-      </>
-    );
-  }
-}
+                    <Carousel.Caption>
+                        <h3 className="label">Packing Assistant</h3>
+                        <p className="label-text-dark">Create a personalized packing list and refer to past trips to make travel a breeze</p>
+                    </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <Image
+                        className="d-block w-100"
+                        src="https://images.unsplash.com/photo-1461696114087-397271a7aedc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"
+                        alt="Third slide"
+                        fluid
+                        rounded
+                    />
+
+                    <Carousel.Caption>
+                        <h3 className="label">Organized Chaos</h3>
+                        <p className="label-text-dark">One place for all your travel needs</p>
+                    </Carousel.Caption>
+                </Carousel.Item>
+            </Carousel>
+            </Container>
+            </>
+        );
+    }
+
 
 export default Home;
