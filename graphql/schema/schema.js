@@ -15,7 +15,7 @@ const UserType = new GraphQLObjectType({
     name: "User", 
     // function so it can interact with other graphql objects
     fields: () => ({
-        id: { type: GraphQLString },
+        _id: { type: GraphQLString },
         username: { type: new GraphQLNonNull(GraphQLString) }, 
         password: { type: new GraphQLNonNull(GraphQLString) },
         createdAt: { type: GraphQLString },
@@ -23,7 +23,7 @@ const UserType = new GraphQLObjectType({
         // trips: { 
         //     type: new GraphQLList(TripType),
         //     resolve(parent, args) {
-        //         // return return Trip.find({})
+        //         // return Trip.find({})
         //     }
         //  }
     })
@@ -50,9 +50,9 @@ const RootQuery = new GraphQLObjectType({
         // the name of the field is how it will be refrenced in queries
         user: {
             type: UserType,
-            args: { id: { type: GraphQLString} },
+            args: { _id: { type: GraphQLString} },
             resolve(parent, args) {
-                return User.findById(args.id);
+                return User.findById(args._id);
             }
         },
         // trip: {
@@ -96,6 +96,7 @@ const Mutation = new GraphQLObjectType({
                 password: args.password,
                 name: args.name
             })
+            user.password = user.generateHash(args.password);
             // save to the mongo db and return the object that was inserted
             return user.save()
         }
