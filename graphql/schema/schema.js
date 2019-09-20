@@ -23,7 +23,7 @@ const UserType = new GraphQLObjectType({
         // trips: { 
         //     type: new GraphQLList(TripType),
         //     resolve(parent, args) {
-        //         // return return Trip.find({})
+        //         // return Trip.find({})
         //     }
         //  }
     })
