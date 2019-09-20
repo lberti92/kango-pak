@@ -13,7 +13,6 @@ function Home() {
     }
 
         return (
-    <>
           <Container className="container-carousel">
             <Carousel activeIndex={index} direction={direction} onSelect={handleSelect}>
                 <Carousel.Item className="carousel">
@@ -60,7 +59,6 @@ function Home() {
                 </Carousel.Item>
             </Carousel>
             </Container>
-        </>
         );
     }
 
