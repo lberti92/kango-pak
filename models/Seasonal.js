@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require("mongoose"); mongoose.set('useCreateIndex', true);
 const Schema = mongoose.Schema;
 mongoose.pluralize(null);
 

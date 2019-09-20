@@ -1,4 +1,5 @@
-const mongoose = require("mongoose");
+const mongoose = require("mongoose"); mongoose.set('useCreateIndex', true);
+// added mongoose.set('useCreateIndex', true); for error received in terminal:  DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
 const Schema = mongoose.Schema;
 mongoose.pluralize(null);
 

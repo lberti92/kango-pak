@@ -72,7 +72,7 @@ const womenSeed = [
         weight: ".3"
     },
     {
-        name: "Wool knit hat",
+        name: "Wool Knit Hat",
         weight: ".35"
     },
     {
@@ -212,11 +212,11 @@ const womenSeed = [
         weight: ".4"
     },
     {
-        name: "Long-Sleeve Shirt",
+        name: "Long Sleeve Shirt",
         weight: ".3"
     },
     {
-        name: "Short-Sleeve Shirt",
+        name: "Short Sleeve Shirt",
         weight: ".25"
     },
     {
@@ -343,7 +343,7 @@ const menSeed = [
         weight: "2"
     },
     {
-        name: "Casual sneakers",
+        name: "Casual Sneakers",
         weight: ".9"
     },
     {
@@ -371,7 +371,7 @@ const menSeed = [
         weight: ".4"
     },
     {
-        name: "Water shoes",
+        name: "Watershoes",
         weight: "1.7"
     },
     {
@@ -558,7 +558,7 @@ const neutralSeed = [
         weight: ".3"
     },
     {
-        name: "Wool knit hat",
+        name: "Wool Knit Hat",
         weight: ".35"
     },
     {
@@ -730,7 +730,7 @@ const neutralSeed = [
         weight: ".4"
     },
     {
-        name: "Long-Sleeve Shirt",
+        name: "Long Sleeve Shirt",
         weight: ".3"
     },
     {
@@ -738,7 +738,7 @@ const neutralSeed = [
         weight: ".3"
     },
     {
-        name: "Short-Sleeve Shirt",
+        name: "Short Sleeve Shirt",
         weight: ".25"
     },
     {
@@ -820,6 +820,9 @@ const coldSeed = [
         name: "Swimsuit"
     },
     {
+        name: "Undershirt"
+    },
+    {
         name: "Underwear"
     },
     {
@@ -853,6 +856,9 @@ const coldSeed = [
         name: "Sunglasses"
     },
     {
+        name: "Tie"
+    },
+    {
         name: "Toiletries"
     },
     {
@@ -860,6 +866,9 @@ const coldSeed = [
     },
     {
         name: "Casual Sneakers"
+    },
+    {
+        name: "Dress Shoes"
     },
     {
         name: "Heels"
@@ -880,6 +889,9 @@ const coldSeed = [
         name: "Cardigan"
     },
     {
+        name: "Dinner Jacket"
+    },
+    {
         name: "Winter Jacket"
     },
     {
@@ -890,6 +902,9 @@ const coldSeed = [
     },
     {
         name: "Casual Pants"
+    },
+    {
+        name: "Dress Pants"
     },
     {
         name: "Hiking Pants"
@@ -904,6 +919,12 @@ const coldSeed = [
         name: "Blouse"
     },
     {
+        name: "Casual Shirt - long sleeve"
+    },
+    {
+        name: "Dress Shirt - long sleeve"
+    },
+    {
         name: "Flannel Shirt"
     },
     {
@@ -913,10 +934,13 @@ const coldSeed = [
         name: "Turtleneck"
     },
     {
-        name: "Casual Shirt"
+        name: "Suit/Tuxedo"
     },
     {
-        name: "Dress Shirt"
+        name: "Casual Skirt"
+    },
+    {
+        name: "Dress Skirt"
     },
     {
         name: "Sweatshirt/Hoodie"

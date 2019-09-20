@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require("mongoose"); mongoose.set('useCreateIndex', true);
 const Schema = mongoose.Schema;
 
 const womenSchema = new Schema({
@@ -8,7 +8,7 @@ const womenSchema = new Schema({
         unique: true
     },
     weight: {
-        type: String,
+        type: Number,
         required: true
     }
 })
