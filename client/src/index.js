@@ -11,6 +11,7 @@ import { createHttpLink } from "apollo-link-http"
 import { ApolloProvider } from "@apollo/react-hooks";
 
 const httpLink = createHttpLink({
+    // this will have to change when we deploy!!!!!
     uri: "http://localhost:3001/graphql"
 });
 
