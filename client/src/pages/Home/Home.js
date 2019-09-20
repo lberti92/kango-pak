@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { Container, Carousel, Image} from "react-bootstrap";
+import { Container, Carousel, Image, Button} from "react-bootstrap";
 import "./Home.scss";
-import Footer from "../../components/Footer";
 
 function Home() {
 
@@ -14,7 +13,7 @@ function Home() {
     }
 
         return (
-            <>
+    <>
           <Container className="container-carousel">
             <Carousel activeIndex={index} direction={direction} onSelect={handleSelect}>
                 <Carousel.Item className="carousel">
@@ -61,7 +60,7 @@ function Home() {
                 </Carousel.Item>
             </Carousel>
             </Container>
-            </>
+        </>
         );
     }
 
