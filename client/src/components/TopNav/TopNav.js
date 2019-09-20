@@ -17,8 +17,8 @@ const Navigation = () => {
 
     return (
         <>
-    <Navbar bg="light" expand="lg">
-  <Navbar.Brand href="/">KanGoPak</Navbar.Brand>
+    <Navbar className="nav" bg="light" expand="lg">
+  <Navbar.Brand href="/"><img src="./assets/images/logotrans.png" alt="logo" width="250px" /></Navbar.Brand>
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="justify-content-end">
