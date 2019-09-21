@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require("mongoose"); mongoose.set('useCreateIndex', true);
 const bcrypt = require('bcrypt');
 const Schema = mongoose.Schema;
 

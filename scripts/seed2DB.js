@@ -56,6 +56,9 @@ const desertSeed = [
         name: "Casual Sneakers"
     },
     {
+        name: "Dress Shoes"
+    },
+    {
         name: "Flats"
     },
     {
@@ -63,6 +66,9 @@ const desertSeed = [
     },
     {
         name: "Heels"
+    },
+    {
+        name: "Loafers"
     },
     {
         name: "Running Shoes"
@@ -92,10 +98,22 @@ const desertSeed = [
         name: "Casual Pants"
     },
     {
+        name: "Dress Pants"
+    },
+    {
         name: "Hiking Pants"
     },
     {
-        name: "Blouses"
+        name: "Blouse"
+    },
+    {
+        name: "Casual Shirt - short sleeve"
+    },
+    {
+        name: "Dress Shirt - short sleeve"
+    },
+    {
+        name: "Polo Shirt"
     },
     {
         name: "Short Sleeve Shirt"
@@ -176,13 +194,19 @@ const tropicalSeed = [
         name: "Casual Sneakers"
     },
     {
+        name: "Dress Shoes"
+    },
+    {
         name: "Flats"
     },
     {
-        name: "Flip Flops"
+        name: "Flip-Flops"
     },
     {
         name: "Heels"
+    },
+    {
+        name: "Loafers"
     },
     {
         name: "Running Shoes"
@@ -194,7 +218,7 @@ const tropicalSeed = [
         name: "Slippers"
     },
     {
-        name: "Water Shoes"
+        name: "Watershoes"
     },
     {
         name: "Cocktail Dress"
@@ -218,10 +242,22 @@ const tropicalSeed = [
         name: "Casual Pants"
     },
     {
+        name: "Dress Pants"
+    },
+    {
         name: "Hiking Pants"
     },
     {
-        name: "Blouses"
+        name: "Blouse"
+    },
+    {
+        name: "Casual Shirt - short sleeve"
+    },
+    {
+        name: "Dress Shirt - short sleeve"
+    },
+    {
+        name: "Polo Shirt"
     },
     {
         name: "Short Sleeve Shirt"
@@ -276,6 +312,9 @@ const warmSeed = [
         name: "Swimsuit"
     },
     {
+        name: "Undershirt"
+    },
+    {
         name: "Underwear"
     },
     {
@@ -297,10 +336,16 @@ const warmSeed = [
         name: "Sunglasses"
     },
     {
+        name: "Tie"
+    },
+    {
         name: "Toiletries"
     },
     {
         name: "Ankle Boots"
+    },
+    {
+        name: "Dress Shoes"
     },
     {
         name: "Hiking Boots"
@@ -318,6 +363,9 @@ const warmSeed = [
         name: "Heels"
     },
     {
+        name: "Loafers"
+    },
+    {
         name: "Running Shoes"
     },
     {
@@ -327,7 +375,7 @@ const warmSeed = [
         name: "Slippers"
     },
     {
-        name: "Water Shoes"
+        name: "Watershoes"
     },
     {
         name: "Cocktail Dress"
@@ -345,10 +393,16 @@ const warmSeed = [
         name: "Cardigan"
     },
     {
+        name: "Dinner Jacket"
+    },
+    {
         name: "Light Jacket"
     },
     {
         name: "Rain Jacket"
+    },
+    {
+        name: "Vest"
     },
     {
         name: "Pajamas"
@@ -360,6 +414,9 @@ const warmSeed = [
         name: "Casual Pants"
     },
     {
+        name: "Dress Pants"
+    },
+    {
         name: "Hiking Pants"
     },
     {
@@ -369,7 +426,16 @@ const warmSeed = [
         name: "Leggings"
     },
     {
-        name: "Blouses"
+        name: "Blouse"
+    },
+    {
+        name: "Casual Shirt - short sleeve"
+    },
+    {
+        name: "Dress Shirt - short sleeve"
+    },
+    {
+        name: "Polo Shirt"
     },
     {
         name: "Short Sleeve Shirt"
@@ -379,6 +445,9 @@ const warmSeed = [
     },
     {
         name: "T-shirt"
+    },
+    {
+        name: "Suit/Tuxedo"
     },
     {
         name: "Casual Shorts"
@@ -412,6 +481,9 @@ const seasonalSeed = [
         name: "Sports Bra"
     },
     {
+        name: "Hosiery/Tights"
+    },
+    {
         name: "Lingerie"
     },
     {
@@ -428,6 +500,9 @@ const seasonalSeed = [
     },
     {
         name: "Swimsuit"
+    },
+    {
+        name: "Undershirt"
     },
     {
         name: "Underwear"
@@ -454,10 +529,13 @@ const seasonalSeed = [
         name: "Pashmina/Wrap"
     },
     {
-        name: "Light Scarg"
+        name: "Light Scarf"
     },
     {
         name: "Sunglasses"
+    },
+    {
+        name: "Tie"
     },
     {
         name: "Toiletries"
@@ -469,6 +547,9 @@ const seasonalSeed = [
         name: "Casual Sneakers"
     },
     {
+        name: "Dress Shoes"
+    },
+    {
         name: "Flats"
     },
     {
@@ -476,6 +557,9 @@ const seasonalSeed = [
     },
     {
         name: "Heels"
+    },
+    {
+        name: "Loafers"
     },
     {
         name: "Running Shoes"
@@ -496,6 +580,9 @@ const seasonalSeed = [
         name: "Cardigan"
     },
     {
+        name: "Dinner Jacket"
+    },
+    {
         name: "Light Jacket"
     },
     {
@@ -514,6 +601,9 @@ const seasonalSeed = [
         name: "Casual Pants"
     },
     {
+        name: "Dress Pants"
+    },
+    {
         name: "Hiking Pants"
     },
     {
@@ -523,7 +613,19 @@ const seasonalSeed = [
         name: "Leggings"
     },
     {
-        name: "Blouses"
+        name: "Blouse"
+    },
+    {
+        name: "Casual Shirt - short sleeve",
+    },
+    {
+        name: "Dress Shirt - short sleeve",
+    },
+    {
+        name: "Casual Shirt - long sleeve",
+    },
+    {
+        name: "Dress Shirt - long sleeve",
     },
     {
         name: "Flannel Shirt"
@@ -539,6 +641,9 @@ const seasonalSeed = [
     },
     {
         name: "Turtleneck"
+    },
+    {
+        name: "Suit/Tuxedo"
     },
     {
         name: "Light Sweater"
