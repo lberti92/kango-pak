@@ -3,7 +3,7 @@ import React from "react";
 const SavedTripList = props => {
     return(
         <>
-        <h3>My Trips</h3>
+        <h3>Packing List</h3>
         {/* get the props from the trip */}
         <ul>
             <li>Trip</li>

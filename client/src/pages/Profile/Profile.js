@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from "react";
+import React, {useContext, useEffect, useState, createContext} from "react";
 import "./Profile.scss";
 import {Row, Col} from "react-bootstrap";
 import SavedTripList from "../../components/SavedTripList";
@@ -9,7 +9,11 @@ import UserProvider from "../../contexts/UserProvider";
 
 const Profile = () => {
     const {loggedIn, user} = useContext(UserProvider.context);
-    
+    const [ tripId, setTripId ] = useState("");
+
+    useEffect(() => {
+        console.log(tripId)
+    }, [tripId])
     
     return (
         <>
@@ -19,11 +23,12 @@ const Profile = () => {
                     <h1>Welcome {user.username}</h1>
                 </Row>
                 <Row>
+
                     <Col>
-                    <SavedTrip user={user}/>
+                    <SavedTrip user={user} tripID={tripId} setTripId={setTripId} />
                     </Col>
                     <Col>
-                    <SavedTripList />
+                    <SavedTripList tripId={tripId} />
                     </Col>
                     <Col>
                     </Col>
