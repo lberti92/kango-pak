@@ -1,9 +1,9 @@
 import React, { Component, useState } from "react";
 import { Button } from "reactstrap";
 import API from "../../utils/API";
-import Header  from "../../components/Header/Header";
-
-import Questions from "../../components/Questions/Questions"
+import Questions from "../../components/Questions/Questions";
+import ClothingList from "../../components/ClothingList/ClothingList";
+import Packed from "../../components/Packed/Packed";
 import "./Home.scss";
 
 class Home extends Component {
@@ -31,7 +31,6 @@ class Home extends Component {
   render() {
     return (
       <>
-      <Header />
       <div className="homeBox">
         <Questions>
         </Questions>
