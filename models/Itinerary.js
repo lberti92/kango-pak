@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const itenerarySchema = new Schema({
+const itinerarySchema = new Schema({
   trip: {
     type: Schema.Types.ObjectId,
     ref: "Trip"
@@ -13,6 +13,6 @@ const itenerarySchema = new Schema({
   }
 });
 
-const Itenerary = mongoose.model("Itenerary", itenerarySchema);
+const Itinerary = mongoose.model("Itinerary", itinerarySchema);
 
-module.exports = Itenerary;
+module.exports = Itinerary;
