@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import "./Profile.scss";
 import {Row, Col} from "react-bootstrap";
 import SavedTripList from "../../components/SavedTripList";
@@ -6,27 +6,10 @@ import SavedTrip from "../../components/SavedTrips";
 import { Button } from "reactstrap";
 import { Link } from "react-router-dom"
 import UserProvider from "../../contexts/UserProvider";
-import gql from 'graphql-tag';
-import { useQuery } from '@apollo/react-hooks';
-
-
-const GET_USERS = gql`
-{
-  users {
-    username
-  }
-}
-`
 
 const Profile = () => {
     const {loggedIn, user} = useContext(UserProvider.context);
-
-    const { loading, error, data } = useQuery(GET_USERS);
-    if (loading) console.log( 'Loading...')
-     if (error) console.log(error.message)
-     if (data) {
-         console.log(data);
-     }
+    
     
     return (
         <>
@@ -37,7 +20,7 @@ const Profile = () => {
                 </Row>
                 <Row>
                     <Col>
-                    <SavedTrip />
+                    <SavedTrip user={user}/>
                     </Col>
                     <Col>
                     <SavedTripList />
