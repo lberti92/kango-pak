@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require("mongoose"); mongoose.set('useCreateIndex', true);
 const Schema = mongoose.Schema;
 
 const menSchema = new Schema ({
@@ -8,10 +8,11 @@ const menSchema = new Schema ({
         unique: true
     }, 
     weight: {
-        type: String,
+        type: Number,
         required: true
-    }
-})
+    },
+    weatherId: [Number] 
+});
 
 const Men = mongoose.model("Men", menSchema);
 
