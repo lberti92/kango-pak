@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require("mongoose"); mongoose.set('useCreateIndex', true);
 const Schema = mongoose.Schema;
 
 const neutralSchema = new Schema ({
@@ -8,10 +8,11 @@ const neutralSchema = new Schema ({
         unique: true
     },
     weight: {
-        type: String,
+        type: Number,
         required: true
-    }
-})
+    },
+    weatherId: [Number]
+});
 
 const Neutral = mongoose.model("Neutral", neutralSchema);
 

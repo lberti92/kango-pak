@@ -8,19 +8,22 @@ const session = require("express-session");
 const passport = require("passport");
 const logger = require("morgan");
 const flash = require('connect-flash');
-// const cors = require("cors");
+const cors = require("cors");
 // for graphql middleware
 const graphqlHTTP = require("express-graphql");
 const schema = require("./graphql/schema/schema");
 
+
+// allow cross origin requests
+app.use(cors());
 // graphqlHTTP is a function that handles the request
 app.use("/graphql", graphqlHTTP({
     schema,
     // interact with graphiql when go to /graphql on the server
     graphiql: true
 }));
-// allow cross origin requests
-// app.use(cors);
+
+
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
