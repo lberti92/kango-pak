@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, {useContext, useEffect} from "react";
 import "./Profile.scss";
 import {Row, Col} from "react-bootstrap";
 import SavedTripList from "../../components/SavedTripList";
@@ -9,24 +9,31 @@ import UserProvider from "../../contexts/UserProvider";
 import gql from 'graphql-tag';
 import { useQuery } from '@apollo/react-hooks';
 
-
-const GET_USERS = gql`
-{
-  users {
-    username
+const GET_USER_TRIPS = gql`
+  query getUserTrips($_id: String!) {
+   user(_id: $id) {
+      trips{
+          name
+      }
+    }
   }
-}
-`
+`;
 
 const Profile = () => {
     const {loggedIn, user} = useContext(UserProvider.context);
 
-    const { loading, error, data } = useQuery(GET_USERS);
-    if (loading) console.log( 'Loading...')
-     if (error) console.log(error.message)
-     if (data) {
-         console.log(data);
-     }
+    useEffect(() => {
+        const { loading, error, data } = useQuery(GET_USER_TRIPS, {
+            variables: {_id: user._id}
+        });
+        if (loading) console.log( 'Loading...')
+         if (error) console.log(error.message)
+         if (data) {
+             console.log(data);
+         }
+    
+    }, [loggedIn])
+
     
     return (
         <>
