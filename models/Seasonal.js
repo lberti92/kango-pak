@@ -8,7 +8,7 @@ const seasonalSchema = new Schema ({
         required: true,
         unique: true
     }
-})
+});
 
 const Seasonal = mongoose.model("Seasonal", seasonalSchema);
 

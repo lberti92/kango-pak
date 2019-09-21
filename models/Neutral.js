@@ -10,8 +10,9 @@ const neutralSchema = new Schema ({
     weight: {
         type: Number,
         required: true
-    }
-})
+    },
+    weatherId: [Number]
+});
 
 const Neutral = mongoose.model("Neutral", neutralSchema);
 

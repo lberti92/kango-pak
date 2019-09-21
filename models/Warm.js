@@ -8,7 +8,7 @@ const warmSchema = new Schema ({
         required: true,
         unique: true
     }
-})
+});
 
 const Warm = mongoose.model("Warm", warmSchema);
 

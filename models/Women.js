@@ -10,8 +10,9 @@ const womenSchema = new Schema({
     weight: {
         type: Number,
         required: true
-    }
-})
+    },
+    weatherId: [Number]
+});
 
 const Women = mongoose.model("Women", womenSchema);
 

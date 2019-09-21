@@ -402,6 +402,9 @@ const warmSeed = [
         name: "Rain Jacket"
     },
     {
+        name: "Vest"
+    },
+    {
         name: "Pajamas"
     },
     {
@@ -476,6 +479,9 @@ const seasonalSeed = [
     },
     {
         name: "Sports Bra"
+    },
+    {
+        name: "Hosiery/Tights"
     },
     {
         name: "Lingerie"
@@ -595,6 +601,9 @@ const seasonalSeed = [
         name: "Casual Pants"
     },
     {
+        name: "Dress Pants"
+    },
+    {
         name: "Hiking Pants"
     },
     {
@@ -635,7 +644,7 @@ const seasonalSeed = [
     },
     {
         name: "Suit/Tuxedo"
-    }
+    },
     {
         name: "Light Sweater"
     },

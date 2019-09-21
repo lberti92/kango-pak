@@ -8,7 +8,7 @@ const tropicalSchema = new Schema ({
         required: true,
         unique: true
     }
-})
+});
 
 const Tropical = mongoose.model("Tropical", tropicalSchema);
 

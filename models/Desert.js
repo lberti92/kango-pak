@@ -8,7 +8,7 @@ const desertSchema = new Schema ({
         required: true,
         unique: true
     }
-})
+});
 
 const Desert = mongoose.model("Desert", desertSchema);
 
