@@ -1,1 +1,1 @@
-export {default} "./Packed";
+export {default} from  "./Packed";

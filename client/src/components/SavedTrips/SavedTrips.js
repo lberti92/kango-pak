@@ -39,7 +39,7 @@ const SavedTrips = ({user, setTripId}) => {
 
     return(
         <>
-        <h3>Your Saved Lists</h3>
+        <h3 className="lead-titles">Packing List</h3>
         {/* get the props from the trip */}
 
         {data ? (
