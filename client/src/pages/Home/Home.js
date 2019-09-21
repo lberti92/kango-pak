@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, Carousel, Image, Button, Col, Row} from "react-bootstrap"
+import { Container, Carousel, Button, Image, Col, Row} from "react-bootstrap"
 
 
 
@@ -69,7 +69,7 @@ function Home() {
             </Row>
             <Row className="change-height">
                 <Col> 
-                <Button href="/signup" className="link-btn"> Sign-Up </Button> 
+                <Button href="/signup" id="link-btn"> Sign-Up </Button> 
                 </Col>
             </Row>
         </Container>
