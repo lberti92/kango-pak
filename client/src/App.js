@@ -9,7 +9,6 @@ import Navigation from "./components/TopNav";
 import Footer from "./components/Footer";
 import UserProvider from "./contexts/UserProvider";
 import { Container } from 'reactstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 import gql from "graphql-tag";
 import { userQuery } from "@apollo/react-hooks";

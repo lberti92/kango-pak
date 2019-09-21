@@ -1,3 +1,10 @@
+@import "../../sass/variable.scss";
+
+
+.container {
+    flex-direction: column;
+    
+}
 
 .carousel {
     max-height: 80%;
@@ -23,3 +30,21 @@
     top: 0;
     bottom: auto;
 }
+
+.change-height {
+    margin-bottom: 5px;
+}
+
+.link-btn {
+    padding: 5px;
+    position: absolute;
+    left: 50%;
+    margin-left: -50px;
+    background-color: #CE2D4F;
+    font-family: $title-font;
+    color: $light-text;
+    border: none;
+    font-size: 1.2em;
+
+}
+
