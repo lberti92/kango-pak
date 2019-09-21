@@ -14,6 +14,11 @@
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
   },
+  "proxy": {
+    "/graphql": {
+      "target": "https://localhost:3001",
+      "secure": false  }
+    },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/evanejtucker/react-auth.git"
@@ -51,4 +56,5 @@
     "concurrently": "^4.1.0",
     "nodemon": "^1.18.9"
   }
+
 }

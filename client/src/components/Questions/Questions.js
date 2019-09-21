@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Container, Form, Button } from "react-bootstrap";
 import "./Questions.scss";
-// import { Formik, Field } from "formik";
 
 export default function Questions(props) {
 
@@ -27,7 +26,7 @@ export default function Questions(props) {
                 </Form.Group>
 
                 <Form.Group>
-                    <Form.Label>Describe the climate will you be visiting (required):</Form.Label>
+                    <Form.Label>Describe the climate you be visiting (required):</Form.Label>
                     <Form.Control as="select" required onChange={e => setClimate(e.target.value)} value={climate}>
                         <option value="cold">Cold</option>
                         <option value="warm">Warm</option>
@@ -67,8 +66,7 @@ export default function Questions(props) {
                         <option value="gender neutral">Gender Neutral</option>
                     </Form.Control>
                 </Form.Group>
-
-                <Button className="button">Get Packing!</Button>
+                    <Button className="button">Get Packing!</Button>
             </Form>
         </Container>
     )
