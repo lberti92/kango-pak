@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 import { Container, Form } from "react-bootstrap";
 import "./Packed.scss";
-import ListGroup from "react-bootstrap/ListGroup";
+import Card from "react-bootstrap/Card";
 import { useQuery } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
 
 
 export default function Packed(props) {
-
-    const [Men, setMen] = useState();
 
     const handleSubmit = (event) => {
         event.preventDefault();

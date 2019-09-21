@@ -402,6 +402,7 @@ const Mutation = new GraphQLObjectType({
             return user.save()
         }
     }
+}
 });
 
 module.exports = new GraphQLSchema({

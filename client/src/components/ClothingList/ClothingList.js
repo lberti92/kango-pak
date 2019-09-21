@@ -15,21 +15,21 @@ export default function ClothingList(props) {
         event.preventDefault();
     }
 
-    const GET_GREETING = gql`
-        query getGreeting($language: String!) {
-        greeting(language: $language) {
-        message
-    }
-  }
-`;
+//     const GET_GREETING = gql`
+//         query getGreeting($language: String!) {
+//         greeting(language: $language) {
+//         message
+//     }
+//   }
+// `;
 
-    function Hello() {
-        const { loading, error, data } = useQuery(GET_GREETING, {
-            variables: { language: 'english' },
-        });
-        if (loading) return <p>Loading ...</p>;
-        return <h1>Hello {data.greeting.message}!</h1>;
-    }
+//     function Hello() {
+//         const { loading, error, data } = useQuery(GET_GREETING, {
+//             variables: { language: 'english' },
+//         });
+//         if (loading) return <p>Loading ...</p>;
+//         return <h1>Hello {data.greeting.message}!</h1>;
+//     }
 
     return (
         <Container className="container-fluid">
