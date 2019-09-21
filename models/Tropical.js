@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require("mongoose"); mongoose.set('useCreateIndex', true);
 const Schema = mongoose.Schema;
 mongoose.pluralize(null);
 
@@ -8,7 +8,7 @@ const tropicalSchema = new Schema ({
         required: true,
         unique: true
     }
-})
+});
 
 const Tropical = mongoose.model("Tropical", tropicalSchema);
 

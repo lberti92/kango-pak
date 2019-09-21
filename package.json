@@ -1,5 +1,5 @@
 {
-  "name": "react-auth",
+  "name": "kangopak",
   "version": "1.0.0",
   "description": "react app with passport auth",
   "main": "server.js",
