@@ -6,6 +6,12 @@
     width: 300px;
     font-family: $text-font;
 
+    .loginBox {
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+    }
+
     .loginTitle {
         text-align: center;
     }
@@ -14,12 +20,18 @@
         margin-top: 15px;
         text-align: center;
     }
+    .signupBox {
+
+        background-color: white;
+        padding: 15px;
+        border-radius: 5px;
+    }
 
     .title-font {
         font-family: $title-font;
     }
 
-    #loginBtn {
+    #loginBtn, .signupBtn {
         background: $primary-color;
         font-family: $title-font;
         color: $light-text;
@@ -27,4 +39,7 @@
         font-size: 1.2em;
     }
 }
+
+
+
 

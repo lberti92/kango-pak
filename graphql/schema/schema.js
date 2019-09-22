@@ -46,6 +46,12 @@ const TripType = new GraphQLObjectType({
         _id: { type: GraphQLID },
         name: { type: GraphQLString },
         // packingList: { type: GraphQLString },
+        location: { type: GraphQLString },
+        length: { type: GraphQLString },
+        climate: { type: GraphQLString },
+        traveler: { type: GraphQLString },
+        luggage: { type: GraphQLString },
+
         user: {
             type: new GraphQLList(UserType),
             resolve(parent, args) {
@@ -404,6 +410,17 @@ const Mutation = new GraphQLObjectType({
                 username: { type: GraphQLString },
                 password: { type: GraphQLString },
                 name: { type: GraphQLString },
+            }, 
+        resolve(parent, args) {
+            // using the mongoose model
+            let user = new User({
+                username: args.username,
+                password: args.password,
+                name: args.name
+            })
+            user.password = user.generateHash(args.password);
+            // save to the mongo db and return the object that was inserted
+            return user.save()
             },
             resolve(parent, args) {
                 // using the mongoose model
@@ -421,12 +438,24 @@ const Mutation = new GraphQLObjectType({
             type: TripType,
             args: {
                 userId: { type: GraphQLID },
-                name: { type: GraphQLString }
+                name: { type: GraphQLString },
+                location: { type: GraphQLString },
+                length: { type: GraphQLString },
+                climate: { type: GraphQLString },
+                traveler: { type: GraphQLString },
+                luggage: { type: GraphQLString },
+
+
             },
             resolve: async function(parent, args) {
                 let trip = new Trip({
                     name: args.name, 
-                    user: args.userId
+                    user: args.userId,
+                    location: args.location,
+                    length: args.length,
+                    climate: args.climate,
+                    traveler: args.traveler,
+                    luggage: args.luggage
                 });
                 const newTrip = await trip.save()
 
@@ -456,8 +485,8 @@ const Mutation = new GraphQLObjectType({
             }
         }
     }
-}
 });
+
 
 module.exports = new GraphQLSchema({
     query: RootQuery,

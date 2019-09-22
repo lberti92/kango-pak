@@ -1,38 +1,47 @@
 @import "../../sass/variable.scss";
 
-// .profilePage {
-//     // margin: 0 auto;
-//     // margin-top: 25px;
+#profile-wrapper {
+    flex-direction: column;
 
-//     .noUser {
-//         width: 280px;
-//         text-align: center;
-//         margin: 0 auto;
-//         margin-top: 50px;
+    .noUser {
+        width: 280px;
+        text-align: center;
+        margin: 0 auto;
+        margin-top: 50px;
 
-//         .loginBtn {
-//             margin-top: 25px;
-//         }
+        .loginBtn {
+            margin-top: 25px;
+        }
     
-//         .loginLink {
-//             color: $light-text;
-//         }
-    
-//         .loginLink:hover {
-//             text-decoration: none;
-//         }
+        .loginLink {
+            color: $light-text;
+        }
 
-//         #loadingIcon {
-//             height: 200px;
-//             width: 200px;
-//             margin: 0 auto;
-//             // margin-top: 25px;
-//         }
-//     }
+        #loadingIcon {
+            height: 50px;
+            width: 50px;
+            margin: 0 auto;
+        }
+    }
 
-//     .profileBox {
-//         #userTitle {
-//             text-align: center
-//         }
-//     }
-// }
+    .profileBox {
+        #userTitle {
+            text-align: center
+        }
+    }
+}
+
+.lead-titles {
+    color: #CE2D4F;
+    font-family: Josefin Sans, sans-serif;
+    font-size: 35px;
+    padding-top: 15px;
+}
+
+.greeting {
+    padding-top: 15px;
+    color: #CE2D4F;
+    font-size: 60px;
+    margin: 0 auto;
+    font-family: 'Shrikhand', cursive;
+}

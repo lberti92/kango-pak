@@ -21,10 +21,8 @@ const Navigation = () => {
   <Navbar.Brand href="/"><img src="./assets/images/logotrans.png" alt="logo" width="250px" /></Navbar.Brand>
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
-    <Nav className="justify-content-end">
-      <Nav.Link href="/">Home</Nav.Link>
-      <Nav.Link href="/newtrip">New Trip</Nav.Link>
-      <NavDropdown title={<FaUserAlt />} id="basic-nav-dropdown">
+    <Nav className="ml-auto">
+    <NavDropdown title={<FaUserAlt />} id="basic-nav-dropdown" className="">
         
         {loggedIn ? 
         <>
@@ -41,6 +39,9 @@ const Navigation = () => {
         </>
         }
       </NavDropdown>
+      <Nav.Link href="/">Home</Nav.Link>
+      <Nav.Link href="/newtrip">New Trip</Nav.Link>
+  
     </Nav>
   </Navbar.Collapse>
 </Navbar>
