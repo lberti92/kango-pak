@@ -34,6 +34,7 @@ class Home extends Component {
       <div className="homeBox">
         <Questions>
         </Questions>
+        <ClothingList></ClothingList>
       </div>
       </>
     );

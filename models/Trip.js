@@ -10,9 +10,9 @@ const tripSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "User"
   },
-  itenerary: {
+  itinerary: {
     type: Schema.Types.ObjectId,
-    ref: "Itenerary"
+    ref: "Itinerary"
   }
 });
 

@@ -5,42 +5,63 @@ import ListGroup from "react-bootstrap/ListGroup";
 import { useQuery } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
 
-export default function ClothingList(props) {
 
-    const [Men, setMen] = useState();
-    const [Women, setWomen] = useState();
-    const [Neutral, setNeutral] = useState();
+const getMens = gql`
+query Cold {
+    mens {
+        name
+        weight
+   }
+}
+`;
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
+const ClothingList = props => {
+
+let mensItems;
+const { loading, error, data } = useQuery(getMens);
+if (loading) console.log('Loading...')
+if (error) console.log(error.message)
+if (data) {
+    // mensItems = data.user.men.map(Men => <li>{Men.name}</li>);
+    console.log(data);
+}
+
+return (
+    <h1>FUCK YOU APOLLO!!!</h1>
+)
+
+
+//     const initialState = { default: false };
+
+//     function reducer(state, action) {
+//         switch (action.type) {
+//             case "men":
+//                 return { Men };
+//             case "women":
+//                 return { Women };
+//             case "neutral":
+//                 return { Neutral };
+//             default:
+//                 throw new Error();
+//         }
+//     }
+
+
+    function clothingList() {
+        return (
+            <>
+                <Container className="container-fluid">
+                    <Form>
+                        <ListGroup>
+                            <ListGroup.Item action variant="info">Men</ListGroup.Item>
+                            <ListGroup.Item action variant="info">Women</ListGroup.Item>
+                            <ListGroup.Item action variant="info">Neutral</ListGroup.Item>
+                        </ListGroup>
+                    </Form>
+                </Container>
+            </>
+        );
     }
+}
 
-//     const GET_GREETING = gql`
-//         query getGreeting($language: String!) {
-//         greeting(language: $language) {
-//         message
-//     }
-//   }
-// `;
-
-//     function Hello() {
-//         const { loading, error, data } = useQuery(GET_GREETING, {
-//             variables: { language: 'english' },
-//         });
-//         if (loading) return <p>Loading ...</p>;
-//         return <h1>Hello {data.greeting.message}!</h1>;
-//     }
-
-    return (
-        <Container className="container-fluid">
-            <Form onSubmit={handleSubmit}>
-                <ListGroup>
-                    <ListGroup.Item action variant="info">Men</ListGroup.Item>
-                    <ListGroup.Item action variant="info">Women</ListGroup.Item>
-                    <ListGroup.Item action variant="info">Neutral</ListGroup.Item>
-                </ListGroup>
-            </Form>
-        </Container>
-    )
-};
-
+export default ClothingList;

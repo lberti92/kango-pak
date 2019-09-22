@@ -1,7 +1,7 @@
 const graphql = require("graphql");
 const User = require("../../models/Users");
 const Trip = require("../../models/Trip");
-const Itenerary = require("../../models/Itenerary");
+const Itinerary = require("../../models/Itinerary");
 const Women = require("../../models/Women");
 const Men = require("../../models/Men");
 const Neutral = require("../../models/Neutral");
@@ -52,17 +52,17 @@ const TripType = new GraphQLObjectType({
                 return User.find({ trips: parent._id })
             }
         },
-        itenerary: {
-            type: new GraphQLList(IteneraryType),
+        itinerary: {
+            type: new GraphQLList(ItineraryType),
             resolve(parent, args) {
-                return Itenerary.find({ trip: parent._id })
+                return Itinerary.find({ trip: parent._id })
             }
         }
     })
 })
 
-const IteneraryType = new GraphQLObjectType({
-    name: "Itenerary",
+const ItineraryType = new GraphQLObjectType({
+    name: "Itinerary",
     fields: () => ({
         _id: { type: new GraphQLNonNull(GraphQLID) },
         item: { type: new GraphQLNonNull(GraphQLString) }
@@ -441,22 +441,21 @@ const Mutation = new GraphQLObjectType({
                 
             }
         }, 
-        addItenerary: {
-            type: IteneraryType,
+        addItinerary: {
+            type: ItineraryType,
             args: {
                 item: { type: GraphQLString },
                 tripId: { type: GraphQLString }
             }, 
             resolve(parents, args) {
-                let itenerary = new Itenerary({
+                let itinerary = new Itinerary({
                     item: args.item,
                     trip: args.tripId
                 })
-                return itenerary.save()
+                return itinerary.save()
             }
         }
     }
-}
 });
 
 module.exports = new GraphQLSchema({
