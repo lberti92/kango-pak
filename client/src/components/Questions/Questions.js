@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import { Container, Form, Button } from "react-bootstrap";
 import "./Questions.scss";
 
+
+
+
+
 export default function Questions(props) {
 
     const [location, setLocation] = useState("");
@@ -13,6 +17,10 @@ export default function Questions(props) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        const ADD_TRIP = gql `
+        mutation addTrip($name: String!, $location: String!, $length: String!, $climate: String!, $traveler: String!, $luggage: String!){
+        name location length climate traveler luggage
+}`
     }
 
     return (
@@ -66,7 +74,7 @@ export default function Questions(props) {
                         <option value="gender neutral">Gender Neutral</option>
                     </Form.Control>
                 </Form.Group>
-                    <Button className="button">Get Packing!</Button>
+                    <Button onClick={this.handleSubmit}>Get Packing!</Button>
             </Form>
         </Container>
     )
