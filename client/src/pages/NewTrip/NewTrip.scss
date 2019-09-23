@@ -1,0 +1,15 @@
+@import "../../sass/variable.scss";
+
+.homeBox {
+    margin: 0 auto;
+    margin-top: 20px;
+    max-width: 500px;
+    font-family: $text-font;
+    display: flex;
+    flex-direction: column;
+
+    button {
+        font-size: 1.3em;
+        font-weight: bold;
+    }
+}

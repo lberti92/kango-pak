@@ -10,6 +10,7 @@
 
 body {
     background-image: url("https://images.unsplash.com/photo-1507295386538-ddd5e86cd597?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80");
+    background-size: cover;
 }
 
 .container {
@@ -24,5 +25,11 @@ body {
 .button {
     font-family: 'Josefin Sans', sans-serif;
     letter-spacing: 2px;
+}
+
+.container-fluid {
+    background-color: white;
+    padding: 15px 20px;
+    border-radius: 5px;
 }
 

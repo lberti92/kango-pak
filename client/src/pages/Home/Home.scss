@@ -1,13 +1,55 @@
 @import "../../sass/variable.scss";
 
-.homeBox {
-    margin: 0 auto;
-    margin-top: 20px;
-    width: 500px;
-    font-family: $text-font;
 
-    button {
-        font-size: 1.3em;
-        font-weight: bold;
-    }
+.container {
+    flex-direction: column;
+    
 }
+
+.carousel {
+    max-height: 80%;
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+
+.label {
+    color: white;
+    font-family: 'Shrikhand', cursive;
+    font-size: 45px;
+}
+
+.label-text-dark {
+    color: white;
+    font-size: 30px;
+    font-family: Josefin Sans, sans-serif;
+
+}
+
+.carousel-caption {
+    top: 0;
+    bottom: auto;
+}
+
+.change-height {
+    margin-bottom: 5px;
+}
+
+#link-btn {
+    padding: 5px;
+    position: absolute;
+    left: 50%;
+    margin-left: -50px;
+    background-color: #CE2D4F;
+    border-radius: 5px;
+    font-family: $title-font;
+    color: $light-text;
+    border: none;
+    font-size: 1.2em;
+
+}
+#link-btn:hover {
+    background-color: #CE6D8B;
+
+}
+

@@ -1,14 +1,5 @@
 import gql from 'graphql-tag';
 
-
-// const userQuery = gql`
-//  query user($id: String!) {
-//     user(id: $id) {
-//         name
-//     }
-// `;
-
-
 const coldMenQuery = gql`
 {
     cold {
@@ -174,6 +165,5 @@ const seasonalNeutralQuery = gql`
     }
   }  
 `;
-export { coldMenQuery, coldWomenQuery, coldNeutralQuery, desertMenQuery, desertWomenQuery, desertNeutralQuery, tropicalMenQuery, tropicalWomenQuery, tropicalNeutralQuery, warmMenQuery, warmWomenQuery, warmNeutralQuery, seasonalMenQuery, seasonalWomenQuery, seasonalNeutralQuery,}
+export { coldMenQuery, coldWomenQuery, coldNeutralQuery, desertMenQuery, desertWomenQuery, desertNeutralQuery, tropicalMenQuery, tropicalWomenQuery, tropicalNeutralQuery, warmMenQuery, warmWomenQuery, warmNeutralQuery, seasonalMenQuery, seasonalWomenQuery, seasonalNeutralQuery, userQuery}
 
-// export default userQuery;
