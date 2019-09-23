@@ -6,11 +6,22 @@ import { useQuery } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
 
 
+// const getMens = gql`
+// query Men {
+//     mens {
+//         name
+//         weight
+//    }
+// }
+// `;
+
 const getMens = gql`
 query Cold {
-    mens {
-        name
-        weight
+    cold {
+        mens {
+            name
+            weight
+        }
    }
 }
 `;
@@ -22,46 +33,24 @@ const { loading, error, data } = useQuery(getMens);
 if (loading) console.log('Loading...')
 if (error) console.log(error.message)
 if (data) {
-    // mensItems = data.user.men.map(Men => <li>{Men.name}</li>);
-    console.log(data);
+    // mensItems = data.cold.mens.map(Men => <li>{data.cold.mens.props}</li>);
+    console.log(data.cold.mens[0]);
 }
 
-return (
-    <h1>FUCK YOU APOLLO!!!</h1>
-)
-
-
-//     const initialState = { default: false };
-
-//     function reducer(state, action) {
-//         switch (action.type) {
-//             case "men":
-//                 return { Men };
-//             case "women":
-//                 return { Women };
-//             case "neutral":
-//                 return { Neutral };
-//             default:
-//                 throw new Error();
-//         }
-//     }
-
-
-    function clothingList() {
-        return (
-            <>
-                <Container className="container-fluid">
-                    <Form>
-                        <ListGroup>
-                            <ListGroup.Item action variant="info">Men</ListGroup.Item>
-                            <ListGroup.Item action variant="info">Women</ListGroup.Item>
-                            <ListGroup.Item action variant="info">Neutral</ListGroup.Item>
-                        </ListGroup>
-                    </Form>
-                </Container>
-            </>
-        );
-    }
+    return (
+        <>
+            <Container className="container-fluid">
+                <Form>
+                    <ListGroup>
+                        <ListGroup.Item action variant="info">Men</ListGroup.Item>
+                        <ListGroup.Item action variant="info">Women</ListGroup.Item>
+                        <ListGroup.Item action variant="info">Neutral</ListGroup.Item>
+                    </ListGroup>
+                </Form>
+            </Container>
+        </>
+    );
 }
+
 
 export default ClothingList;
