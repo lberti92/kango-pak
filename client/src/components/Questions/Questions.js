@@ -17,10 +17,10 @@ export default function Questions(props) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        const ADD_TRIP = gql `
-        mutation addTrip($name: String!, $location: String!, $length: String!, $climate: String!, $traveler: String!, $luggage: String!){
-        name location length climate traveler luggage
-}`
+//         const ADD_TRIP = gql `
+//         mutation addTrip($name: String!, $location: String!, $length: String!, $climate: String!, $traveler: String!, $luggage: String!){
+//         name location length climate traveler luggage
+// }`
     }
 
     return (

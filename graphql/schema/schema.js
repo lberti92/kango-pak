@@ -71,7 +71,9 @@ const ItineraryType = new GraphQLObjectType({
     name: "Itinerary",
     fields: () => ({
         _id: { type: new GraphQLNonNull(GraphQLID) },
-        item: { type: new GraphQLNonNull(GraphQLString) }
+        title: { type: new GraphQLNonNull(GraphQLString) },
+        date: { type: new GraphQLNonNull(GraphQLString) },
+        notes: { type: new GraphQLNonNull(GraphQLString) }
     })
 })
 
@@ -473,13 +475,17 @@ const Mutation = new GraphQLObjectType({
         addItinerary: {
             type: ItineraryType,
             args: {
-                item: { type: GraphQLString },
-                tripId: { type: GraphQLString }
+                tripId: { type: GraphQLString },
+                title: { type: GraphQLString },
+                date: { type: GraphQLString },
+                notes: { type: GraphQLString }
             }, 
             resolve(parents, args) {
-                let Itinerary = new Itinerary({
-                    item: args.item,
-                    trip: args.tripId
+                let itinerary = new Itinerary({
+                    trip: args.tripId,
+                    title: args.title,
+                    date: args.date,
+                    notes: args.notes
                 })
                 return itinerary.save()
             }

@@ -1,18 +1,15 @@
-import React, {useContext, useEffect, useState, createContext} from "react";
+import React, {useContext, useState} from "react";
 import {Row, Col, Button, Container} from "react-bootstrap";
 import "./Profile.scss";
-import SavedTripList from "../../components/SavedTripList";
-import SavedTrip from "../../components/SavedTrips";
+import SavedTrips from "../../components/SavedTrips";
+import PackingList from "../../components/PackingList";
+import Itinerary from "../../components/Itinerary";
 import { Link } from "react-router-dom"
 import UserProvider from "../../contexts/UserProvider";
 
 const Profile = () => {
     const {loggedIn, user} = useContext(UserProvider.context);
     const [ tripId, setTripId ] = useState("");
-
-    useEffect(() => {
-        console.log(tripId)
-    }, [tripId])
     
     return (
         <>
@@ -24,13 +21,18 @@ const Profile = () => {
                 <Row>
 
                     <Col>
-                    <SavedTrip user={user} tripID={tripId} setTripId={setTripId} />
+                    <SavedTrips user={user} tripID={tripId} setTripId={setTripId} />
                     </Col>
-                    <Col>
-                    <SavedTripList tripId={tripId} />
-                    </Col>
-                    <Col>
-                    </Col>
+                    
+                    {tripId ? (
+                        <>
+                    <Col><PackingList tripId={tripId} /></Col>
+                    <Col><Itinerary tripId={tripId} /></Col>
+                    </>) : 
+                    null
+                    }
+
+                    
                 </Row>
                 </Container>
             ) : (
