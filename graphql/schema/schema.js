@@ -44,13 +44,13 @@ const TripType = new GraphQLObjectType({
     name: "Trip",
     fields: () => ({
         _id: { type: GraphQLID },
-        name: { type: GraphQLString },
         // packingList: { type: GraphQLString },
         location: { type: GraphQLString },
         length: { type: GraphQLString },
         climate: { type: GraphQLString },
         traveler: { type: GraphQLString },
         luggage: { type: GraphQLString },
+        apparel: { type: GraphQLString },
 
         user: {
             type: new GraphQLList(UserType),
@@ -437,25 +437,25 @@ const Mutation = new GraphQLObjectType({
         addTrip: {
             type: TripType,
             args: {
-                userId: { type: GraphQLID },
-                name: { type: GraphQLString },
+                userId: { type: GraphQLString },
                 location: { type: GraphQLString },
                 length: { type: GraphQLString },
                 climate: { type: GraphQLString },
                 traveler: { type: GraphQLString },
                 luggage: { type: GraphQLString },
+                apparel: { type: GraphQLString }
 
 
             },
             resolve: async function(parent, args) {
                 let trip = new Trip({
-                    name: args.name, 
                     user: args.userId,
                     location: args.location,
                     length: args.length,
                     climate: args.climate,
                     traveler: args.traveler,
-                    luggage: args.luggage
+                    luggage: args.luggage,
+                    apparel: args.apparel
                 });
                 const newTrip = await trip.save()
 

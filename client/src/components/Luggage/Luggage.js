@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Questions from "../Questions/Questions";
+import { useQuery } from '@apollo/react-hooks';
+import gql from 'graphql-tag';
 
 //function to fetch clothing items from API
 
@@ -21,7 +23,7 @@ const Luggage = () => {
   function handleClick(e, { weight }) {
     e.preventDefault();
     let travelType = weight.traveler;
-    //switch case for setting weight 
+    //switch case\]+for setting weight 
     //assume bag and what an empty bag weighs figured in 
     switch (travelType) {
       case "Hacker-Packer":
