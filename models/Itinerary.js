@@ -6,10 +6,16 @@ const itinerarySchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "Trip"
   },
-  item: {
+  title: {
     type: String,
     unique: false,
     required: [true, "text is required"]
+  }, 
+  date: {
+    type: String
+  },
+  notes: {
+    type: String
   }
 });
 

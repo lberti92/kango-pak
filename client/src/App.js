@@ -12,9 +12,6 @@ import Footer from "./components/Footer";
 import UserProvider from "./contexts/UserProvider";
 import { Container } from 'reactstrap';
 
-import gql from "graphql-tag";
-import { userQuery } from "@apollo/react-hooks";
-
 
 function App() {
   return (
