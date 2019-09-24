@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Container, Form } from "react-bootstrap";
 import "./Packed.scss";
+import ClothingList from "../ClothingList/ClothingList";
+import Questions from "../Questions/Questions";
 import Card from "react-bootstrap/Card";
 import { useQuery } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
@@ -12,24 +14,9 @@ export default function Packed(props) {
         event.preventDefault();
     }
 
-    //     const GET_GREETING = gql`
-    //         query getGreeting($language: String!) {
-    //         greeting(language: $language) {
-    //         message
-    //     }
-    //   }
-    // `;
-
-    //     function Hello() {
-    //         const { loading, error, data } = useQuery(GET_GREETING, {
-    //             variables: { language: 'english' },
-    //         });
-    //         if (loading) return <p>Loading ...</p>;
-    //         return <h1>Hello {data.greeting.message}!</h1>;
-    //     }
-
     return (
         <Container className="container-fluid">
+            <div>
             <Card style={{ width: '18rem' }}>
                 <Card.Body>
                     <Card.Title>My trip</Card.Title>
@@ -42,6 +29,12 @@ export default function Packed(props) {
                     <Card.Link href="#">Another Link</Card.Link>
                 </Card.Body>
             </Card>
+            </div>
+            <div>
+            <ClothingList>
+                <h2>Packing Rex:</h2>
+            </ClothingList>
+            </div>
         </Container>
     )
 };

@@ -3,11 +3,7 @@ const Schema = mongoose.Schema;
 mongoose.pluralize(null);
 
 
-const tripSchema = new Schema({
-  name: {
-    type: String,
-    required: [true, "text is required"]
-  },
+const tripSchema = new Schema({  
   user: {
     type: Schema.Types.ObjectId,
     ref: "User"
@@ -29,6 +25,9 @@ const tripSchema = new Schema({
     type: String
   },
   luggage: {
+    type: String
+  },
+  apparel: {
     type: String
   }
 });

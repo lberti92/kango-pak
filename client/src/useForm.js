@@ -2,7 +2,6 @@ import { useState } from "react";
 
 export const useForm = initialValues => {
   const [values, setValues] = useState(initialValues);
-    console.log(values.username);
   return [
     values,
     e => {
