@@ -11,7 +11,7 @@ const flash = require('connect-flash');
 const cors = require("cors");
 // for graphql middleware
 const graphqlHTTP = require("express-graphql");
-const schema = require("./graphql/schema/schema");
+const schema = require("./graphql/schema/schema"); 
 
 
 // allow cross origin requests

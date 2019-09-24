@@ -1,46 +1,101 @@
-import React, { useState } from "react";
+import React, { Component } from "react";
 import { Container, Form } from "react-bootstrap";
+import Questions from "../Questions/Questions";
 import "./ClothingList.scss";
 import ListGroup from "react-bootstrap/ListGroup";
-import { useQuery } from '@apollo/react-hooks';
+import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
+import {coldWomenQuery } from '../../utils/queries'
 
-export default function ClothingList(props) {
 
-    const [Men, setMen] = useState();
-    const [Women, setWomen] = useState();
-    const [Neutral, setNeutral] = useState();
+class ClothingList extends Component {
+  displayClothes() {
+    let data = this.props.data;
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
+    if (data.loading) {
+      return (<div>Loading clothes...</div>);
+    } else {
+      // return data.cold.mens.map(men => {
+        return data.cold.womens.map(women => {
+        return (
+         <ol>
+
+          {/* <button>{men.name}</button> */}
+          <button>{women.name}</button>
+         </ol>
+          )
+        })
+      }
     }
-
-//     const GET_GREETING = gql`
-//         query getGreeting($language: String!) {
-//         greeting(language: $language) {
-//         message
-//     }
-//   }
-// `;
-
-//     function Hello() {
-//         const { loading, error, data } = useQuery(GET_GREETING, {
-//             variables: { language: 'english' },
-//         });
-//         if (loading) return <p>Loading ...</p>;
-//         return <h1>Hello {data.greeting.message}!</h1>;
-//     }
-
+    render(){
+      // console.log(this.props);
     return (
-        <Container className="container-fluid">
-            <Form onSubmit={handleSubmit}>
-                <ListGroup>
-                    <ListGroup.Item action variant="info">Men</ListGroup.Item>
-                    <ListGroup.Item action variant="info">Women</ListGroup.Item>
-                    <ListGroup.Item action variant="info">Neutral</ListGroup.Item>
-                </ListGroup>
-            </Form>
-        </Container>
-    )
-};
+      <div>
+        <ul className = "clothes-list">
+          {this.displayClothes()}
+        </ul>
+        </div>
+      )
+    }
+  }
+  
+  export default graphql(coldWomenQuery) (ClothingList);
+  
+  
+// climate = useState.climate
+//     const initialState = { default: false };
+//     function reducer(state, action) {
+//         switch (action.type) {
+//             case "men":
+//                 return { Men };
+//             case "women":
+//                 return { Women };
+//             case "neutral":
+//                 return { Neutral };
+//             default:
+//                 throw new Error();
+//         }
+//     }
+// }
+// let data = 
+
+// switch (data.trip.) {
+//   case mens:
+//       if (climate = "cold")
+//         return data = coldMenQuery
+//       else if (climate = "desert")  
+//         return desertMenQuery
+//       else if (climate = "tropical")
+//         return tropicalMenQuery
+//       else if (climate = "warm")
+//         return warmMenQuery
+//       else (climate = "seasonal")
+//         return seasonalMenQuery;
+
+//   case womens:
+//       if (climate = "cold")
+//       return coldWomenQuery
+//     else if (climate = "desert")  
+//       return desertWomenQuery
+//     else if (climate = "tropical")
+//       return tropicalWomenQuery
+//     else if (climate = "warm")
+//       return warmWomenQuery
+//     else (climate = "seasonal")
+//       return seasonalWomenQuery;
+
+//   case neurtrals:
+//       if (climate = "cold")
+//         return coldNeutralQuery
+//       else if (climate = "desert")  
+//         return desertNeutralQuery
+//       else if (climate = "tropical")
+//         return tropicalNeutralQuery
+//       else if (climate = "warm")
+//         return warmNeutralQuery
+//       else (climate = "seasonal")
+//         return seasonalNeutralQuery;
+// }
+
+
 
