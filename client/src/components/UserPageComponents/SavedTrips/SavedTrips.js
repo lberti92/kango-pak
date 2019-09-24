@@ -7,7 +7,6 @@ const GET_USER_TRIPS = gql`
   query getUserTrips($_id: String!) {
    user(_id: $_id) {
       trips{
-          name
           _id
           location
           length
@@ -41,7 +40,7 @@ const TripListItem = props => {
 
     return (
         <ListGroup.Item onClick={props.handleClick} ref={node}>
-            <h5>{props.name}</h5> { display ? <p>Your trip at {props.location}, for {props.length}.</p> : null }
+            <h5>{props.location}</h5> { display ? <p>Your trip at {props.location}, for {props.length}.</p> : null }
         </ListGroup.Item>
     )
 }
@@ -79,11 +78,9 @@ const SavedTrips = ({ user, setTripId, tripId }) => {
                                 <img id="loadingIcon" src="./assets/images/loading.gif" alt="loading" />
                             )}
                     </ListGroup>
-                    <Button variant="primary">New Trip</Button>
+                    <Button variant="primary" href="/newtrip">New Trip</Button>
                 </Card.Body>
             </Card>
-            {/* <h3 className="lead-titles">Saved Trips</h3> */}
-            {/* get the props from the trip */}
         </>
     )
 }

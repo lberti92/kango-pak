@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
-import { useForm } from "../../useForm";
+import { useForm } from "../../../useForm";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useMutation } from '@apollo/react-hooks';
@@ -39,7 +39,7 @@ const ItineraryForm = props => {
                         selected={startDate}
                         onChange={date => setStartDate(date)}
                         showTimeSelect
-                        timeFormat="HH:mm"
+                        timeFormat="hh:mm"
                         timeIntervals={15}
                         timeCaption="time"
                         dateFormat="MMMM d, yyyy h:mm aa"

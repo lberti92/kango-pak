@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Button, Modal } from "react-bootstrap";
+import { Button, Modal, Card, ListGroup } from "react-bootstrap";
 import ItineraryItem from "../IteneraryItem";
 import ItineraryForm from "../ItineraryForm";
 import gql from 'graphql-tag';
@@ -34,28 +34,31 @@ const Itinerary = props => {
 
     return (
         <>
-            <h3>Itinerary</h3>
-            {/* get the props from the trip */}
 
+            <Card>
+                <Card.Header as="h4">Itinerary</Card.Header>
+                <Card.Body>
+                    <ListGroup variant="flush">
+                        
             {data ? (
-                <ul>{data.trip.itinerary.map(item => <ItineraryItem _id={item._id} key={item._id} title={item.title} date={item.date} notes={item.notes}/>)}</ul>
+                <ul>{data.trip.itinerary.map(item => <ItineraryItem data={item} key={item._id} />)}</ul>
             ) :
 
                 <h4>Add Items To Your Itinerary</h4>
             }
-
-            <Button variant="primary" onClick={handleShow}>
-                Add to Itinerary
-      </Button>
-
+                    </ListGroup>
+                    <Button variant="primary" onClick={handleShow}>Add to Itinerary</Button>
+                </Card.Body>
+            </Card>
+       
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Modal heading</Modal.Title>
+                    <Modal.Title>Add an Event</Modal.Title>
                 </Modal.Header>
                 <Modal.Body><ItineraryForm tripId={props.tripId} close={handleClose} /></Modal.Body>
 
             </Modal>
-        </>
+            </>
 
     )
 }

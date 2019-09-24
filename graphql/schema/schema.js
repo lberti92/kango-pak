@@ -61,7 +61,7 @@ const TripType = new GraphQLObjectType({
         itinerary: {
             type: new GraphQLList(ItineraryType),
             resolve(parent, args) {
-                return Itinerary.find({ trip: parent._id })
+                return Itinerary.find({ trip: parent._id }).sort({date: 1})
             }
         }
     })

@@ -1,9 +1,9 @@
 import React, {useContext, useState} from "react";
 import {Row, Col, Button, Container} from "react-bootstrap";
 import "./Profile.scss";
-import SavedTrips from "../../components/SavedTrips";
-import PackingList from "../../components/PackingList";
-import Itinerary from "../../components/Itinerary";
+import SavedTrips from "../../components/UserPageComponents/SavedTrips";
+import PackingList from "../../components/UserPageComponents/PackingList";
+import Itinerary from "../../components/UserPageComponents/Itinerary";
 import { Link } from "react-router-dom"
 import UserProvider from "../../contexts/UserProvider";
 
@@ -19,8 +19,7 @@ const Profile = () => {
                     <h1 className="greeting">Welcome {user.username}</h1>
                 </Row>
                 <Row>
-
-                    <Col>
+                 <Col>
                     <SavedTrips user={user} tripID={tripId} setTripId={setTripId} />
                     </Col>
                     
@@ -31,7 +30,6 @@ const Profile = () => {
                     </>) : 
                     null
                     }
-
                     
                 </Row>
                 </Container>
