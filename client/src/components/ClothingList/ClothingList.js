@@ -1,60 +1,3 @@
-// import React, { useState } from "react";
-// import { Container, Form } from "react-bootstrap";
-// import "./ClothingList.scss";
-// import ListGroup from "react-bootstrap/ListGroup";
-// import { useQuery } from '@apollo/react-hooks';
-// import gql from 'graphql-tag';
-
-
-// const getMens = gql`
-// query Men {
-//     mens {
-//         name
-//         weight
-//    }
-// }
-// `;
-
-// const getColdMens = gql`
-// query Cold {
-//     cold {
-//         mens {
-//             name
-//             weight
-//         }
-//    }
-// }
-// `;
-
-// const ClothingList = props => {
-
-// let mensItems;
-// const { loading, error, data } = useQuery(getColdMens);
-// if (loading) console.log('Loading...')
-// if (error) console.log(error.message)
-// if (data) {
-//     // mensItems = data.cold.mens.map(Men => <li>{data.cold.mens.props}</li>);
-//     console.log(data.cold.mens[0]);
-// }
-
-//     return (
-//         <>
-//             <Container className="container-fluid">
-//                 <Form>
-//                     <ListGroup>
-//                         <ListGroup.Item action variant="info">Men</ListGroup.Item>
-//                         <ListGroup.Item action variant="info">Women</ListGroup.Item>
-//                         <ListGroup.Item action variant="info">Neutral</ListGroup.Item>
-//                     </ListGroup>
-//                 </Form>
-//             </Container>
-//         </>
-//     );
-// }
-
-
-// export default ClothingList;
-
 import React, { Component } from "react";
 import { Container, Form } from "react-bootstrap";
 import Questions from "../Questions/Questions";
@@ -112,10 +55,12 @@ class ClothingList extends Component {
 //         }
 //     }
 // }
-// switch () {
+// let data = 
+
+// switch (data.trip.) {
 //   case mens:
 //       if (climate = "cold")
-//         return coldMenQuery
+//         return data = coldMenQuery
 //       else if (climate = "desert")  
 //         return desertMenQuery
 //       else if (climate = "tropical")
@@ -135,6 +80,7 @@ class ClothingList extends Component {
 //       return warmWomenQuery
 //     else (climate = "seasonal")
 //       return seasonalWomenQuery;
+
 //   case neutrals:
 //       if (climate = "cold")
 //         return coldNeutralQuery
@@ -147,3 +93,6 @@ class ClothingList extends Component {
 //       else (climate = "seasonal")
 //         return seasonalNeutralQuery;
 // }
+
+
+

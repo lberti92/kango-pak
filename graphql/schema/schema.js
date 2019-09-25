@@ -44,13 +44,13 @@ const TripType = new GraphQLObjectType({
     name: "Trip",
     fields: () => ({
         _id: { type: GraphQLID },
-        name: { type: GraphQLString },
         // packingList: { type: GraphQLString },
         location: { type: GraphQLString },
         length: { type: GraphQLString },
         climate: { type: GraphQLString },
         traveler: { type: GraphQLString },
         luggage: { type: GraphQLString },
+        apparel: { type: GraphQLString },
 
         user: {
             type: new GraphQLList(UserType),
@@ -61,7 +61,7 @@ const TripType = new GraphQLObjectType({
         itinerary: {
             type: new GraphQLList(ItineraryType),
             resolve(parent, args) {
-                return Itinerary.find({ trip: parent._id })
+                return Itinerary.find({ trip: parent._id }).sort({date: 1})
             }
         }
     })
@@ -71,7 +71,9 @@ const ItineraryType = new GraphQLObjectType({
     name: "Itinerary",
     fields: () => ({
         _id: { type: new GraphQLNonNull(GraphQLID) },
-        item: { type: new GraphQLNonNull(GraphQLString) }
+        title: { type: new GraphQLNonNull(GraphQLString) },
+        date: { type: new GraphQLNonNull(GraphQLString) },
+        notes: { type: new GraphQLNonNull(GraphQLString) }
     })
 })
 
@@ -437,25 +439,25 @@ const Mutation = new GraphQLObjectType({
         addTrip: {
             type: TripType,
             args: {
-                userId: { type: GraphQLID },
-                name: { type: GraphQLString },
+                userId: { type: GraphQLString },
                 location: { type: GraphQLString },
                 length: { type: GraphQLString },
                 climate: { type: GraphQLString },
                 traveler: { type: GraphQLString },
                 luggage: { type: GraphQLString },
+                apparel: { type: GraphQLString }
 
 
             },
             resolve: async function(parent, args) {
                 let trip = new Trip({
-                    name: args.name, 
                     user: args.userId,
                     location: args.location,
                     length: args.length,
                     climate: args.climate,
                     traveler: args.traveler,
-                    luggage: args.luggage
+                    luggage: args.luggage,
+                    apparel: args.apparel
                 });
                 const newTrip = await trip.save()
 
@@ -473,13 +475,17 @@ const Mutation = new GraphQLObjectType({
         addItinerary: {
             type: ItineraryType,
             args: {
-                item: { type: GraphQLString },
-                tripId: { type: GraphQLString }
+                tripId: { type: GraphQLString },
+                title: { type: GraphQLString },
+                date: { type: GraphQLString },
+                notes: { type: GraphQLString }
             }, 
             resolve(parents, args) {
-                let Itinerary = new Itinerary({
-                    item: args.item,
-                    trip: args.tripId
+                let itinerary = new Itinerary({
+                    trip: args.tripId,
+                    title: args.title,
+                    date: args.date,
+                    notes: args.notes
                 })
                 return itinerary.save()
             }
