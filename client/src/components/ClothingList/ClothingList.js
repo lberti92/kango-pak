@@ -14,8 +14,6 @@ class ClothingList extends Component {
   displayClothes() {
 
     let data = this.props.data;
-    
-
     if (data.loading) {
       return (<div>Loading clothes...</div>);
     } else {
@@ -79,7 +77,6 @@ class ClothingList extends Component {
 //         return warmMenQuery
 //       else (climate = "seasonal")
 //         return seasonalMenQuery;
-
 //   case womens:
 //       if (climate = "cold")
 //       return coldWomenQuery
@@ -92,7 +89,7 @@ class ClothingList extends Component {
 //     else (climate = "seasonal")
 //       return seasonalWomenQuery;
 
-//   case neurtrals:
+//   case neutrals:
 //       if (climate = "cold")
 //         return coldNeutralQuery
 //       else if (climate = "desert")  
