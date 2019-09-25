@@ -10,1184 +10,1184 @@ const clothingSeed = [
     {
         name: "Bra",
         weight: ".2",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "women"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "women"
     },
     {
         name: "Sports Bra",
         weight: ".02",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "women"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "women"
     },
     {
         name: "Hosiery/Tights",
         weight: ".05",
-        weather: ["cold", "seasonal"],
-        gender: "women"
+        climate: ["cold", "seasonal"],
+        apparel: "women"
     },
     {
         name: "Lingerie",
         weight: ".3",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "women"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "women"
     },
     {
         name: "Athletic Socks",
         weight: ".1",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "women"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "women"
     },
     {
         name: "Dress Socks",
         weight: ".1",
-        weather: ["cold", "warm", "seasonal"],
-        gender: "women"
+        climate: ["cold", "warm", "seasonal"],
+        apparel: "women"
     },
     {
         name: "Wool Socks",
         weight: ".3",
-        weather: ["cold", "seasonal"],
-        gender: "women"
+        climate: ["cold", "seasonal"],
+        apparel: "women"
     },
     {
         name: "Spanx",
         weight: ".5",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "women"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "women"
     },
     {
         name: "Swimsuit",
         weight: ".7",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "women"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "women"
     },
     {
         name: "Underwear",
         weight: ".2",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "women"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "women"
     },
     {
         name: "Long Underwear/Thermals",
         weight: ".4",
-        weather: ["cold", "seasonal"],
-        gender: "women"
+        climate: ["cold", "seasonal"],
+        apparel: "women"
     },
     {
         name: "Belt",
         weight: ".3",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "women"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "women"
     },
     {
         name: "Light Gloves",
         weight: ".04",
-        weather: ["cold", "seasonal"],
-        gender: "women"
+        climate: ["cold", "seasonal"],
+        apparel: "women"
     },
     {
         name: "Wool Gloves",
         weight: ".1",
-        weather: ["cold"],
-        gender: "women"
+        climate: ["cold"],
+        apparel: "women"
     },
     {
         name: "Baseball Hat",
         weight: ".2",
-        weather: [ "desert", "tropical", "warm", "seasonal"],
-        gender: "women"
+        climate: [ "desert", "tropical", "warm", "seasonal"],
+        apparel: "women"
     },
     {
         name: "Sun Hat",
         weight: ".3",
-        weather: ["desert", "tropical", "warm", "seasonal"],
-        gender: "women"
+        climate: ["desert", "tropical", "warm", "seasonal"],
+        apparel: "women"
     },
     {
         name: "Wool Knit Hat",
         weight: ".35",
-        weather: ["cold"],
-        gender: "women"
+        climate: ["cold"],
+        apparel: "women"
     },
     {
         name: "Jewelry",
         weight: "2",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "women"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "women"
     },
     {
         name: "Pashmina/Wrap",
         weight: ".6",
-        weather: ["cold", "seasonal"],
-        gender: "women"
+        climate: ["cold", "seasonal"],
+        apparel: "women"
     },
     {
         name: "Sarong/Coverup",
         weight: ".3",
-        weather: ["desert", "tropical", "warm"],
-        gender: "women"
+        climate: ["desert", "tropical", "warm"],
+        apparel: "women"
     },
     {
         name: "Light Scarf",
         weight: ".15",
-        weather: ["cold", "seasonal"],
-        gender: "women"
+        climate: ["cold", "seasonal"],
+        apparel: "women"
     },
     {
         name: "Winter Scarf",
         weight: ".15",
-        weather: ["cold"],
-        gender: "women"
+        climate: ["cold"],
+        apparel: "women"
     },
     {
         name: "Sunglasses",
         weight: ".045",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "women"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "women"
     },
     {
         name: "Toiletries",
         weight: "1.5",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "women"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "women"
     },
     {
         name: "Ankle Boots",
         weight: "1.2",
-        weather: ["warm"],
-        gender: "women"
+        climate: ["warm"],
+        apparel: "women"
     },
     {
         name: "Hiking Boots",
         weight: "1.5",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "women"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "women"
     },
     {
         name: "Casual Sneakers",
         weight: ".6",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "women"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "women"
     },
     {
         name: "Flats",
         weight: ".5",
-        weather: ["desert", "tropical", "warm", "seasonal"],
-        gender: "women"
+        climate: ["desert", "tropical", "warm", "seasonal"],
+        apparel: "women"
     },
     {
         name: "Flip-Flops",
         weight: ".3",
-        weather: ["desert", "tropical", "warm", "seasonal"],
-        gender: "women"
+        climate: ["desert", "tropical", "warm", "seasonal"],
+        apparel: "women"
     },
     {
         name: "Heels",
         weight: ".7",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "women"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "women"
     },
     {
         name: "Running Shoes",
         weight: ".5",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "women"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "women"
     },
     {
         name: "Sandals",
         weight: ".35",
-        weather: [ "desert", "tropical", "warm"],
-        gender: "women"
+        climate: [ "desert", "tropical", "warm"],
+        apparel: "women"
     },
     {
         name: "Slippers",
         weight: ".3",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "women"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "women"
     },
     {
         name: "Watershoes",
         weight: "1",
-        weather: ["tropical", "warm"],
-        gender: "women"
+        climate: ["tropical", "warm"],
+        apparel: "women"
     },
     {
         name: "Cocktail Dress",
         weight: "1.2",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "women"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "women"
     },
     {
         name: "Evening Dress",
         weight: "2",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "women"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "women"
     },
     {
         name: "Jersey Maxi-Dress",
         weight: ".5",
-        weather: ["desert", "tropical", "warm", "seasonal"],
-        gender: "women"
+        climate: ["desert", "tropical", "warm", "seasonal"],
+        apparel: "women"
     },
     {
         name: "Sundress",
         weight: ".5",
-        weather: ["desert", "tropical", "warm"],
-        gender: "women"
+        climate: ["desert", "tropical", "warm"],
+        apparel: "women"
     },
     {
         name: "Cardigan",
         weight: ".8",
-        weather: ["cold", "warm", "seasonal"],
-        gender: "women"
+        climate: ["cold", "warm", "seasonal"],
+        apparel: "women"
     },
     {
         name: "Light Jacket",
         weight: ".5",
-        weather: ["warm", "seasonal"],
-        gender: "women"
+        climate: ["warm", "seasonal"],
+        apparel: "women"
     },
     {
         name: "Rain Jacket",
         weight: ".5",
-        weather: ["tropical", "warm", "seasonal"],
-        gender: "women"
+        climate: ["tropical", "warm", "seasonal"],
+        apparel: "women"
     },
     {
         name: "Winter Jacket",
         weight: "3",
-        weather: ["cold"],
-        gender: "women"
+        climate: ["cold"],
+        apparel: "women"
     },
     {
         name: "Vest",
         weight: ".5",
-        weather: ["cold", "warm", "seasonal"],
-        gender: "women"
+        climate: ["cold", "warm", "seasonal"],
+        apparel: "women"
     },
     {
         name: "Pajamas",
         weight: ".3",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "women"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "women"
     },
     {
         name: "Capris",
         weight: ".4",
-        weather: ["desert", "tropical", "warm", "seasonal"],
-        gender: "women"
+        climate: ["desert", "tropical", "warm", "seasonal"],
+        apparel: "women"
     },
     {
         name: "Casual Pants",
         weight: ".4",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "women"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "women"
     },
     {
         name: "Hiking Pants",
         weight: ".5",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "women"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "women"
     },
     {
         name: "Jeans",
         weight: "1",
-        weather: ["cold", "warm", "seasonal"],
-        gender: "women"
+        climate: ["cold", "warm", "seasonal"],
+        apparel: "women"
     },
     {
         name: "Leggings",
         weight: ".3",
-        weather: ["cold", "warm", "seasonal"],
-        gender: "women"
+        climate: ["cold", "warm", "seasonal"],
+        apparel: "women"
     },
     {
         name: "Blouse",
         weight: ".25",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "women"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "women"
     },
     {
         name: "Flannel Shirt",
         weight: ".4",
-        weather: ["cold", "seasonal"],
-        gender: "women"
+        climate: ["cold", "seasonal"],
+        apparel: "women"
     },
     {
         name: "Long Sleeve Shirt",
         weight: ".3",
-        weather: ["cold", "seasonal"],
-        gender: "women"
+        climate: ["cold", "seasonal"],
+        apparel: "women"
     },
     {
         name: "Short Sleeve Shirt",
         weight: ".25",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "women"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "women"
     },
     {
         name: "Tank Top",
         weight: ".085",
-        weather: ["desert", "tropical", "warm", "seasonal"],
-        gender: "women"
+        climate: ["desert", "tropical", "warm", "seasonal"],
+        apparel: "women"
     },
     {
         name: "T-shirt",
         weight: ".18",
-        weather: ["desert", "tropical", "warm", "seasonal"],
-        gender: "women"
+        climate: ["desert", "tropical", "warm", "seasonal"],
+        apparel: "women"
     },
     {
         name: "Turtleneck",
         weight: ".3",
-        weather: ["cold", "seasonal"],
-        gender: "women"
+        climate: ["cold", "seasonal"],
+        apparel: "women"
     },
     {
         name: "Casual Shorts",
         weight: ".3",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "women"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "women"
     },
     {
         name: "Dress Shorts",
         weight: ".3",
-        weather: ["desert", "tropical", "warm"],
-        gender: "women"
+        climate: ["desert", "tropical", "warm"],
+        apparel: "women"
     },
     {
         name: "Hiking Shorts",
         weight: ".3",
-        weather: ["desert", "tropical", "warm"],
-        gender: "women"
+        climate: ["desert", "tropical", "warm"],
+        apparel: "women"
     },
     {
         name: "Casual Skirt",
         weight: ".3",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "women"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "women"
     },
     {
         name: "Dress Skirt",
         weight: ".4",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "women"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "women"
     },
     {
         name: "Light Sweater",
         weight: ".5",
-        weather: ["warm", "seasonal"],
-        gender: "women"
+        climate: ["warm", "seasonal"],
+        apparel: "women"
     },
     {
         name: "Sweatshirt/Hoodie",
         weight: ".6",
-        weather: ["cold", "seasonal"],
-        gender: "women"
+        climate: ["cold", "seasonal"],
+        apparel: "women"
     },
     {
         name: "Winter Sweater",
         weight: ".75",
-        weather: ["cold"],
-        gender: "women"
+        climate: ["cold"],
+        apparel: "women"
     },
     {
         name: "Workout Clothes",
         weight: "1.5",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "women"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "women"
     },
     {
         name: "Athletic Socks",
         weight: ".15",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "men"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "men"
     },
     {
         name: "Dress Socks",
         weight: ".15",
-        weather: ["cold", "warm", "seasonal"],
-        gender: "men"
+        climate: ["cold", "warm", "seasonal"],
+        apparel: "men"
     },
     {
         name: "Wool Socks",
         weight: ".3",
-        weather: ["cold", "seasonal"],
-        gender: "men"
+        climate: ["cold", "seasonal"],
+        apparel: "men"
     },
     {
         name: "Swimsuit",
         weight: ".8",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "men"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "men"
     },
     {
         name: "Undershirt",
         weight: ".15",
-        weather: ["cold", "tropical",  "seasonal"],
-        gender: "men"
+        climate: ["cold", "tropical",  "seasonal"],
+        apparel: "men"
     },
     {
         name: "Underwear",
         weight: ".3",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "men"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "men"
     },
     {
         name: "Long Underwear/Thermals",
         weight: ".5",
-        weather: ["cold", "seasonal"],
-        gender: "men"
+        climate: ["cold", "seasonal"],
+        apparel: "men"
     },
     {
         name: "Belt",
         weight: ".3",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "men"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "men"
     },
     {
         name: "Light Gloves",
         weight: ".25",
-        weather: ["cold", "seasonal"],
-        gender: "men"
+        climate: ["cold", "seasonal"],
+        apparel: "men"
     },
     {
         name: "Wool Gloves",
         weight: ".15",
-        weather: ["cold"],
-        gender: "men"
+        climate: ["cold"],
+        apparel: "men"
     },
     {
         name: "Baseball cap",
         weight: ".3",
-        weather: [ "desert", "tropical", "warm", "seasonal"],
-        gender: "men"
+        climate: [ "desert", "tropical", "warm", "seasonal"],
+        apparel: "men"
     },
     {
         name: "Sun Hat",
         weight: ".4",
-        weather: ["desert", "tropical", "warm", "seasonal"],
-        gender: "men"
+        climate: ["desert", "tropical", "warm", "seasonal"],
+        apparel: "men"
     },
     {
         name: "Wool Knit Hat",
         weight: ".35",
-        weather: ["cold"],
-        gender: "men"
+        climate: ["cold"],
+        apparel: "men"
     },
     {
         name: "Light Scarf",
         weight: ".15",
-        weather: ["cold", "seasonal"],
-        gender: "men"
+        climate: ["cold", "seasonal"],
+        apparel: "men"
     },
     {
         name: "Winter Scarf",
         weight: ".3",
-        weather: ["cold"],
-        gender: "men"
+        climate: ["cold"],
+        apparel: "men"
     },
     {
         name: "Sunglasses",
         weight: ".05",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "men"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "men"
     },
     {
         name: "Tie",
         weight: ".1",
-        weather: ["cold", "warm", "seasonal"],
-        gender: "men"
+        climate: ["cold", "warm", "seasonal"],
+        apparel: "men"
     },
     {
         name: "Toiletries",
         weight: "1.0",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "men"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "men"
     },
     {
         name: "Hiking Boots",
         weight: "2",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "men"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "men"
     },
     {
         name: "Casual Sneakers",
         weight: ".9",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "men"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "men"
     },
     {
         name: "Dress Shoes",
         weight: "1",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "men"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "men"
     },
     {
         name: "Flip-flops",
         weight: ".4",
-        weather: [ "desert", "tropical", "warm", "seasonal"],
-        gender: "men"
+        climate: [ "desert", "tropical", "warm", "seasonal"],
+        apparel: "men"
     },
     {
         name: "Loafers",
         weight: "1",
-        weather: ["desert", "tropical", "warm", "seasonal"],
-        gender: "men"
+        climate: ["desert", "tropical", "warm", "seasonal"],
+        apparel: "men"
     },
     {
         name: "Running Shoes",
         weight: ".6",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "men"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "men"
     },
     {
         name: "Sandals",
         weight: ".45",
-        weather: ["desert", "tropical", "warm"],
-        gender: "men"
+        climate: ["desert", "tropical", "warm"],
+        apparel: "men"
     },
     {
         name: "Slippers",
         weight: ".4",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "men"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "men"
     },
     {
         name: "Watershoes",
         weight: "1.7",
-        weather: ["tropical", "warm"],
-        gender: "men"
+        climate: ["tropical", "warm"],
+        apparel: "men"
     },
     {
         name: "Cardigan",
         weight: "1",
-        weather: ["cold", "warm", "seasonal"],
-        gender: "men"
+        climate: ["cold", "warm", "seasonal"],
+        apparel: "men"
     },
     {
         name: "Dinner Jacket",
         weight: "2.5",
-        weather: ["cold", "warm", "seasonal"],
-        gender: "men"
+        climate: ["cold", "warm", "seasonal"],
+        apparel: "men"
     },
     {
         name: "Light Jacket",
         weight: ".5",
-        weather: ["warm", "seasonal"],
-        gender: "men"
+        climate: ["warm", "seasonal"],
+        apparel: "men"
     },
     {
         name: "Rain Jacket",
         weight: ".5",
-        weather: ["desert", "tropical", "warm", "seasonal"],
-        gender: "men"
+        climate: ["desert", "tropical", "warm", "seasonal"],
+        apparel: "men"
     },
     {
         name: "Winter Jacket",
         weight: "2",
-        weather: ["cold"],
-        gender: "men"
+        climate: ["cold"],
+        apparel: "men"
     },
     {
         name: "Vest",
         weight: ".5",
-        weather: ["cold", "warm", "seasonal"],
-        gender: "men"
+        climate: ["cold", "warm", "seasonal"],
+        apparel: "men"
     },
     {
         name: "Pajamas",
         weight: ".5",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "men"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "men"
     },
     {
         name: "Casual Pants",
         weight: ".8",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "men"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "men"
     },
     {
         name: "Dress Pants",
         weight: ".9",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "men"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "men"
     },
     {
         name: "Hiking Pants",
         weight: ".7",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "men"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "men"
     },
     {
         name: "Jeans",
         weight: "1.7",
-        weather: ["cold", "warm", "seasonal"],
-        gender: "men"
+        climate: ["cold", "warm", "seasonal"],
+        apparel: "men"
     },
     {
         name: "Casual Shirt - short sleeve",
         weight: ".5",
-        weather: ["desert", "tropical", "warm", "seasonal"],
-        gender: "men"
+        climate: ["desert", "tropical", "warm", "seasonal"],
+        apparel: "men"
     },
     {
         name: "Dress Shirt - short sleeve",
         weight: ".5",
-        weather: ["desert", "tropical", "warm", "seasonal"],
-        gender: "men"
+        climate: ["desert", "tropical", "warm", "seasonal"],
+        apparel: "men"
     },
     {
         name: "Casual Shirt - long sleeve",
         weight: ".6",
-        weather: ["cold", "seasonal"],
-        gender: "men"
+        climate: ["cold", "seasonal"],
+        apparel: "men"
     },
     {
         name: "Dress Shirt - long sleeve",
         weight: ".6",
-        weather: ["cold", "seasonal"],
-        gender: "men"
+        climate: ["cold", "seasonal"],
+        apparel: "men"
     },
     {
         name: "Flannel Shirt",
         weight: ".5",
-        weather: ["cold", "seasonal"],
-        gender: "men"
+        climate: ["cold", "seasonal"],
+        apparel: "men"
     },
     {
         name: "Polo Shirt",
         weight: ".3",
-        weather: ["desert", "tropical", "warm"],
-        gender: "men"
+        climate: ["desert", "tropical", "warm"],
+        apparel: "men"
     },
     {
         name: "Tank Top",
         weight: ".2",
-        weather: ["desert", "tropical", "warm"],
-        gender: "men"
+        climate: ["desert", "tropical", "warm"],
+        apparel: "men"
     },
     {
         name: "T-shirt",
         weight: ".25",
-        weather: ["desert", "tropical", "warm", "seasonal"],
-        gender: "men"
+        climate: ["desert", "tropical", "warm", "seasonal"],
+        apparel: "men"
     },
     {
         name: "Turtleneck",
         weight: ".4",
-        weather: ["cold", "seasonal"],
-        gender: "men"
+        climate: ["cold", "seasonal"],
+        apparel: "men"
     },
     {
         name: "Suit/Tuxedo",
         weight: "3",
-        weather: ["cold", "warm", "seasonal"],
-        gender: "men"
+        climate: ["cold", "warm", "seasonal"],
+        apparel: "men"
     },
     {
         name: "Casual Shorts",
         weight: ".5",
-        weather: ["desert", "tropical", "warm"],
-        gender: "men"
+        climate: ["desert", "tropical", "warm"],
+        apparel: "men"
     },
     {
         name: "Dress Shorts",
         weight: ".5",
-        weather: ["desert", "tropical", "warm"],
-        gender: "men"
+        climate: ["desert", "tropical", "warm"],
+        apparel: "men"
     },
     {
         name: "Hiking Shorts",
         weight: ".5",
-        weather: ["desert", "tropical", "warm"],
-        gender: "men"
+        climate: ["desert", "tropical", "warm"],
+        apparel: "men"
     },
     {
         name: "Light Sweater",
         weight: ".6",
-        weather: ["warm", "seasonal"],
-        gender: "men"
+        climate: ["warm", "seasonal"],
+        apparel: "men"
     },
     {
         name: "Sweatshirt/Hoodie",
         weight: ".8",
-        weather: ["cold", "seasonal"],
-        gender: "men"
+        climate: ["cold", "seasonal"],
+        apparel: "men"
     },
     {
         name: "Winter Sweater",
         weight: "1",
-        weather: ["cold"],
-        gender: "men"
+        climate: ["cold"],
+        apparel: "men"
     },
     {
         name: "Workout Clothes",
         weight: "3",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "men"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "men"
     },
     {
         name: "Bra",
         weight: ".2",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "neutral"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Sports Bra",
         weight: ".02",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "neutral"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Hosiery/Tights",
         weight: ".05",
-        weather: ["cold", "seasonal"],
-        gender: "neutral"
+        climate: ["cold", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Lingerie",
         weight: ".3",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "neutral"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Athletic Socks",
         weight: ".1",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "neutral"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Dress Socks",
         weight: ".1",
-        weather: ["cold", "warm", "seasonal"],
-        gender: "neutral"
+        climate: ["cold", "warm", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Wool Socks",
         weight: ".3",
-        weather: ["cold", "seasonal"],
-        gender: "neutral"
+        climate: ["cold", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Spanx",
         weight: ".5",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "neutral"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Swimsuit",
         weight: ".7",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "neutral"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Undershirt",
         weight: ".15",
-        weather: ["cold", "warm", "seasonal"],
-        gender: "neutral"
+        climate: ["cold", "warm", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Underwear",
         weight: ".2",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "neutral"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Long Underwear/Thermals",
         weight: ".4",
-        weather: ["cold", "seasonal"],
-        gender: "neutral"
+        climate: ["cold", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Belt",
         weight: ".3",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "neutral"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Light Gloves",
         weight: ".04",
-        weather: ["cold", "seasonal"],
-        gender: "neutral"
+        climate: ["cold", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Wool Gloves",
         weight: ".1",
-        weather: ["cold"],
-        gender: "neutral"
+        climate: ["cold"],
+        apparel: "neutral"
     },
     {
         name: "Baseball Hat",
         weight: ".2",
-        weather: ["desert", "tropical", "warm", "seasonal"],
-        gender: "neutral"
+        climate: ["desert", "tropical", "warm", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Sun Hat",
         weight: ".3",
-        weather: ["desert", "tropical", "warm", "seasonal"],
-        gender: "neutral"
+        climate: ["desert", "tropical", "warm", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Wool Knit Hat",
         weight: ".35",
-        weather: ["cold"],
-        gender: "neutral"
+        climate: ["cold"],
+        apparel: "neutral"
     },
     {
         name: "Jewelry",
         weight: "2",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "neutral"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Pashmina/Wrap",
         weight: ".6",
-        weather: ["cold", "seasonal"],
-        gender: "neutral"
+        climate: ["cold", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Sarong/Coverup",
         weight: ".3",
-        weather: ["desert", "tropical", "warm"],
-        gender: "neutral"
+        climate: ["desert", "tropical", "warm"],
+        apparel: "neutral"
     },
     {
         name: "Light Scarf",
         weight: ".15",
-        weather: ["cold", "seasonal"],
-        gender: "neutral"
+        climate: ["cold", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Winter Scarf",
         weight: ".15",
-        weather: ["codl"],
-        gender: "neutral"
+        climate: ["codl"],
+        apparel: "neutral"
     },
     {
         name: "Sunglasses",
         weight: ".045",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "neutral"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Tie",
         weight: ".2",
-        weather: ["cold", "warm", "seasonal"],
-        gender: "neutral"
+        climate: ["cold", "warm", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Toiletries",
         weight: "1.5",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "neutral"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Ankle Boots",
         weight: "1.2",
-        weather: ["warm"],
-        gender: "neutral"
+        climate: ["warm"],
+        apparel: "neutral"
     },
     {
         name: "Hiking Boots",
         weight: "1.5",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "neutral"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Casual Sneakers",
         weight: ".6",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "neutral"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Dress Shoes",
         weight: "1",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "neutral"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Flats",
         weight: ".5",
-        weather: ["desert", "tropical", "warm", "seasonal"],
-        gender: "neutral"
+        climate: ["desert", "tropical", "warm", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Flip-Flops",
         weight: ".3",
-        weather: ["desert", "tropical", "warm", "seasonal"],
-        gender: "neutral"
+        climate: ["desert", "tropical", "warm", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Heels",
         weight: ".7",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "neutral"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Loafers",
         weight: "1",
-        weather: ["desert", "tropical", "warm", "seasonal"],
-        gender: "neutral"
+        climate: ["desert", "tropical", "warm", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Running Shoes",
         weight: ".5",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "neutral"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Sandals",
         weight: ".35",
-        weather: ["desert", "tropical", "warm"],
-        gender: "neutral"
+        climate: ["desert", "tropical", "warm"],
+        apparel: "neutral"
     },
     {
         name: "Slippers",
         weight: ".3",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "neutral"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Watershoes",
         weight: "1",
-        weather: ["tropical", "warm"],
-        gender: "neutral"
+        climate: ["tropical", "warm"],
+        apparel: "neutral"
     },
     {
         name: "Cocktail Dress",
         weight: "1.2",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "neutral"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Evening Dress",
         weight: "2",
-        weather: ["cold", "warm", "seasonal"],
-        gender: "neutral"    
+        climate: ["cold", "warm", "seasonal"],
+        apparel: "neutral"    
     },
     {
         name: "Jersey Maxi-Dress",
         weight: ".5",
-        weather: ["desert", "tropical", "warm", "seasonal"],
-        gender: "neutral"
+        climate: ["desert", "tropical", "warm", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Sundress",
         weight: ".5",
-        weather: ["desert", "tropical", "warm"],
-        gender: "neutral"
+        climate: ["desert", "tropical", "warm"],
+        apparel: "neutral"
     },
     {
         name: "Cardigan",
         weight: ".8",
-        weather: ["cold", "warm", "seasonal"],
-        gender: "neutral"
+        climate: ["cold", "warm", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Dinner Jacket",
         weight: "2.5",
-        weather: ["cold", "warm", "seasonal"],
-        gender: "neutral"
+        climate: ["cold", "warm", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Light Jacket",
         weight: ".5",
-        weather: ["warm", "seasonal"],
-        gender: "neutral"
+        climate: ["warm", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Rain Jacket",
         weight: ".5",
-        weather: ["tropical", "warm", "seasonal"],
-        gender: "neutral"
+        climate: ["tropical", "warm", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Winter Jacket",
         weight: "3",
-        weather: ["cold"],
-        gender: "neutral"
+        climate: ["cold"],
+        apparel: "neutral"
     },
     {
         name: "Vest",
         weight: ".5",
-        weather: ["cold", "warm", "seasonal"],
-        gender: "neutral"
+        climate: ["cold", "warm", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Pajamas",
         weight: ".3",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "neutral"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Capris",
         weight: ".4",
-        weather: ["desert", "tropical", "warm", "seasonal"],
-        gender: "neutral"
+        climate: ["desert", "tropical", "warm", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Casual Pants",
         weight: ".4",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "neutral"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Dress Pants",
         weight: ".9",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "neutral"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Hiking Pants",
         weight: ".5",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "neutral"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Jeans",
         weight: "1",
-        weather: ["cold", "warm", "seasonal"],
-        gender: "neutral"
+        climate: ["cold", "warm", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Leggings",
         weight: ".3",
-        weather: ["cold", "warm", "seasonal"],
-        gender: "neutral"
+        climate: ["cold", "warm", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Blouse",
         weight: ".25",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "neutral"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Casual Shirt - short sleeve",
         weight: ".5",
-        weather: ["desert", "tropical", "warm", "seasonal"],
-        gender: "neutral"
+        climate: ["desert", "tropical", "warm", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Dress Shirt - short sleeve",
         weight: ".5",
-        weather: ["desert", "tropical", "warm", "seasonal"],
-        gender: "neutral"
+        climate: ["desert", "tropical", "warm", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Casual Shirt - long sleeve",
         weight: ".6",
-        weather: ["cold", "seasonal"],
-        gender: "neutral"
+        climate: ["cold", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Dress Shirt - long sleeve",
         weight: ".6",
-        weather: ["cold", "seasonal"],
-        gender: "neutral"
+        climate: ["cold", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Flannel Shirt",
         weight: ".4",
-        weather: ["cold", "seasonal"],
-        gender: "neutral"
+        climate: ["cold", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Long Sleeve Shirt",
         weight: ".3",
-        weather: ["cold", "seasonal"],
-        gender: "neutral"
+        climate: ["cold", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Polo Shirt",
         weight: ".3",
-        weather: ["desert", "tropical", "warm"],
-        gender: "neutral"
+        climate: ["desert", "tropical", "warm"],
+        apparel: "neutral"
     },
     {
         name: "Short Sleeve Shirt",
         weight: ".25",
-        weather: ["desert", "tropical", "warm", "seasonal"],
-        gender: "neutral"
+        climate: ["desert", "tropical", "warm", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Tank Top",
         weight: ".085",
-        weather: ["desert", "tropical", "warm"],
-        gender: "neutral"
+        climate: ["desert", "tropical", "warm"],
+        apparel: "neutral"
     },
     {
         name: "T-shirt",
         weight: ".18",
-        weather: ["desert", "tropical", "warm", "seasonal"],
-        gender: "neutral"
+        climate: ["desert", "tropical", "warm", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Turtleneck",
         weight: ".3",
-        weather: ["cold", "seasonal"],
-        gender: "neutral"
+        climate: ["cold", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Casual Shorts",
         weight: ".3",
-        weather: ["desert", "tropical", "warm"],
-        gender: "neutral"
+        climate: ["desert", "tropical", "warm"],
+        apparel: "neutral"
     },
     {
         name: "Dress Shorts",
         weight: ".3",
-        weather: ["desert", "tropical", "warm"],
-        gender: "neutral"
+        climate: ["desert", "tropical", "warm"],
+        apparel: "neutral"
     },
     {
         name: "Hiking Shorts",
         weight: ".3",
-        weather: ["desert", "tropical", "warm"],
-        gender: "neutral"
+        climate: ["desert", "tropical", "warm"],
+        apparel: "neutral"
     },
     {
         name: "Casual Skirt",
         weight: ".3",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "neutral"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Dress Skirt",
         weight: ".4",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "neutral"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Suit/Tuxedo",
         weight: "3",
-        weather: ["cold", "warm", "seasonal"],
-        gender: "neutral"
+        climate: ["cold", "warm", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Light Sweater",
         weight: ".5",
-        weather: ["warm", "seasonal"],
-        gender: "neutral"
+        climate: ["warm", "seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Sweatshirt/Hoodie",
         weight: ".6",
-        weather: ["cold","seasonal"],
-        gender: "neutral"
+        climate: ["cold","seasonal"],
+        apparel: "neutral"
     },
     {
         name: "Winter Sweater",
         weight: ".75",
-        weather: ["cold"],
-        gender: "neutral"
+        climate: ["cold"],
+        apparel: "neutral"
     },
     {
         name: "Workout Clothes",
         weight: "1.5",
-        weather: ["cold", "desert", "tropical", "warm", "seasonal"],
-        gender: "neutral"
+        climate: ["cold", "desert", "tropical", "warm", "seasonal"],
+        apparel: "neutral"
     }
 ];
 
