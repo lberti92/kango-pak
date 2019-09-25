@@ -28,12 +28,7 @@ export default function Questions(props) {
     const [values, handleChange] = useForm({location: "", length: "", climate: "", luggage: "", traveler: "", apparel: ""})
 
     const [addTrip, { data }] = useMutation(ADD_TRIP);
-    // const [location, setLocation] = useState("");
-    // const [length, setLength] = useState("");
-    // const [climate, setClimate] = useState("");
-    // const [traveler, setTraveler] = useState("");
-    // const [luggage, setLuggage] = useState("");
-    // const [apparel, setApparel] = useState("");
+   
     console.log(values.location);
     console.log(values.length);
     console.log(values.climate);
@@ -59,7 +54,7 @@ export default function Questions(props) {
                 </Form.Group>
 
                 <Form.Group>
-                    <Form.Label>Describe the climate you be visiting (required):</Form.Label>
+                    <Form.Label>Describe the climate you will be visiting (required):</Form.Label>
                     <Form.Control as="select" name="climate" required onChange={handleChange} value={values.climate}>
                         <option value="cold">Cold</option>
                         <option value="warm">Warm</option>
@@ -94,9 +89,9 @@ export default function Questions(props) {
                 <Form.Group>
                     <Form.Label>What type of apparel do you prefer (select below)?</Form.Label>
                     <Form.Control as="select" name="apparel" onChange={handleChange} value={values.apparel}>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                        <option value="gender neutral">Gender Neutral</option>
+                        <option value="mens">Male</option>
+                        <option value="womens">Female</option>
+                        <option value="neutral">Gender Neutral</option>
                     </Form.Control>
                 </Form.Group>
                     <Button onClick={handleSubmit}>Get Packing!</Button>

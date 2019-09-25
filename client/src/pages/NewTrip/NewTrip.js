@@ -1,7 +1,6 @@
 import React, { Component, useState } from "react";
 import { Button } from "reactstrap";
 import API from "../../utils/API";
-import Header  from "../../components/Header/Header";
 import Questions from "../../components/Questions/Questions"
 import "./NewTrip.scss";
 
@@ -30,7 +29,6 @@ class NewTrip extends Component {
   render() {
     return (
       <>
-      <Header />
       <div className="homeBox">
         <Questions>
         </Questions>

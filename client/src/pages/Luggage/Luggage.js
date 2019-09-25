@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ClothingList from "../../components/ClothingList";
-import Packed from "../../components/Packed/Packed";
+import Packed from "../Packed";
 
 
 
@@ -22,7 +22,7 @@ function WeightAllotment() {
     return (
       <div>
         <button onClick={() => setWeight(weight + 1)}> Pretend Clothing Item </button>
-        <ClothingList></ClothingList>
+  
         <Packed></Packed>
       </div>
     )

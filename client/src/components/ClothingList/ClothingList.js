@@ -1,16 +1,20 @@
 import React, { Component } from "react";
-import { Container, Form } from "react-bootstrap";
-import Questions from "../Questions/Questions";
+import { ButtonGroup, Button } from "react-bootstrap";
 import "./ClothingList.scss";
-import ListGroup from "react-bootstrap/ListGroup";
 import { graphql } from 'react-apollo';
-import gql from 'graphql-tag';
 import {coldWomenQuery } from '../../utils/queries'
 
 
 class ClothingList extends Component {
+
+  state = {
+    bagWeight: 0
+  }
+  
   displayClothes() {
+
     let data = this.props.data;
+    
 
     if (data.loading) {
       return (<div>Loading clothes...</div>);
@@ -18,23 +22,27 @@ class ClothingList extends Component {
       // return data.cold.mens.map(men => {
         return data.cold.womens.map(women => {
         return (
-         <ol>
-
+        <>
           {/* <button>{men.name}</button> */}
-          <button>{women.name}</button>
-         </ol>
+          <Button id="clothes-btn" key = {women.name} value={women.weight} onClick={() => console.log(women.weight)}>{women.name}</Button>
+         </>
           )
         })
       }
     }
+
+
     render(){
       // console.log(this.props);
     return (
-      <div>
-        <ul className = "clothes-list">
+      <div className="scroll-box">
+        <div className="clothes-list">
+        <h6 className="tips">Click an item to add it to your list</h6>
+        <ButtonGroup vertical>
           {this.displayClothes()}
-        </ul>
+        </ButtonGroup>
         </div>
+      </div>
       )
     }
   }

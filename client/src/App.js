@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import NewTrip from "./pages/NewTrip";
 import Profile from "./pages/Profile";
 import Luggage from "./pages/Luggage";
-import Packed from "./components/Packed/Packed";
+import Packed from "./pages/Packed";
 import Auth from "./pages/Auth";
 // import NoMatch from "./pages/NoMatch";
 import Navigation from "./components/TopNav";
@@ -29,8 +29,9 @@ function App() {
               <Route exact path="/luggage" component={Luggage} />
               <Route exact path="/profile" component={Profile} />
               <Route path="/packed/:tripId" render={({ match }) => (
-                <Packed
-                tripId={match.params.id} />
+              <Packed
+                tripId={match.params.tripId}                
+                />
                 )} />
               {/* <Route component={NoMatch} /> */}
             </Switch>
