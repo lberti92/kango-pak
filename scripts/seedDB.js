@@ -339,277 +339,332 @@ const menSeed = [
     {
         name: "Athletic Socks",
         weight: ".15",
-        weatherId: [1, 2, 3 , 4, 5]
+        weatherId: [1, 2, 3 , 4, 5],
+        gender: "men"
     },
     {
         name: "Dress Socks",
         weight: ".15",
-        weatherId: [1,4,5]
+        weatherId: [1,4,5],
+        gender: "men"
     },
     {
         name: "Wool Socks",
         weight: ".3",
-        weatherId: [1,5]
+        weatherId: [1,5],
+        gender: "men"
     },
     {
         name: "Swimsuit",
         weight: ".8",
-        weatherId: [1,2,3,4,5]
+        weatherId: [1,2,3,4,5],
+        gender: "men"
     },
     {
         name: "Undershirt",
         weight: ".15",
-        weatherId: [1,4,5]
+        weatherId: [1,4,5],
+        gender: "men"
     },
     {
         name: "Underwear",
         weight: ".3",
-        weatherId: [1,2,3,4,5]
+        weatherId: [1,2,3,4,5],
+        gender: "men"
     },
     {
         name: "Long Underwear/Thermals",
         weight: ".5",
-        weatherId: [1,5]
+        weatherId: [1,5],
+        gender: "men"
     },
     {
         name: "Belt",
         weight: ".3",
-        weatherId: [1,2,3,4,5]
+        weatherId: [1,2,3,4,5],
+        gender: "men"
     },
     {
         name: "Light Gloves",
         weight: ".25",
-        weatherId: [1,5]
+        weatherId: [1,5],
+        gender: "men"
     },
     {
         name: "Wool Gloves",
         weight: ".15",
-        weatherId: [1]
+        weatherId: [1],
+        gender: "men"
     },
     {
         name: "Baseball cap",
         weight: ".3",
-        weatherId: [2,3,4,5]
+        weatherId: [2,3,4,5],
+        gender: "men"
     },
     {
         name: "Sun Hat",
         weight: ".4",
-        weatherId: [2,3,4,5]
+        weatherId: [2,3,4,5],
+        gender: "men"
     },
     {
         name: "Wool Knit Hat",
         weight: ".35",
-        weatherId: [1]
+        weatherId: [1],
+        gender: "men"
     },
     {
         name: "Light Scarf",
         weight: ".15",
-        weatherId: [1,5]
+        weatherId: [1,5],
+        gender: "men"
     },
     {
         name: "Winter Scarf",
         weight: ".3",
-        weatherId: [1]
+        weatherId: [1],
+        gender: "men"
     },
     {
         name: "Sunglasses",
         weight: ".05",
-        weatherId: [1,2,3,4,5]
+        weatherId: [1,2,3,4,5],
+        gender: "men"
     },
     {
         name: "Tie",
         weight: ".1",
-        weatherId: [1,4,5]
+        weatherId: [1,4,5],
+        gender: "men"
     },
     {
         name: "Toiletries",
         weight: "1.0",
-        weatherId: [1,2,3,4,5]
+        weatherId: [1,2,3,4,5],
+        gender: "men"
     },
     {
         name: "Hiking Boots",
         weight: "2",
-        weatherId: [1,2,3,4,5]
+        weatherId: [1,2,3,4,5],
+        gender: "men"
     },
     {
         name: "Casual Sneakers",
         weight: ".9",
-        weatherId: [1,2,3,4,5]
+        weatherId: [1,2,3,4,5],
+        gender: "men"
     },
     {
         name: "Dress Shoes",
         weight: "1",
-        weatherId: [1,2,3,4,5]
+        weatherId: [1,2,3,4,5],
+        gender: "men"
     },
     {
         name: "Flip-flops",
         weight: ".4",
-        weatherId: [2,3,4,5]
+        weatherId: [2,3,4,5],
+        gender: "men"
     },
     {
         name: "Loafers",
         weight: "1",
-        weatherId: [2,3,4,5]
+        weatherId: [2,3,4,5],
+        gender: "men"
     },
     {
         name: "Running Shoes",
         weight: ".6",
-        weatherId: [1,2,3,4,5]
+        weatherId: [1,2,3,4,5],
+        gender: "men"
     },
     {
         name: "Sandals",
         weight: ".45",
-        weatherId: [2,3,4]
+        weatherId: [2,3,4],
+        gender: "men"
     },
     {
         name: "Slippers",
         weight: ".4",
-        weatherId: [1,2,3,4,5]
+        weatherId: [1,2,3,4,5],
+        gender: "men"
     },
     {
         name: "Watershoes",
         weight: "1.7",
-        weatherId: [3,4]
+        weatherId: [3,4],
+        gender: "men"
     },
     {
         name: "Cardigan",
         weight: "1",
-        weatherId: [1,4,5]
+        weatherId: [1,4,5],
+        gender: "men"
     },
     {
         name: "Dinner Jacket",
         weight: "2.5",
-        weatherId: [1,4,5]
+        weatherId: [1,4,5],
+        gender: "men"
     },
     {
         name: "Light Jacket",
         weight: ".5",
-        weatherId: [4,5]
+        weatherId: [4,5],
+        gender: "men"
     },
     {
         name: "Rain Jacket",
         weight: ".5",
-        weatherId: [3,4,5]
+        weatherId: [3,4,5],
+        gender: "men"
     },
     {
         name: "Winter Jacket",
         weight: "2",
-        weatherId: [1]
+        weatherId: [1],
+        gender: "men"
     },
     {
         name: "Vest",
         weight: ".5",
-        weatherId: [1,4,5]
+        weatherId: [1,4,5],
+        gender: "men"
     },
     {
         name: "Pajamas",
         weight: ".5",
-        weatherId: [1,2,3,4,5]
+        weatherId: [1,2,3,4,5],
+        gender: "men"
     },
     {
         name: "Casual Pants",
         weight: ".8",
-        weatherId: [1,2,3,4,5]
+        weatherId: [1,2,3,4,5],
+        gender: "men"
     },
     {
         name: "Dress Pants",
         weight: ".9",
-        weatherId: [1,2,3,4,5]
+        weatherId: [1,2,3,4,5],
+        gender: "men"
     },
     {
         name: "Hiking Pants",
         weight: ".7",
-        weatherId: [1,2,3,4,5]
+        weatherId: [1,2,3,4,5],
+        gender: "men"
     },
     {
         name: "Jeans",
         weight: "1.7",
-        weatherId: [1,4,5]
+        weatherId: [1,4,5],
+        gender: "men"
     },
     {
         name: "Casual Shirt - short sleeve",
         weight: ".5",
-        weatherId: [2,3,4,5]
+        weatherId: [2,3,4,5],
+        gender: "men"
     },
     {
         name: "Dress Shirt - short sleeve",
         weight: ".5",
-        weatherId: [2,3,4,5]
+        weatherId: [2,3,4,5],
+        gender: "men"
     },
     {
         name: "Casual Shirt - long sleeve",
         weight: ".6",
-        weatherId: [1,5]
+        weatherId: [1,5],
+        gender: "men"
     },
     {
         name: "Dress Shirt - long sleeve",
         weight: ".6",
-        weatherId: [1,5]
+        weatherId: [1,5],
+        gender: "men"
     },
     {
         name: "Flannel Shirt",
         weight: ".5",
-        weatherId: [1,5]
+        weatherId: [1,5],
+        gender: "men"
     },
     {
         name: "Polo Shirt",
         weight: ".3",
-        weatherId: [2,3,4]
+        weatherId: [2,3,4],
+        gender: "men"
     },
     {
         name: "Tank Top",
         weight: ".2",
-        weatherId: [2,3,4]
+        weatherId: [2,3,4],
+        gender: "men"
     },
     {
         name: "T-shirt",
         weight: ".25",
-        weatherId: [2,3,4,5]
+        weatherId: [2,3,4,5],
+        gender: "men"
     },
     {
         name: "Turtleneck",
         weight: ".4",
-        weatherId: [1,5]
+        weatherId: [1,5],
+        gender: "men"
     },
     {
         name: "Suit/Tuxedo",
         weight: "3",
-        weatherId: [1,4,5]
+        weatherId: [1,4,5],
+        gender: "men"
     },
     {
         name: "Casual Shorts",
         weight: ".5",
-        weatherId: [2,3,4]
+        weatherId: [2,3,4],
+        gender: "men"
     },
     {
         name: "Dress Shorts",
         weight: ".5",
-        weatherId: [2,3,4]
+        weatherId: [2,3,4],
+        gender: "men"
     },
     {
         name: "Hiking Shorts",
         weight: ".5",
-        weatherId: [2,3,4]
+        weatherId: [2,3,4],
+        gender: "men"
     },
     {
         name: "Light Sweater",
         weight: ".6",
-        weatherId: [4,5]
+        weatherId: [4,5],
+        gender: "men"
     },
     {
         name: "Sweatshirt/Hoodie",
         weight: ".8",
-        weatherId: [1,5]
+        weatherId: [1,5],
+        gender: "men"
     },
     {
         name: "Winter Sweater",
         weight: "1",
-        weatherId: [1]
+        weatherId: [1],
+        gender: "men"
     },
     {
         name: "Workout Clothes",
         weight: "3",
-        weatherId: [1,2,3,4,5]
+        weatherId: [1,2,3,4,5],
+        gender: "men"
     }
 ];
 
@@ -617,147 +672,176 @@ const neutralSeed = [
     {
         name: "Bra",
         weight: ".2",
-        weatherId: [1,2,3,4,5]
+        weatherId: [1,2,3,4,5],
+        gender: ""neutral""
     },
     {
         name: "Sports Bra",
         weight: ".02",
-        weatherId: [1,2,3,4,5]
+        weatherId: [1,2,3,4,5],
+        gender: "neutral"
     },
     {
         name: "Hosiery/Tights",
         weight: ".05",
-        weatherId: [1,5]
+        weatherId: [1,5],
+        gender: "neutral"
     },
     {
         name: "Lingerie",
         weight: ".3",
-        weatherId: [1,2,3,4,5]
+        weatherId: [1,2,3,4,5],
+        gender: "neutral"
     },
     {
         name: "Athletic Socks",
         weight: ".1",
-        weatherId: [1,2,3,4,5]
+        weatherId: [1,2,3,4,5],
+        gender: "neutral"
     },
     {
         name: "Dress Socks",
         weight: ".1",
-        weatherId: [1,4,5]
+        weatherId: [1,4,5],
+        gender: "neutral"
     },
     {
         name: "Wool Socks",
         weight: ".3",
-        weatherId: [1,5]
+        weatherId: [1,5],
+        gender: "neutral"
     },
     {
         name: "Spanx",
         weight: ".5",
-        weatherId: [1,2,3,4,5]
+        weatherId: [1,2,3,4,5],
+        gender: "neutral"
     },
     {
         name: "Swimsuit",
         weight: ".7",
-        weatherId: [1,2,3,4,5]
+        weatherId: [1,2,3,4,5],
+        gender: "neutral"
     },
     {
         name: "Undershirt",
         weight: ".15",
-        weatherId: [1,4,5]
+        weatherId: [1,4,5],
+        gender: "neutral"
     },
     {
         name: "Underwear",
         weight: ".2",
-        weatherId: [1,2,3,4,5]
+        weatherId: [1,2,3,4,5],
+        gender: "neutral"
     },
     {
         name: "Long Underwear/Thermals",
         weight: ".4",
-        weatherId: [1,5]
+        weatherId: [1,5],
+        gender: "neutral"
     },
     {
         name: "Belt",
         weight: ".3",
-        weatherId: [1,2,3,4,5]
+        weatherId: [1,2,3,4,5],
+        gender: "neutral"
     },
     {
         name: "Light Gloves",
         weight: ".04",
-        weatherId: [1,5]
+        weatherId: [1,5],
+        gender: "neutral"
     },
     {
         name: "Wool Gloves",
         weight: ".1",
-        weatherId: [1]
+        weatherId: [1],
+        gender: "neutral"
     },
     {
         name: "Baseball Hat",
         weight: ".2",
-        weatherId: [2,3,4,5]
+        weatherId: [2,3,4,5],
+        gender: "neutral"
     },
     {
         name: "Sun Hat",
         weight: ".3",
-        weatherId: [2,3,4,5]
+        weatherId: [2,3,4,5],
+        gender: "neutral"
     },
     {
         name: "Wool Knit Hat",
         weight: ".35",
-        weatherId: [1]
+        weatherId: [1],
+        gender: "neutral"
     },
     {
         name: "Jewelry",
         weight: "2",
-        weatherId: [1,2,3,4,5]
+        weatherId: [1,2,3,4,5],
+        gender: "neutral"
     },
     {
         name: "Pashmina/Wrap",
         weight: ".6",
-        weatherId: [1,5]
+        weatherId: [1,5],
+        gender: "neutral"
     },
     {
         name: "Sarong/Coverup",
         weight: ".3",
-        weatherId: [2,4,3]
+        weatherId: [2,4,3],
+        gender: "neutral"
     },
     {
         name: "Light Scarf",
         weight: ".15",
-        weatherId: [1,5]
+        weatherId: [1,5],
+        gender: "neutral"
     },
     {
         name: "Winter Scarf",
         weight: ".15",
-        weatherId: [1]
+        weatherId: [1],
+        gender: neutral
     },
     {
         name: "Sunglasses",
         weight: ".045",
-        weatherId: [1,2,3,4,5]
+        weatherId: [1,2,3,4,5],
+        gender: "neutral"
     },
     {
         name: "Tie",
         weight: ".2",
-        weatherId: [1,4,5]
+        weatherId: [1,4,5],
+        gender: "neutral"
     },
     {
         name: "Toiletries",
         weight: "1.5",
-        weatherId: [1,2,3,4,5]
+        weatherId: [1,2,3,4,5],
+        gender: "neutral"
     },
     {
         name: "Ankle Boots",
         weight: "1.2",
-        weatherId: [4]
+        weatherId: [4],
+        gender: "neutral"
     },
     {
         name: "Hiking Boots",
         weight: "1.5",
-        weatherId: [1,2,3,4,5]
+        weatherId: [1,2,3,4,5],
+        gender: neutral
     },
     {
         name: "Casual Sneakers",
         weight: ".6",
-        weatherId: [1,2,3,4,5]
+        weatherId: [1,2,3,4,5],
+        gender: "neutral"
     },
     {
         name: "Dress Shoes",
