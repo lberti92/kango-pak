@@ -30,7 +30,7 @@ function App() {
               <Route exact path="/profile" component={Profile} />
               <Route path="/packed/:tripId" render={({ match }) => (
                 <Packed
-                tripId={match.params.id} />
+                tripId={match.params.tripId} />
                 )} />
               {/* <Route component={NoMatch} /> */}
             </Switch>
