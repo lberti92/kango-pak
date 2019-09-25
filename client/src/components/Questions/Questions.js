@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Container, Form, Button } from "react-bootstrap";
 import { useForm } from "../../useForm";
 import "./Questions.scss";
@@ -28,25 +28,23 @@ export default function Questions(props) {
     const [values, handleChange] = useForm({location: "", length: "", climate: "", luggage: "", traveler: "", apparel: ""})
 
     const [addTrip, { data }] = useMutation(ADD_TRIP);
-    // const [location, setLocation] = useState("");
-    // const [length, setLength] = useState("");
-    // const [climate, setClimate] = useState("");
-    // const [traveler, setTraveler] = useState("");
-    // const [luggage, setLuggage] = useState("");
-    // const [apparel, setApparel] = useState("");
-    console.log(values.location);
-    console.log(values.length);
-    console.log(values.climate);
+
     
     const handleSubmit = (event) => {
         event.preventDefault();
         addTrip({ variables: { userId: user._id, location: values.location, length: values.length, climate: values.climate, traveler: values.traveler, luggage: values.luggage, apparel: values.apparel }});
         if (data) { 
         console.log(data)
+        ;
         return window.location=`/packed/${data.addTrip._id}`
-      ;
         }
     }
+
+    useEffect(() => {
+        if (data) {
+            return window.location=`/packed/${data.addTrip._id}`
+        }
+    })
 
     return (
 
@@ -94,12 +92,12 @@ export default function Questions(props) {
                 <Form.Group>
                     <Form.Label>What type of apparel do you prefer (select below)?</Form.Label>
                     <Form.Control as="select" name="apparel" onChange={handleChange} value={values.apparel}>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                        <option value="gender neutral">Gender Neutral</option>
+                        <option value="mens">Male</option>
+                        <option value="womens">Female</option>
+                        <option value="neutral">Gender Neutral</option>
                     </Form.Control>
                 </Form.Group>
-                    <Button onClick={handleSubmit}>Get Packing!</Button>
+                    <Button type="submit">Get Packing!</Button>
             </Form>
         </Container>
     )
