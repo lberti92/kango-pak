@@ -453,6 +453,15 @@ const Mutation = new GraphQLObjectType({
 
             }
         },
+        removeTrip: {
+            type: TripType,
+            args: {
+                _id: {type: GraphQLString}
+            },
+            resolve(parents, args) {
+               return Trip.findOneAndRemove({_id: args._id})
+            }
+        },
         addItinerary: {
             type: ItineraryType,
             args: {
@@ -469,6 +478,15 @@ const Mutation = new GraphQLObjectType({
                     notes: args.notes
                 })
                 return itinerary.save()
+            }
+        },
+        removeItinerary: {
+            type: ItineraryType,
+            args: {
+                _id: {type: GraphQLString}
+            },
+            resolve(parents, args) {
+               return Itinerary.findOneAndRemove({_id: args._id})
             }
         }
     }

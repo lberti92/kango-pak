@@ -23,7 +23,13 @@ margin: auto;
     font-weight: bold;
 }
 
+
 ul {
     list-style: none;
     padding: 0;
+}
+
+li p {
+    line-height: 1;
+    margin-bottom: .5rem;
 }
