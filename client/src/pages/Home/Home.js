@@ -1,9 +1,6 @@
 import { Container, Carousel, Button, Image, Col, Row} from "react-bootstrap"
 import React, { Component, useState } from "react";
 import API from "../../utils/API";
-import Questions from "../../components/Questions/Questions";
-import ClothingList from "../../components/ClothingList/ClothingList";
-import Packed from "../../components/Packed/Packed";
 import "./Home.scss";
 
 function Home() {

@@ -2,15 +2,16 @@
 @import "./sass/variable.scss";
 
 html, body {
-    background: $background-color;
     height: 100vh;
 }
+
 body {
+    background-image: url("https://images.unsplash.com/photo-1507295386538-ddd5e86cd597?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80");
+    background-size: auto;
     display: flex;
     flex-direction: column;
     min-height: 100%;
 }
-
 #root {
     flex: 1 0 auto;
     min-height: 100%;

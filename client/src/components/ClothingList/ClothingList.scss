@@ -8,10 +8,6 @@
     font-size: 1.3em;
 }
 
-// body {
-//     background-image: url("https://images.unsplash.com/photo-1507295386538-ddd5e86cd597?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80");
-// }
-
 .container {
     display: flex;
 }
@@ -25,3 +21,25 @@
     font-family: 'Josefin Sans', sans-serif;
     letter-spacing: 2px;
 }
+
+.scroll-box {
+    border: 1px solid #000;
+    border-radius: 5px;
+    height: 400px;
+    width: 350px;
+}
+
+.clothes-list {
+    max-height: 400px;
+    margin: 0;
+    overflow: auto;
+    padding: 30px;
+    text-indent: 10px;
+}
+
+#clothes-btn {
+    margin-top: 5px;
+    font-family: 'Josefin Sans', sans-serif;
+    letter-spacing: 2px;
+}
+

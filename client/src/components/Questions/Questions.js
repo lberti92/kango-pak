@@ -28,7 +28,6 @@ export default function Questions(props) {
     const [values, handleChange] = useForm({location: "", length: "", climate: "", luggage: "", traveler: "", apparel: ""})
 
     const [addTrip, { data }] = useMutation(ADD_TRIP);
-
     
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -57,7 +56,7 @@ export default function Questions(props) {
                 </Form.Group>
 
                 <Form.Group>
-                    <Form.Label>Describe the climate you be visiting (required):</Form.Label>
+                    <Form.Label>Describe the climate you will be visiting (required):</Form.Label>
                     <Form.Control as="select" name="climate" required onChange={handleChange} value={values.climate}>
                         <option value="cold">Cold</option>
                         <option value="warm">Warm</option>

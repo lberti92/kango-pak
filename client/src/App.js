@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import NewTrip from "./pages/NewTrip";
 import Profile from "./pages/Profile";
 import Luggage from "./pages/Luggage";
-import Packed from "./components/Packed/Packed";
+import Packed from "./pages/Packed";
 import Auth from "./pages/Auth";
 // import NoMatch from "./pages/NoMatch";
 import Navigation from "./components/TopNav";
