@@ -26,7 +26,7 @@ const ItineraryItem = props => {
 
     return (
         <li>
-            <p className="title">{props.data.title}</p> <GoTrashcan onClick={() => remove(props.data._id)} />
+            <p className="title">{props.data.title} <GoTrashcan onClick={() => remove(props.data._id)} /> </p>
             <p className="date"><Moment date={props.data.date} format="LLLL" /></p>
             <p>{props.data.notes}</p>
 

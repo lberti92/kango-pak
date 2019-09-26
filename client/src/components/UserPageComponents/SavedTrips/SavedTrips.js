@@ -2,6 +2,8 @@ import React, {useState, useEffect, useRef} from "react";
 import { Card, Button, ListGroup } from "react-bootstrap";
 import gql from 'graphql-tag';
 import { useQuery } from '@apollo/react-hooks';
+import { GoTrashcan } from "react-icons/go";
+import { useMutation } from '@apollo/react-hooks';
 
 const GET_USER_TRIPS = gql`
   query getUserTrips($_id: String!) {
@@ -18,6 +20,14 @@ const GET_USER_TRIPS = gql`
     }
   }
 `;
+
+const REMOVE_TRIP = gql`
+    mutation RemoveTrip($_id: String!) {
+        removeTrip(_id: $_id) {
+            _id
+        }
+    }
+`
 
 const TripListItem = props => {
     const node = useRef();
@@ -41,18 +51,25 @@ const TripListItem = props => {
         };
       }, []);
 
+      const [removeTrip, { data }] = useMutation(REMOVE_TRIP);
+      const remove = _id => {
+          removeTrip({ variables: {_id: _id }});
+          props.refetch();
+      }
+
     return (
         <ListGroup.Item onClick={props.handleClick} ref={node}>
-            <h5>{props.location}</h5> { display ? <p>Your trip at {props.location}, for {props.length}.</p> : null }
+            <h5>{props.location} <GoTrashcan onClick={() => remove(props._id)} /></h5>  { display ? <p>Your trip to {props.location} for {props.length} days.</p> : null }
         </ListGroup.Item>
     )
 }
 
 const SavedTrips = ({ user, setTripId, tripId }) => {
+
     const handleClick = _id => {
         return setTripId(_id)
     }
-    const { loading, error, data } = useQuery(GET_USER_TRIPS, {
+    const { loading, error, data, refetch } = useQuery(GET_USER_TRIPS, {
         variables: { _id: user._id }
     });
     if (loading) console.log('Loading...')
@@ -73,13 +90,14 @@ const SavedTrips = ({ user, setTripId, tripId }) => {
                                     return (<TripListItem
                                         tripId={tripId}
                                         name={trip.name} _id={trip._id}
+                                        refetch={refetch}
                                         location={trip.location} length={trip.length}
                                         handleClick={() => handleClick(trip._id)} />
                                         )
                                 })
-                         : (
-                                <img id="loadingIcon" src="./assets/images/loading.gif" alt="loading" />
-                            )}
+                         : 
+                         <p>Planning a trip? Add it so we can start getting you organized!</p> 
+                           }
                     </ListGroup>
                     </div>
                     <Button id="new-trip" href="/newtrip">New Trip</Button>
