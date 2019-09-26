@@ -43,13 +43,13 @@ export default function Packed(props) {
                         {data ?
                             <>
                                 <Card.Subtitle className="mb-2 text-muted">{data.trip.location}</Card.Subtitle>
-                                <Card.Text>
+                                <Card.Body>
                                     <p>Packing for: {data.trip.length}</p>
                                     <p>Climate: {data.trip.climate}</p>
                                     <p>Traveler: {data.trip.traveler}</p>
                                     <p>Luggage: {data.trip.luggage}</p>
                                     <p>Apparel: {data.trip.apparel}</p>
-                                </Card.Text>
+                                </Card.Body>
                             </>
                             : "loading..."}
                         <Card.Link href="#">Packed List</Card.Link>
@@ -57,9 +57,13 @@ export default function Packed(props) {
                 </Card>
             </div>
             <div>
-                <ClothingList>
+            {data ? 
+                <ClothingList apparel={data.trip.apparel} climate={data.trip.climate}>
                     <h2>Packing Items Recommendatons:</h2>
-                </ClothingList>
+                </ClothingList> 
+                : "loading..."
+            }
+                
             </div>
         </Container>
     )

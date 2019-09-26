@@ -1,43 +1,73 @@
-import React, { Component } from "react";
+import React from "react";
 import { Container, Form } from "react-bootstrap";
-import Questions from "../Questions/Questions";
+// import Questions from "../Questions/Questions";
 import "./ClothingList.scss";
 import ListGroup from "react-bootstrap/ListGroup";
 import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
-import {coldWomenQuery } from '../../utils/queries'
+import { useQuery } from '@apollo/react-hooks';
+// import {coldWomenQuery } from '../../utils/queries'
+
+const GET_CLOTHINGLIST = gql`
+    query getClothing($apparel: String!, $climate: String) {
+        clothing(apparel: $apparel, climate: $climate) {
+            name 
+            weight
+      } 
+    }
+`;
+
+const ClothingList = props => {
+  const { loading, error, data } = useQuery(GET_CLOTHINGLIST, {
+    variables: {apparel: props.apparel, climate: props.climate  }
+   });
+if (loading) console.log('Loading...')
+if (error) console.log(error.message)
+if (data) data.clothing.map(item => console.log(item.name, item.weight))
+
+return (
+  <div>
+    <ol>
+     <li>hi</li>
+    </ol>
+  </div>
+)
+
+}
+
+export default ClothingList;
 
 
-class ClothingList extends Component {
-  displayClothes() {
-    let data = this.props.data;
-    if (data.loading) {
-      return (<div>Loading clothes...</div>);
-    } else {
-      // return data.cold.mens.map(men => {
-        return data.cold.womens.map(women => {
-        return (
-         <ol>
-          {/* <button>{men.name}</button> */}
-          <button>{women.name}</button>
-         </ol>
-          )
-        })
-      }
-    }
-    render(){
-      // console.log(this.props);
-    return (
-      <div>
-        <ul className = "clothes-list">
-          {this.displayClothes()}
-        </ul>
-        </div>
-      )
-    }
-  }
+// class ClothingList extends Component {
+//   displayClothes() {
+//     let data = this.props.data;
+//     if (data.loading) {
+//       return (<div>Loading clothes...</div>);
+//     } else {
+//       // return data.cold.mens.map(men => {
+//         return data.cold.womens.map(women => {
+//         return (
+//          <ol>
+//           {/* <button>{men.name}</button> */}
+//           <button>{women.name}</button>
+//          </ol>
+//           )
+//         })
+//       }
+//     }
+//     render(){
+//       // console.log(this.props);
+//     return (
+//       <div>
+//         <ul className = "clothes-list">
+//           {this.displayClothes()}
+//         </ul>
+//         </div>
+//       )
+//     }
+//   }
   
-  export default graphql(coldWomenQuery) (ClothingList);
+//   export default graphql(coldWomenQuery) (ClothingList);
   
   
 // climate = useState.climate
