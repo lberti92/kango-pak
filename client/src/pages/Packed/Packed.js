@@ -6,7 +6,7 @@ import ClothingList from "../../components/ClothingList/ClothingList";
 import { useQuery } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
 
-const GET_PACKINGLIST = gql `
+const GET_PACKINGLIST = gql`
    query getTrip($_id: String!) {
        trip(_id: $_id) {
            location
@@ -38,7 +38,11 @@ export default function Packed(props) {
                 <Recommendation />  
                 </Col>
                 <Col>
-                <ClothingList />                
+                {data ? 
+                <ClothingList apparel={data.trip.apparel} climate={data.trip.climate}>
+                </ClothingList> 
+                : "loading..."
+            }       
                 </Col>
                 {data ? 
                 <>
