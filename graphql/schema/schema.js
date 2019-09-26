@@ -470,6 +470,15 @@ const Mutation = new GraphQLObjectType({
                 })
                 return itinerary.save()
             }
+        },
+        removeItinerary: {
+            type: ItineraryType,
+            args: {
+                _id: {type: GraphQLString}
+            },
+            resolve(parents, args) {
+               return Itinerary.findOneAndRemove({_id: args._id})
+            }
         }
     }
 });
