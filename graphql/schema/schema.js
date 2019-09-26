@@ -2,14 +2,6 @@ const graphql = require("graphql");
 const User = require("../../models/Users");
 const Trip = require("../../models/Trip");
 const Itinerary = require("../../models/Itinerary");
-const Women = require("../../models/Women");
-const Men = require("../../models/Men");
-const Neutral = require("../../models/Neutral");
-const Cold = require("../../models/Cold");
-const Desert = require("../../models/Desert");
-const Seasonal = require("../../models/Seasonal");
-const Warm = require("../../models/Warm");
-const Tropical = require("../../models/Tropical");
 const Clothing = require("../../models/Clothing");
 
 const {
@@ -78,45 +70,7 @@ const ItineraryType = new GraphQLObjectType({
     })
 })
 
-const MenType = new GraphQLObjectType({
-    name: "Men",
-    fields: () => ({
-        name: { type: GraphQLString },
-        weight: { type: GraphQLFloat },
-        weatherId: { type: GraphQLList(GraphQLInt) },
-        cold: {
-            type: ColdType,
-            resolve(parent, args) {
-                return Cold.find({})
-            }
-        },
-        desert: {
-            type: DesertType,
-            resolve(parent, args) {
-                return Desert.find({})
-            }
-        },
-        tropical: {
-            type: TropicalType,
-            resolve(parent, args) {
-                return Tropical.find({})
-            }
-        },
-        warm: {
-            type: WarmType,
-            resolve(parent, args) {
-                return Warm.find({})
-            }
-        },
-        seasonal: {
-            type: SeasonalType,
-            resolve(parent, args) {
-                return Seasonal.find({})
-            }
-        }
 
-    })
-});
 
 const WomenType = new GraphQLObjectType({
     name: "Women",
