@@ -5,10 +5,28 @@ import "./ClothingList.scss";
 import ListGroup from "react-bootstrap/ListGroup";
 import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
-import {coldWomenQuery } from '../../utils/queries'
+import { coldWomenQuery } from '../../utils/queries';
+import { useQuery } from "@apollo/react-hooks";
 
 
 class ClothingList extends Component {
+  state = {
+      items: [],
+      weight: 0
+  }
+
+  handleClick = (e) => {
+    e.preventDefault();
+    let item = e.target.id;
+    let itemWeight = e.target.value;
+    console.log(itemWeight);
+    console.log(item);
+    this.setState({
+      weight: this.state.itemWeight + itemWeight,
+      items: this.state.items.concat(item)
+    })
+  }
+
   displayClothes() {
     let data = this.props.data;
     if (data.loading) {
@@ -19,7 +37,7 @@ class ClothingList extends Component {
         return (
          <ol>
           {/* <button>{men.name}</button> */}
-          <button>{women.name}</button>
+          <button onClick={this.handleClick} id={women.name} value={women.weight}>{women.name}</button>
          </ol>
           )
         })
