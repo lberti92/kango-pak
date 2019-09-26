@@ -417,7 +417,7 @@ const RootQuery = new GraphQLObjectType({
                 climate: { type: GraphQLString }
             },
             resolve(parent, args) {
-                return Clothing.find({ climate: args.weather, apparel: args.gender })
+                return Clothing.find({ climate: args.climate, apparel: args.apparel })
             }
         }
     }
