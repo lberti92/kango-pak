@@ -9,5 +9,6 @@ module.exports = {
     Desert: require("./Desert"),
     Tropical: require("./Tropical"),
     Warm: require("./Warm"),
-    Seasonal: require("./Seasonal")
+    Seasonal: require("./Seasonal"),
+    Clothing: require("./Clothing")
   };
