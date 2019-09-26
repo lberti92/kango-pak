@@ -6,13 +6,11 @@ import gql from 'graphql-tag';
 import { useQuery } from '@apollo/react-hooks';
 
 const GET_ITINERARY = gql`
-  query getItinerary($tripId: String!) {
-   trip(_id: $tripId) {
-    itinerary {
-        title
-        date
-        notes
-      }
+  query Itinerary($tripId: String!) {
+    itinerary(tripId: $tripId) {
+         title
+         date
+         notes
       }
     }
 `;
@@ -22,7 +20,7 @@ const Itinerary = props => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-
+    console.log(props.tripId)
 
     const { loading, error, data } = useQuery(GET_ITINERARY, {
         variables: { tripId: props.tripId }
@@ -34,23 +32,24 @@ const Itinerary = props => {
 
     return (
         <>
-
-            <Card>
+            <Card bg="light">
                 <Card.Header as="h4">Itinerary</Card.Header>
-                <Card.Body>
-                    <ListGroup variant="flush">
-                        
-            {data ? (
-                <ul>{data.trip.itinerary.map(item => <ItineraryItem data={item} key={item._id} />)}</ul>
-            ) :
+                <Card.Body className="scrool">
+                    <div className="scroll">
+                        {props.tripId ?
+                            <ListGroup variant="flush">
+                                {data ? (
+                                    <ul>{data.itinerary.map(item => <ItineraryItem data={item} key={item._id} />)}</ul>
+                                ) :
+                                    <p>Add items to your trip itinerary to stay organized!</p>
+                                }
+                            </ListGroup> : <p>Choose a trip to see your itinerary and add more items!</p>}
 
-                <h4>Add Items To Your Itinerary</h4>
-            }
-                    </ListGroup>
-                    <Button variant="primary" onClick={handleShow}>Add to Itinerary</Button>
+                    </div>
+                    <Button id="new-itinerary" variant="primary" onClick={handleShow}>Add to Itinerary</Button>
                 </Card.Body>
             </Card>
-       
+
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>Add an Event</Modal.Title>
@@ -58,7 +57,7 @@ const Itinerary = props => {
                 <Modal.Body><ItineraryForm tripId={props.tripId} close={handleClose} /></Modal.Body>
 
             </Modal>
-            </>
+        </>
 
     )
 }

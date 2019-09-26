@@ -1,15 +1,18 @@
-import React from "react";
+import React, {useContext} from "react";
 import Login from "../../components/Login";
 import Signup from "../../components/Signup";
 import "./Auth.scss";
+import UserProvider from "../../contexts/UserProvider";
 
 const Auth = (props) => {
+  const {loggedIn, user} = useContext(UserProvider.context);
+
     return (
       <div className="authBox">
         {(props.action === "login") ? (
-          <Login />
+          <Login loggedIn={loggedIn} />
         ) : (
-            <Signup />
+            <Signup loggedIn={loggedIn} />
           )}
       </div>
     )
