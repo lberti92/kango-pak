@@ -51,7 +51,6 @@ return (
   </div>
 </div>
 )
-
 }
 
 export default ClothingList;

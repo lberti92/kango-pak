@@ -91,8 +91,8 @@ export default function Questions(props) {
                 <Form.Group>
                     <Form.Label>What type of apparel do you prefer (select below)?</Form.Label>
                     <Form.Control as="select" name="apparel" onChange={handleChange} value={values.apparel}>
-                        <option value="mens">Male</option>
-                        <option value="womens">Female</option>
+                        <option value="men">Male</option>
+                        <option value="women">Female</option>
                         <option value="neutral">Gender Neutral</option>
                     </Form.Control>
                 </Form.Group>

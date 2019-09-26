@@ -9,3 +9,5 @@ const clothingSchema = new Schema ({
 });
 
 const Clothing = mongoose.model("Clothing", clothingSchema);
+
+module.exports = Clothing;
