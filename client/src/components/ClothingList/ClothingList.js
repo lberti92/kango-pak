@@ -1,11 +1,9 @@
 import React from "react";
-import { Container, Form } from "react-bootstrap";
-// import Questions from "../Questions/Questions";
-import "./ClothingList.scss";
-import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
 import { useQuery } from '@apollo/react-hooks';
-// import {coldWomenQuery } from '../../utils/queries'
+import { Button, ButtonGroup } from "react-bootstrap";
+import "./ClothingList.scss";;
+
 
 const GET_CLOTHINGLIST = gql`
     query getClothing($apparel: String!, $climate: String) {
@@ -15,9 +13,28 @@ const GET_CLOTHINGLIST = gql`
       } 
     }
 `;
+ 
+  
+// function displayClothes() {
+
+//     if (data.loading) {
+//       return (<div>Loading clothes...</div>);
+//     } else {
+//       // return data.cold.mens.map(men => {
+//         return data.cold.womens.map(women => {
+//         return (
+//         <>
+//           {/* <button>{men.name}</button> */}
+//           <Button id="clothes-btn" key = {women.name} value={women.weight} onClick={() => console.log(women.weight)}>{women.name}</Button>
+//          </>
+//           )
+//         })
+//       }
+//     }
+
 
 const ClothingList = props => {
-  const { loading, error, data } = useQuery(GET_CLOTHINGLIST, {
+  const { loading, error, data, refetch } = useQuery(GET_CLOTHINGLIST, {
     variables: {apparel: props.apparel, climate: props.climate  }
    });
 if (loading) console.log('Loading...')
@@ -25,11 +42,13 @@ if (error) console.log(error.message)
 if (data) data.clothing.map(item => console.log(item.name, item.weight))
 
 return (
-  <div>
-    <ol>
-     <li>hi</li>
-    </ol>
+  <div className="scroll-box">
+  <div className="clothes-list">
+  <h6 className="tips">Click an item to add it to your list</h6>
+  <ButtonGroup vertical>
+  </ButtonGroup>
   </div>
+</div>
 )
 
 }
