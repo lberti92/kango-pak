@@ -35,7 +35,9 @@ const ItineraryForm = props => {
                     <Form.Control type="text" name="title" value={values.title} onChange={handleChange} placeholder="New Itinerary Item" />
                 </Form.Group>
                 <Form.Group>
-                    <DatePicker placeholderText="Click to select a date"
+                <Form.Label>Date and Time</Form.Label>
+                <div>
+                    <DatePicker 
                         selected={startDate}
                         onChange={date => setStartDate(date)}
                         showTimeSelect
@@ -43,7 +45,9 @@ const ItineraryForm = props => {
                         timeIntervals={15}
                         timeCaption="time"
                         dateFormat="MMMM d, yyyy h:mm aa"
+                        placeholderText="Select a Date and Time"
                     />
+                    </div>
                 </Form.Group>
                 <Form.Group controlId="notes">
                     <Form.Label>Notes</Form.Label>

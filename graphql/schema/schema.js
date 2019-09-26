@@ -63,7 +63,7 @@ const TripType = new GraphQLObjectType({
 const ItineraryType = new GraphQLObjectType({
     name: "Itinerary",
     fields: () => ({
-        _id: { type: new GraphQLNonNull(GraphQLID) },
+        _id: { type: new GraphQLNonNull(GraphQLString) },
         title: { type: new GraphQLNonNull(GraphQLString) },
         date: { type: new GraphQLNonNull(GraphQLString) },
         notes: { type: new GraphQLNonNull(GraphQLString) }
@@ -72,208 +72,208 @@ const ItineraryType = new GraphQLObjectType({
 
 
 
-const WomenType = new GraphQLObjectType({
-    name: "Women",
-    fields: () => ({
-        name: { type: GraphQLString },
-        weight: { type: GraphQLFloat },
-        weatherId: { type: GraphQLList(GraphQLInt) },
-        cold: {
-            type: ColdType,
-            resolve(parent, args) {
-                return Cold.find({})
-            }
-        },
-        desert: {
-            type: DesertType,
-            resolve(parent, args) {
-                return Desert.find({})
-            }
-        },
-        tropical: {
-            type: TropicalType,
-            resolve(parent, args) {
-                return Tropical.find({})
-            }
-        },
-        warm: {
-            type: WarmType,
-            resolve(parent, args) {
-                return Warm.find({})
-            }
-        },
-        seasonal: {
-            type: SeasonalType,
-            resolve(parent, args) {
-                return Seasonal.find({})
-            }
-        }
-    })
-});
+// const WomenType = new GraphQLObjectType({
+//     name: "Women",
+//     fields: () => ({
+//         name: { type: GraphQLString },
+//         weight: { type: GraphQLFloat },
+//         weatherId: { type: GraphQLList(GraphQLInt) },
+//         cold: {
+//             type: ColdType,
+//             resolve(parent, args) {
+//                 return Cold.find({})
+//             }
+//         },
+//         desert: {
+//             type: DesertType,
+//             resolve(parent, args) {
+//                 return Desert.find({})
+//             }
+//         },
+//         tropical: {
+//             type: TropicalType,
+//             resolve(parent, args) {
+//                 return Tropical.find({})
+//             }
+//         },
+//         warm: {
+//             type: WarmType,
+//             resolve(parent, args) {
+//                 return Warm.find({})
+//             }
+//         },
+//         seasonal: {
+//             type: SeasonalType,
+//             resolve(parent, args) {
+//                 return Seasonal.find({})
+//             }
+//         }
+//     })
+// });
 
-const NeutralType = new GraphQLObjectType({
-    name: "Neutral",
-    fields: () => ({
-        name: { type: GraphQLString },
-        weight: { type: GraphQLFloat },
-        weatherId: { type: GraphQLList(GraphQLInt) },
-        cold: {
-            type: ColdType,
-            resolve(parent, args) {
-                return Cold.find({})
-            }
-        },
-        desert: {
-            type: DesertType,
-            resolve(parent, args) {
-                return Desert.find({})
-            }
-        },
-        tropical: {
-            type: TropicalType,
-            resolve(parent, args) {
-                return Tropical.find({})
-            }
-        },
-        warm: {
-            type: WarmType,
-            resolve(parent, args) {
-                return Warm.find({})
-            }
-        },
-        seasonal: {
-            type: SeasonalType,
-            resolve(parent, args) {
-                return Seasonal.find({})
-            }
-        }
-    })
-});
+// const NeutralType = new GraphQLObjectType({
+//     name: "Neutral",
+//     fields: () => ({
+//         name: { type: GraphQLString },
+//         weight: { type: GraphQLFloat },
+//         weatherId: { type: GraphQLList(GraphQLInt) },
+//         cold: {
+//             type: ColdType,
+//             resolve(parent, args) {
+//                 return Cold.find({})
+//             }
+//         },
+//         desert: {
+//             type: DesertType,
+//             resolve(parent, args) {
+//                 return Desert.find({})
+//             }
+//         },
+//         tropical: {
+//             type: TropicalType,
+//             resolve(parent, args) {
+//                 return Tropical.find({})
+//             }
+//         },
+//         warm: {
+//             type: WarmType,
+//             resolve(parent, args) {
+//                 return Warm.find({})
+//             }
+//         },
+//         seasonal: {
+//             type: SeasonalType,
+//             resolve(parent, args) {
+//                 return Seasonal.find({})
+//             }
+//         }
+//     })
+// });
 
-const ColdType = new GraphQLObjectType({
-    name: "Cold",
-    fields: () => ({
-        name: { type: GraphQLString },
-        mens: {
-            type: new GraphQLList(MenType),
-            resolve(parent, args) {
-                return Men.find({ weatherId: 1 })
-            }
-        },
-        womens: {
-            type: new GraphQLList(WomenType),
-            resolve(parent, args) {
-                return Women.find({ weatherId: 1 })
-            }
-        },
-        neutrals: {
-            type: new GraphQLList(NeutralType),
-            resolve(parent, args) {
-                return Neutral.find({ weatherId: 1 })
-            }
-        }
-    })
-});
+// const ColdType = new GraphQLObjectType({
+//     name: "Cold",
+//     fields: () => ({
+//         name: { type: GraphQLString },
+//         mens: {
+//             type: new GraphQLList(MenType),
+//             resolve(parent, args) {
+//                 return Men.find({ weatherId: 1 })
+//             }
+//         },
+//         womens: {
+//             type: new GraphQLList(WomenType),
+//             resolve(parent, args) {
+//                 return Women.find({ weatherId: 1 })
+//             }
+//         },
+//         neutrals: {
+//             type: new GraphQLList(NeutralType),
+//             resolve(parent, args) {
+//                 return Neutral.find({ weatherId: 1 })
+//             }
+//         }
+//     })
+// });
 
-const DesertType = new GraphQLObjectType({
-    name: "Desert",
-    fields: () => ({
-        name: { type: GraphQLString },
-        mens: {
-            type: new GraphQLList(MenType),
-            resolve(parent, args) {
-                return Men.find({ weatherId: 2 })
-            }
-        },
-        womens: {
-            type: new GraphQLList(WomenType),
-            resolve(parent, args) {
-                return Women.find({ weatherId: 2 })
-            }
-        },
-        neutrals: {
-            type: new GraphQLList(NeutralType),
-            resolve(parent, args) {
-                return Neutral.find({ weatherId: 2 })
-            }
-        }
-    })
-});
+// const DesertType = new GraphQLObjectType({
+//     name: "Desert",
+//     fields: () => ({
+//         name: { type: GraphQLString },
+//         mens: {
+//             type: new GraphQLList(MenType),
+//             resolve(parent, args) {
+//                 return Men.find({ weatherId: 2 })
+//             }
+//         },
+//         womens: {
+//             type: new GraphQLList(WomenType),
+//             resolve(parent, args) {
+//                 return Women.find({ weatherId: 2 })
+//             }
+//         },
+//         neutrals: {
+//             type: new GraphQLList(NeutralType),
+//             resolve(parent, args) {
+//                 return Neutral.find({ weatherId: 2 })
+//             }
+//         }
+//     })
+// });
 
-const TropicalType = new GraphQLObjectType({
-    name: "Tropical",
-    fields: () => ({
-        name: { type: GraphQLString },
-        mens: {
-            type: new GraphQLList(MenType),
-            resolve(parent, args) {
-                return Men.find({ weatherId: 3 })
-            }
-        },
-        womens: {
-            type: new GraphQLList(WomenType),
-            resolve(parent, args) {
-                return Women.find({ weatherId: 3 })
-            }
-        },
-        neutrals: {
-            type: new GraphQLList(NeutralType),
-            resolve(parent, args) {
-                return Neutral.find({ weatherId: 3 })
-            }
-        }
-    })
-});
+// const TropicalType = new GraphQLObjectType({
+//     name: "Tropical",
+//     fields: () => ({
+//         name: { type: GraphQLString },
+//         mens: {
+//             type: new GraphQLList(MenType),
+//             resolve(parent, args) {
+//                 return Men.find({ weatherId: 3 })
+//             }
+//         },
+//         womens: {
+//             type: new GraphQLList(WomenType),
+//             resolve(parent, args) {
+//                 return Women.find({ weatherId: 3 })
+//             }
+//         },
+//         neutrals: {
+//             type: new GraphQLList(NeutralType),
+//             resolve(parent, args) {
+//                 return Neutral.find({ weatherId: 3 })
+//             }
+//         }
+//     })
+// });
 
-const WarmType = new GraphQLObjectType({
-    name: "Warm",
-    fields: () => ({
-        name: { type: GraphQLString },
-        mens: {
-            type: new GraphQLList(MenType),
-            resolve(parent, args) {
-                return Men.find({ weatherId: 4 })
-            }
-        },
-        womens: {
-            type: new GraphQLList(WomenType),
-            resolve(parent, args) {
-                return Women.find({ weatherId: 4 })
-            }
-        },
-        neutrals: {
-            type: new GraphQLList(NeutralType),
-            resolve(parent, args) {
-                return Neutral.find({ weatherId: 4 })
-            }
-        }
-    })
-});
+// const WarmType = new GraphQLObjectType({
+//     name: "Warm",
+//     fields: () => ({
+//         name: { type: GraphQLString },
+//         mens: {
+//             type: new GraphQLList(MenType),
+//             resolve(parent, args) {
+//                 return Men.find({ weatherId: 4 })
+//             }
+//         },
+//         womens: {
+//             type: new GraphQLList(WomenType),
+//             resolve(parent, args) {
+//                 return Women.find({ weatherId: 4 })
+//             }
+//         },
+//         neutrals: {
+//             type: new GraphQLList(NeutralType),
+//             resolve(parent, args) {
+//                 return Neutral.find({ weatherId: 4 })
+//             }
+//         }
+//     })
+// });
 
-const SeasonalType = new GraphQLObjectType({
-    name: "Seasonal",
-    fields: () => ({
-        name: { type: GraphQLString },
-        mens: {
-            type: new GraphQLList(MenType),
-            resolve(parent, args) {
-                return Men.find({ weatherId: 5 })
-            }
-        },
-        womens: {
-            type: new GraphQLList(WomenType),
-            resolve(parent, args) {
-                return Women.find({ weatherId: 5 })
-            }
-        },
-        neutrals: {
-            type: new GraphQLList(NeutralType),
-            resolve(parent, args) {
-                return Neutral.find({ weatherId: 5 })
-            }
-        }
-    })
-});
+// const SeasonalType = new GraphQLObjectType({
+//     name: "Seasonal",
+//     fields: () => ({
+//         name: { type: GraphQLString },
+//         mens: {
+//             type: new GraphQLList(MenType),
+//             resolve(parent, args) {
+//                 return Men.find({ weatherId: 5 })
+//             }
+//         },
+//         womens: {
+//             type: new GraphQLList(WomenType),
+//             resolve(parent, args) {
+//                 return Women.find({ weatherId: 5 })
+//             }
+//         },
+//         neutrals: {
+//             type: new GraphQLList(NeutralType),
+//             resolve(parent, args) {
+//                 return Neutral.find({ weatherId: 5 })
+//             }
+//         }
+//     })
+// });
 
 const ClothingType = new GraphQLObjectType({
     name: "Clothing",
@@ -316,54 +316,61 @@ const RootQuery = new GraphQLObjectType({
                 return Trip.find({})
             }
         },
-        mens: {
-            type: new GraphQLList(MenType),
+        itinerary: {
+            type: new GraphQLList(ItineraryType),
+            args: {tripId: {type: GraphQLString}},
             resolve(parent, args) {
-                return Men.find();
+                return Itinerary.find({trip: args.tripId})
             }
         },
-        womens: {
-            type: new GraphQLList(WomenType),
-            resolve(parent, args) {
-                return Women.find();
-            }
-        },
-        neutrals: {
-            type: new GraphQLList(NeutralType),
-            resolve(parent, args) {
-                return Neutral.find();
-            }
-        },
-        cold: {
-            type: ColdType,
-            resolve(parent, args) {
-                return Cold.find({});
-            }
-        },
-        desert: {
-            type: DesertType,
-            resolve(parent, args) {
-                return Desert.find({});
-            }
-        },
-        tropical: {
-            type: TropicalType,
-            resolve(parent, args) {
-                return Tropical.find({});
-            }
-        },
-        warm: {
-            type: WarmType,
-            resolve(parent, args) {
-                return Warm.find({});
-            }
-        },
-        seasonal: {
-            type: SeasonalType,
-            resolve(parent, args) {
-                return Seasonal.find({});
-            }
-        },
+        // mens: {
+        //     type: new GraphQLList(MenType),
+        //     resolve(parent, args) {
+        //         return Men.find();
+        //     }
+        // },
+        // womens: {
+        //     type: new GraphQLList(WomenType),
+        //     resolve(parent, args) {
+        //         return Women.find();
+        //     }
+        // },
+        // neutrals: {
+        //     type: new GraphQLList(NeutralType),
+        //     resolve(parent, args) {
+        //         return Neutral.find();
+        //     }
+        // },
+        // cold: {
+        //     type: ColdType,
+        //     resolve(parent, args) {
+        //         return Cold.find({});
+        //     }
+        // },
+        // desert: {
+        //     type: DesertType,
+        //     resolve(parent, args) {
+        //         return Desert.find({});
+        //     }
+        // },
+        // tropical: {
+        //     type: TropicalType,
+        //     resolve(parent, args) {
+        //         return Tropical.find({});
+        //     }
+        // },
+        // warm: {
+        //     type: WarmType,
+        //     resolve(parent, args) {
+        //         return Warm.find({});
+        //     }
+        // },
+        // seasonal: {
+        //     type: SeasonalType,
+        //     resolve(parent, args) {
+        //         return Seasonal.find({});
+        //     }
+        // },
         clothing: {
             type: new GraphQLList(ClothingType),
             args: {

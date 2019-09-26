@@ -11,7 +11,6 @@ const ItineraryItem = props => {
         <Moment date={props.date} format="LLLL"/>
         {props.data.title}
         {props.data.notes}
-
         </li> 
     )
 }

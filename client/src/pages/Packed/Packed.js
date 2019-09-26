@@ -39,8 +39,7 @@ export default function Packed(props) {
                 </Col>
                 <Col>
                 {data ? 
-                <ClothingList apparel={data.trip.apparel} climate={data.trip.climate}>
-                </ClothingList> 
+                <ClothingList apparel={data.trip.apparel} climate={data.trip.climate} />
                 : "loading..."
             }       
                 </Col>

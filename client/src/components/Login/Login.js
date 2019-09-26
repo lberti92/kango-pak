@@ -2,11 +2,14 @@ import React, {useState} from "react";
 import { Button, Form, FormGroup, Label, Input, Alert } from 'reactstrap';
 import { Link } from "react-router-dom";
 import { useForm } from "../../useForm";
+import "./Style.scss";
 import API from "../../utils/API";
 
-const Login = () => {
+const Login = props => {
     const [values, handleChange] = useForm({ username: "", password: "" });
     const [message, setMessage] = useState("")
+
+    if (props.loggedIn) window.location = "/profile";
 
     const handleLogin = event => {
         event.preventDefault();

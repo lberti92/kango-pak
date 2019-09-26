@@ -11,6 +11,9 @@ const GET_USER_TRIPS = gql`
           location
           length
           climate
+          itinerary{
+              title
+          }
       }
     }
   }
@@ -60,10 +63,10 @@ const SavedTrips = ({ user, setTripId, tripId }) => {
 
     return (
         <>
-            <Card>
+            <Card bg="light">
                 <Card.Header as="h4">Saved Trips</Card.Header>
                 <Card.Body>
-                    {/* <Card.Title>Special title treatment</Card.Title> */}
+                    <div className="scroll">
                     <ListGroup variant="flush">
                         {data ? 
                              data.user.trips.map(function(trip) {
@@ -78,8 +81,10 @@ const SavedTrips = ({ user, setTripId, tripId }) => {
                                 <img id="loadingIcon" src="./assets/images/loading.gif" alt="loading" />
                             )}
                     </ListGroup>
-                    <Button variant="primary" href="/newtrip">New Trip</Button>
+                    </div>
+                    <Button id="new-trip" href="/newtrip">New Trip</Button>
                 </Card.Body>
+                
             </Card>
         </>
     )
