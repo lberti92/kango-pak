@@ -10,6 +10,7 @@ const Desert = require("../../models/Desert");
 const Seasonal = require("../../models/Seasonal");
 const Warm = require("../../models/Warm");
 const Tropical = require("../../models/Tropical");
+const Clothing = require("../../models/Clothing");
 
 const {
     GraphQLObjectType,
@@ -61,7 +62,7 @@ const TripType = new GraphQLObjectType({
         itinerary: {
             type: new GraphQLList(ItineraryType),
             resolve(parent, args) {
-                return Itinerary.find({ trip: parent._id }).sort({date: 1})
+                return Itinerary.find({ trip: parent._id }).sort({ date: 1 })
             }
         }
     })
@@ -320,6 +321,16 @@ const SeasonalType = new GraphQLObjectType({
     })
 });
 
+const ClothingType = new GraphQLObjectType({
+    name: "Clothing",
+    fields: () => ({
+        name: {type: GraphQLString},
+        weight: {type: GraphQLFloat},
+        climate: { type: new GraphQLList(GraphQLString) },
+        apparel: { type: GraphQLString }
+    })
+})
+
 // how to initially jump into the graph to get data
 const RootQuery = new GraphQLObjectType({
     name: "RootQueryType",
@@ -398,8 +409,17 @@ const RootQuery = new GraphQLObjectType({
             resolve(parent, args) {
                 return Seasonal.find({});
             }
+        },
+        clothing: {
+            type: new GraphQLList(ClothingType),
+            args: {
+                apparel: { type: GraphQLString },
+                climate: { type: GraphQLString }
+            },
+            resolve(parent, args) {
+                return Clothing.find({ climate: args.weather, apparel: args.gender })
+            }
         }
-
     }
 });
 
@@ -412,17 +432,17 @@ const Mutation = new GraphQLObjectType({
                 username: { type: GraphQLString },
                 password: { type: GraphQLString },
                 name: { type: GraphQLString },
-            }, 
-        resolve(parent, args) {
-            // using the mongoose model
-            let user = new User({
-                username: args.username,
-                password: args.password,
-                name: args.name
-            })
-            user.password = user.generateHash(args.password);
-            // save to the mongo db and return the object that was inserted
-            return user.save()
+            },
+            resolve(parent, args) {
+                // using the mongoose model
+                let user = new User({
+                    username: args.username,
+                    password: args.password,
+                    name: args.name
+                })
+                user.password = user.generateHash(args.password);
+                // save to the mongo db and return the object that was inserted
+                return user.save()
             },
             resolve(parent, args) {
                 // using the mongoose model
@@ -449,7 +469,7 @@ const Mutation = new GraphQLObjectType({
 
 
             },
-            resolve: async function(parent, args) {
+            resolve: async function (parent, args) {
                 let trip = new Trip({
                     user: args.userId,
                     location: args.location,
@@ -462,16 +482,16 @@ const Mutation = new GraphQLObjectType({
                 const newTrip = await trip.save()
 
                 let savedUser = ""
-                if(newTrip) {
-                    savedUser = await User.findByIdAndUpdate({_id: args.userId}, {$push: {trips: newTrip._id}})
+                if (newTrip) {
+                    savedUser = await User.findByIdAndUpdate({ _id: args.userId }, { $push: { trips: newTrip._id } })
                 }
 
-                if(savedUser) {
+                if (savedUser) {
                     return newTrip
                 }
-                
+
             }
-        }, 
+        },
         addItinerary: {
             type: ItineraryType,
             args: {
@@ -479,7 +499,7 @@ const Mutation = new GraphQLObjectType({
                 title: { type: GraphQLString },
                 date: { type: GraphQLString },
                 notes: { type: GraphQLString }
-            }, 
+            },
             resolve(parents, args) {
                 let itinerary = new Itinerary({
                     trip: args.tripId,
