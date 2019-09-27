@@ -49,6 +49,7 @@ export default function Packed(props) {
                 </Card.Body>
             </Card>
         </>
+
     )
 };
 
