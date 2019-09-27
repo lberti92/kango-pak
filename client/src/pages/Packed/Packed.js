@@ -1,8 +1,6 @@
 import React from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
-import "./Packed.scss";
 import Recommendation from "../../components/Recommendation/Recommendation";
-import Packed from "../../components/Packed/Packed";
 import ClothingList from "../../components/ClothingList/ClothingList";
 import { useQuery } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
@@ -39,12 +37,12 @@ export default function Packing(props) {
                 <Col>
                 <Recommendation />  
                 </Col>
-                <Col>
+          
                 {data ? 
                 <ClothingList apparel={data.trip.apparel} climate={data.trip.climate} luggage={data.trip.luggage} location={data.trip.location} />
                 : "loading..."
             }       
-                </Col>
+    
             </Row>
         </Container>
     )

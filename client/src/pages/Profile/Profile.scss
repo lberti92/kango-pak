@@ -5,9 +5,17 @@
     overflow-y: auto;
 }
 
+.greeting {
+    font-family: 'Shrikhand', cursive;
+    font-size: 50px;
+    padding: 20px;
+    color: #CE2D4F;
+}
 .card-body,
 .card-header {
     text-align: center;
+    font-family: $title-font;
+
 }
 
 #new-trip, 
