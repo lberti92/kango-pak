@@ -10,7 +10,7 @@ const tripSchema = new Schema({
   },
   itinerary: {
     type: Schema.Types.ObjectId,
-    ref: "itinerary"
+    ref: "Itinerary"
   },
   location: {
     type: String
@@ -29,6 +29,10 @@ const tripSchema = new Schema({
   },
   apparel: {
     type: String
+  },
+  packing: {
+    type: Schema.Types.ObjectId,
+    ref: "Packing"
   }
 });
 

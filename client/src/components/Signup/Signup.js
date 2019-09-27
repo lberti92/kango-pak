@@ -1,23 +1,27 @@
 import React from "react";
 import { Form, Button, Container } from "react-bootstrap";
 import { Formik } from "formik";
-import { string, object, bool} from "yup";
+import * as yup from "yup";
 import API from "../../utils/API";
 
-import gql from "graphql-tag";
-import { userQuery, useMutation } from "@apollo/react-hooks";
-
-const ADD_USER = gql`
- mutation addUser($username: String!, $password: String!, $name: String!) {
-   username name
- }
-`
-
-const schema = object({
-  name: string().required(),
-  username: string().required(),
-  password: string().required(),
-  confirmPassword: string().required()
+const schema =  yup.object({
+  name: yup
+  .string()
+  .required("Please enter your name."),
+  username: yup
+  .string()
+  .required(),
+  password: yup 
+  .string()
+  .required("Please enter a password.")
+  .matches(
+    /^(?=.*[A-Za-z])(?=.*d)(?=.*[@$!%*#?&])[A-Za-zd@$!%*#?&]{8,}$/,
+    "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and one special case Character"
+  ),
+  confirmPassword: yup
+    .string()
+    .required()
+    .oneOf([yup.ref("password"), null], "Passwords must match")
 });
 
 function Signup() {
