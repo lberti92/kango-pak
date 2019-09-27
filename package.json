@@ -51,10 +51,10 @@
     "concurrently": "^4.1.0",
     "nodemon": "^1.18.9"
   },
-  "proxy": { 
-    "/graphql": { 
-      "target": "https://localhost:3001", 
-      "secure": false 
+  "proxy": {
+    "/graphql": {
+      "target": "https://localhost:3001",
+      "secure": false
     }
   }
 }
