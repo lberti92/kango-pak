@@ -54,9 +54,9 @@ const TripType = new GraphQLObjectType({
             }
         },
         packing: {
-            type: PackingType,
+            type: new GraphQLList(PackingType),
             resolve(parent, args) {
-                return Packing.find({ trip: parent._id })
+                return Packing.find({trip: parent._id})
             }
         }
     })
@@ -72,10 +72,6 @@ const ItineraryType = new GraphQLObjectType({
     })
 })
 
-<<<<<<< HEAD
-=======
-
->>>>>>> master
 const ClothingType = new GraphQLObjectType({
     name: "Clothing",
     fields: () => ({
@@ -93,7 +89,7 @@ const PackingType = new GraphQLObjectType({
         _id: { type: new GraphQLNonNull(GraphQLString) },
         trip: { type: new GraphQLNonNull(GraphQLString) },
         items: { type: GraphQLString },
-        weight: { type: GraphQLFloat },
+        weight: { type: GraphQLString },
         notes: { type: GraphQLString }
     })
 })
@@ -151,7 +147,7 @@ const RootQuery = new GraphQLObjectType({
             }
         },
         packing: {
-            type: PackingType,
+            type: new GraphQLList(PackingType),
             args: {
                 tripId: { type: GraphQLString }
             },
@@ -271,7 +267,7 @@ const Mutation = new GraphQLObjectType({
             args: {
                 tripId: { type: GraphQLString },
                 items: { type: GraphQLString },
-                weight: { type: GraphQLFloat },
+                weight: { type: GraphQLString },
                 notes: { type: GraphQLString }
             },
             resolve: async function (parent, args) {

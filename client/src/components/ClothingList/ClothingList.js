@@ -23,6 +23,7 @@ const ClothingList = (props) => {
   if (data) { console.log(data) };
   const [weight, setWeight] = useState(0);
   const [packed, setPacked] = useState([]);
+<<<<<<< HEAD
   // const [weightAllowed, setWeightAllowed] = useState(0);
   const [message, setMessage] = useState("")
   console.log(weightAllowed);
@@ -66,6 +67,9 @@ const ClothingList = (props) => {
       setWeight(weight + item)
     }
   }
+=======
+  
+>>>>>>> master
   return (
     <>
       <div className="scroll-box">
