@@ -54,9 +54,9 @@ const TripType = new GraphQLObjectType({
             }
         },
         packing: {
-            type: PackingType,
+            type: new GraphQLList(PackingType),
             resolve(parent, args) {
-                return Packing.find({ trip: parent._id })
+                return Packing.find({trip: parent._id})
             }
         }
     })
@@ -145,7 +145,7 @@ const RootQuery = new GraphQLObjectType({
             }
         },
         packing: {
-            type: PackingType,
+            type: new GraphQLList(PackingType),
             args: {
                 tripId: { type: GraphQLString }
             },
