@@ -19,9 +19,8 @@ export default function Packed(props) {
     if (data) console.log(data);
     console.log(props.tripId)
 
-    let items = props.packed.map(item => item.name).join(", ");
-
     const handleClick = () => {
+        const items = props.packed.map(item => item).join(", ");
         addPackingList({ variables: { tripId: props.tripId, items: items }});
         if (data) window.location = "/profile"
     }
@@ -37,15 +36,14 @@ export default function Packed(props) {
                             {props ?
                                 props.packed.map(function (item, i) {
                                     return (
-                                        <ListGroupItem onClick={items}>{item.name}</ListGroupItem>
+                                        <ListGroupItem>{item}</ListGroupItem>
                                     )
                                 })
                                 :
                                 <p>You've definitely underpacked.</p>
                             }
-
-                            <Button href="#" onClick={handleClick}>Ready to Pack!</Button>
                         </ListGroup>
+                        <Button onClick={handleClick}>Ready to Pack!</Button>
                     </Card.Text>
 
                 </Card.Body>

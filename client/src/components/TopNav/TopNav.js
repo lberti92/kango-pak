@@ -5,7 +5,7 @@ import { FaUserAlt } from "react-icons/fa";
 import UserProvider from "../../contexts/UserProvider";
 
 const Navigation = () => {
-    const { loggedIn, user } = useContext(UserProvider.context);
+    const { loggedIn } = useContext(UserProvider.context);
 
     const logout = () => {
         API.logout().then((data) => {
@@ -27,12 +27,12 @@ const Navigation = () => {
                             {loggedIn ?
                                 <>
                                     <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
-                                    <NavDropdown.Item href="/trips">My Trips</NavDropdown.Item>
+                                    <NavDropdown.Item href="/profile">My Trips</NavDropdown.Item>
                                     <NavDropdown.Divider />
                                     <NavDropdown.Item onClick={logout}>Logout</NavDropdown.Item>
                                 </> :
                                 <>
-                                    <NavDropdown.Item href="/learnmore">Learn More</NavDropdown.Item>
+                                    <NavDropdown.Item href="/">Learn More</NavDropdown.Item>
                                     <NavDropdown.Divider />
                                     <NavDropdown.Item href="/login">Login</NavDropdown.Item>
                                     <NavDropdown.Item href="/signup">Signup</NavDropdown.Item>

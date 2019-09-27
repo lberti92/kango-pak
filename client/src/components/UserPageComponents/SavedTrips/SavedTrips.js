@@ -52,6 +52,7 @@ const TripListItem = props => {
       }, []);
 
       const [removeTrip, { data }] = useMutation(REMOVE_TRIP);
+      if (data) console.log(data)
       const remove = _id => {
           removeTrip({ variables: {_id: _id }});
           props.refetch();

@@ -5,7 +5,7 @@ import "./Auth.scss";
 import UserProvider from "../../contexts/UserProvider";
 
 const Auth = (props) => {
-  const {loggedIn, user} = useContext(UserProvider.context);
+  const {loggedIn} = useContext(UserProvider.context);
 
     return (
       <div className="authBox">

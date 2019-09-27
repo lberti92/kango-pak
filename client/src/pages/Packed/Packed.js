@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col, Card } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import Recommendation from "../../components/Recommendation/Recommendation";
 import ClothingList from "../../components/ClothingList/ClothingList";
 import { useQuery } from '@apollo/react-hooks';
@@ -26,10 +26,6 @@ export default function Packing(props) {
     if (error) console.log(error.message)
     if (data) console.log(data);
     
-    const handleSubmit = (event) => {
-        event.preventDefault();
-    }
-
 
     return (
         <Container className="container-packing">

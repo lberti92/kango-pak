@@ -5,38 +5,47 @@ import gql from 'graphql-tag';
 import { useQuery } from '@apollo/react-hooks';
 
 const GET_PACKINGLIST = gql`
-  query getTrip($_id: String!) {
-   trip(_id: $_id) {
-         name
+  query getPackingList($tripId: String!) {
+   packing(tripId: $tripId) {
+         items
       }
     }
 `;
 
+let packingList = [];
+
 const PackingList = props => {
     const { loading, error, data } = useQuery(GET_PACKINGLIST, {
-        variables: { _id: props.tripId }
+        variables: { tripId: props.tripId }
     });
     if (loading) console.log('Loading...')
     if (error) console.log(error.message)
-    if (data) console.log(data);
+    if (data) {
+        if (data.packing[0]) {
+            packingList = data.packing[data.packing.length - 1].items.split(", ");
+        }
+    };
+
     return (
         <>
 
             <Card bg="light">
                 <Card.Header as="h4">Packing List</Card.Header>
                 <Card.Body>
-                <div className="scroll">
-                    {props.tripId ? (
-                        <ListGroup variant="flush">
-                            {data ? (<p>{data.trip.location}  </p>) :
-                                <>
-                                    <h5>Don't have a list yet? We'll help you out with that.</h5>
-                                    <Link to={`/packed/${props.tripId}`}>Let's get packing!</Link>
+                    <div className="scroll">
+                        {packingList.length > 1  ? (
+                            <>
+                                <ListGroup variant="flush">
+                                   { packingList.map(item => <ListGroup.Item>{item}</ListGroup.Item>)}
+                                </ListGroup>
+                            </>
+                        ) : (
+                            <>
+                                    <p>Don't have a list yet? We'll help you out with that.</p>
+                                    <Link to={props.tripId ? `/packed/${props.tripId}` : "/newtrip"}>Let's get packing!</Link>
                                 </>
-
-                            }
-                        </ListGroup>
-                    ) : <p>Choose a trip to see your packing list!</p>}
+                            )
+                        }
                     </div>
                 </Card.Body>
             </Card>

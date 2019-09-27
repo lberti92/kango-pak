@@ -19,11 +19,25 @@ const GET_ITINERARY = gql`
 
 
 const Itinerary = props => {
+    let itinerary = [];
+   
+    const { loading, error, data, refetch } = useQuery(GET_ITINERARY, {
+        variables: { tripId: props.tripId }
+    });
+    if (loading) console.log('Loading...')
+    if (error) console.log(error.message)
+    if (data) {
+        if (data.itinerary[0]) {
+            data.itinerary.map(item => itinerary.push(item))
+        }
+    }
+
     const [show, setShow] = useState(false);
 
     const handleClose = () => {
+        refetch();
         setShow(false);
-        refetch();    }
+     }
 
 
     const handleShow = () => {
@@ -31,14 +45,7 @@ const Itinerary = props => {
     };
 
 
-    const { loading, error, data, refetch } = useQuery(GET_ITINERARY, {
-        variables: { tripId: props.tripId }
-    });
-    if (loading) console.log('Loading...')
-    if (error) console.log(error.message)
-    if (data) console.log(data);
-
-
+  
     return (
         <>
             <Card bg="light">
@@ -47,7 +54,7 @@ const Itinerary = props => {
                     <div className="scroll">
                         {props.tripId ?
                             <ListGroup variant="flush">
-                                {data ? (
+                                {itinerary.length > 1 ? (
                                     <ul>{data.itinerary.map(item => <ItineraryItem refetch={refetch} handleShow={handleShow} data={item} key={item._id} />)}</ul>
                                 ) :
                                     <p>Add items to your trip itinerary to stay organized!</p>

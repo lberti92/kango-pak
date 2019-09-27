@@ -1,12 +1,10 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { Container, Form, Button } from "react-bootstrap";
 import { useForm } from "../../useForm";
 import "./Questions.scss";
-import { useQuery } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
 import { useMutation } from "@apollo/react-hooks";
 import UserProvider from "../../contexts/UserProvider";
-import { Redirect } from "react-router-dom";
 
 
 const ADD_TRIP = gql `
@@ -23,7 +21,7 @@ mutation AddTrip($userId: String!, $location: String!, $length: String!, $climat
 }`
 
 export default function Questions(props) {
-    const {loggedIn, user} = useContext(UserProvider.context);
+    const {user} = useContext(UserProvider.context);
 
     const [values, handleChange] = useForm({location: "", length: "", climate: "", luggage: "", traveler: "", apparel: ""})
 
@@ -46,8 +44,7 @@ export default function Questions(props) {
     })
 
     return (
-
-        <Container className="container-fluid">
+            <Container className="container-fluid">
             <Form onSubmit={handleSubmit}>
                 <h1 className="form-header">Tell us about your trip:</h1>
                 <Form.Group>
