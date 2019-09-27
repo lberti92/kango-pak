@@ -1,24 +1,27 @@
 import React, { useState } from "react";
 import { Col, Card } from "react-bootstrap";
-import { useQuery } from '@apollo/react-hooks';
+import { useMutation } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
 
 
-const GET_PACKINGLIST = gql`
-    query getTrip($_id: String!) {
-        trip(_id: $_id) {
-            location
-            length
-            climate
-            traveler
-            luggage
-            apparel
-      } 
+const ADD_PACKINGLIST = gql`
+mutation AddPackingList($tripId: String!, $items: String!, $weight: Float!) {
+    addPackingList(tripId: $tripId, items: $items, weight: $weight) {
+      $_id
+      items
+      weight
     }
-`;
+  }
+`
 
 export default function Packed(props) {
+    const [addPackingList, { data }] = useMutation(ADD_PACKINGLIST);
+    if (data) console.log(data);
 
+    const addPackingList = () => {
+        addItinerary({ variables: { tripId: props.tripId, items: props.items, weight: props.weight  }});
+        if (data) window.location = "/profile"
+    }
 
     return (
         <>    
@@ -28,11 +31,10 @@ export default function Packed(props) {
                             <Card.Text>
                                 {props.packed}
                             </Card.Text>
-                            <Card.Link href="#">Ready to Pack!</Card.Link>
+                            <Card.Link href="#" onClick={addPackingList}>Ready to Pack!</Card.Link>
                         </Card.Body>
                     </Card>
         
-            
           </>
     )
 };
