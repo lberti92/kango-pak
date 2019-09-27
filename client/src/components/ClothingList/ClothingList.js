@@ -70,7 +70,6 @@ const ClothingList = (props) => {
     <>
       <div className="scroll-box">
         <div className="clothes-list">
-          <h6 className="tips">Click to add!</h6>
           <ButtonGroup vertical>
             {data ?
               data.clothing.map(function (item, i) {

@@ -1,11 +1,10 @@
 import React, {useContext, useState} from "react";
-import {Row, Col, Button, Container} from "react-bootstrap";
+import {Row, Col, Container} from "react-bootstrap";
 import "./Profile.scss";
 import SavedTrips from "../../components/UserPageComponents/SavedTrips";
 import PackingList from "../../components/UserPageComponents/PackingList";
 import Itinerary from "../../components/UserPageComponents/Itinerary";
-import Login from "../../components/Login"
-import { Link } from "react-router-dom"
+import Login from "../../components/Login";
 import UserProvider from "../../contexts/UserProvider";
 
 const Profile = () => {
@@ -19,7 +18,9 @@ const Profile = () => {
             {loggedIn ? (
                 <Container id="profile-wrapper">
                 <Row>
-                    <h1 className="greeting">Welcome {user.username}</h1>
+                    <div>
+                    <h1 className="greeting">Welcome, {user.username}</h1>
+                    </div>
                 </Row>
                 <Row>
                  <Col>

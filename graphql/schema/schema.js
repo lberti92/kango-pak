@@ -1,8 +1,6 @@
 const graphql = require("graphql");
-const User = require("../../models/Users");
-const Trip = require("../../models/Trip");
-const Itinerary = require("../../models/Itinerary");
-const Clothing = require("../../models/Clothing");
+const { User, Trip, Itinerary, Clothing, Packing } = require("../../models/index");
+
 
 const {
     GraphQLObjectType,
@@ -11,8 +9,7 @@ const {
     GraphQLID,
     GraphQLList,
     GraphQLNonNull,
-    GraphQLFloat,
-    GraphQLInt
+    GraphQLFloat
 } = graphql;
 
 const UserType = new GraphQLObjectType({
@@ -44,7 +41,6 @@ const TripType = new GraphQLObjectType({
         traveler: { type: GraphQLString },
         luggage: { type: GraphQLString },
         apparel: { type: GraphQLString },
-
         user: {
             type: new GraphQLList(UserType),
             resolve(parent, args) {
@@ -55,6 +51,12 @@ const TripType = new GraphQLObjectType({
             type: new GraphQLList(ItineraryType),
             resolve(parent, args) {
                 return Itinerary.find({ trip: parent._id }).sort({ date: 1 })
+            }
+        },
+        packing: {
+            type: PackingType,
+            resolve(parent, args) {
+                return Packing.find({ trip: parent._id })
             }
         }
     })
@@ -70,6 +72,10 @@ const ItineraryType = new GraphQLObjectType({
     })
 })
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 const ClothingType = new GraphQLObjectType({
     name: "Clothing",
     fields: () => ({
@@ -77,6 +83,18 @@ const ClothingType = new GraphQLObjectType({
         weight: {type: GraphQLFloat},
         climate: { type: new GraphQLList(GraphQLString) },
         apparel: { type: GraphQLString }
+    })
+})
+
+
+const PackingType = new GraphQLObjectType({
+    name: "Packing",
+    fields: () => ({
+        _id: { type: new GraphQLNonNull(GraphQLString) },
+        trip: { type: new GraphQLNonNull(GraphQLString) },
+        items: { type: GraphQLString },
+        weight: { type: GraphQLFloat },
+        notes: { type: GraphQLString }
     })
 })
 
@@ -118,6 +136,10 @@ const RootQuery = new GraphQLObjectType({
                 return Itinerary.find({trip: args.tripId})
             }
         },
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
         clothing: {
             type: new GraphQLList(ClothingType),
             args: {
@@ -126,6 +148,15 @@ const RootQuery = new GraphQLObjectType({
             },
             resolve(parent, args) {
                 return Clothing.find({ climate: args.climate, apparel: args.apparel })
+            }
+        },
+        packing: {
+            type: PackingType,
+            args: {
+                tripId: { type: GraphQLString }
+            },
+            resolve(parent, args) {
+                return Packing.find({ trip: args.tripId })
             }
         }
     }
@@ -197,7 +228,6 @@ const Mutation = new GraphQLObjectType({
                 if (savedUser) {
                     return newTrip
                 }
-
             }
         },
         removeTrip: {
@@ -205,7 +235,7 @@ const Mutation = new GraphQLObjectType({
             args: {
                 _id: {type: GraphQLString}
             },
-            resolve(parents, args) {
+            resolve(parent, args) {
                return Trip.findOneAndRemove({_id: args._id})
             }
         },
@@ -217,7 +247,7 @@ const Mutation = new GraphQLObjectType({
                 date: { type: GraphQLString },
                 notes: { type: GraphQLString }
             },
-            resolve(parents, args) {
+            resolve(parent, args) {
                 let itinerary = new Itinerary({
                     trip: args.tripId,
                     title: args.title,
@@ -232,8 +262,35 @@ const Mutation = new GraphQLObjectType({
             args: {
                 _id: {type: GraphQLString}
             },
-            resolve(parents, args) {
+            resolve(parent, args) {
                return Itinerary.findOneAndRemove({_id: args._id})
+            }
+        },
+        addPackingList: {
+            type: PackingType,
+            args: {
+                tripId: { type: GraphQLString },
+                items: { type: GraphQLString },
+                weight: { type: GraphQLFloat },
+                notes: { type: GraphQLString }
+            },
+            resolve: async function (parent, args) {
+                let packing = new Packing({
+                    trip: args.tripId,
+                    items: args.items,
+                    weight: args.weight,
+                    notes: args.notes
+                });
+                const newPacking = await packing.save()
+
+                let savedTrip = ""
+                if (newPacking) {
+                    savedTrip = await Trip.findByIdAndUpdate({ _id: args.tripId }, { packing: newPacking._id })
+                }
+
+                if (savedTrip) {
+                    return newPacking
+                }
             }
         }
     }
