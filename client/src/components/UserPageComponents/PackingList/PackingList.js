@@ -14,34 +14,36 @@ const GET_PACKINGLIST = gql`
 
 const PackingList = props => {
     const { loading, error, data } = useQuery(GET_PACKINGLIST, {
-        variables: {_id: props.tripId}
+        variables: { _id: props.tripId }
     });
-    if (loading) console.log( 'Loading...')
-     if (error) console.log(error.message)
-     if (data) console.log(data);
-    return(
+    if (loading) console.log('Loading...')
+    if (error) console.log(error.message)
+    if (data) console.log(data);
+    return (
         <>
-        
-        <Card>
+
+            <Card bg="light">
                 <Card.Header as="h4">Packing List</Card.Header>
                 <Card.Body>
-                    <ListGroup variant="flush">
-                        
-                    {data ? (
-           <p>{data.trip.location}  </p>          ) : 
-                <>
-           <h5>Don't have a list yet? We'll help you out with that.</h5>
-           <Link to={`/packed/${props.tripId}`}>Let's get packing!</Link>
-           </>
-        }
-                    </ListGroup>
-                    
+                <div className="scroll">
+                    {props.tripId ? (
+                        <ListGroup variant="flush">
+                            {data ? (<p>{data.trip.location}  </p>) :
+                                <>
+                                    <h5>Don't have a list yet? We'll help you out with that.</h5>
+                                    <Link to={`/packed/${props.tripId}`}>Let's get packing!</Link>
+                                </>
+
+                            }
+                        </ListGroup>
+                    ) : <p>Choose a trip to see your packing list!</p>}
+                    </div>
                 </Card.Body>
             </Card>
-        
+
         </>
-        
-        )
+
+    )
 }
 
 export default PackingList

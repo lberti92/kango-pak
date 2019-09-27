@@ -63,7 +63,7 @@ const TripType = new GraphQLObjectType({
 const ItineraryType = new GraphQLObjectType({
     name: "Itinerary",
     fields: () => ({
-        _id: { type: new GraphQLNonNull(GraphQLID) },
+        _id: { type: new GraphQLNonNull(GraphQLString) },
         title: { type: new GraphQLNonNull(GraphQLString) },
         date: { type: new GraphQLNonNull(GraphQLString) },
         notes: { type: new GraphQLNonNull(GraphQLString) }
@@ -109,6 +109,13 @@ const RootQuery = new GraphQLObjectType({
             type: new GraphQLList(TripType),
             resolve() {
                 return Trip.find({})
+            }
+        },
+        itinerary: {
+            type: new GraphQLList(ItineraryType),
+            args: {tripId: {type: GraphQLString}},
+            resolve(parent, args) {
+                return Itinerary.find({trip: args.tripId})
             }
         },
         clothing: {
@@ -193,6 +200,15 @@ const Mutation = new GraphQLObjectType({
 
             }
         },
+        removeTrip: {
+            type: TripType,
+            args: {
+                _id: {type: GraphQLString}
+            },
+            resolve(parents, args) {
+               return Trip.findOneAndRemove({_id: args._id})
+            }
+        },
         addItinerary: {
             type: ItineraryType,
             args: {
@@ -209,6 +225,15 @@ const Mutation = new GraphQLObjectType({
                     notes: args.notes
                 })
                 return itinerary.save()
+            }
+        },
+        removeItinerary: {
+            type: ItineraryType,
+            args: {
+                _id: {type: GraphQLString}
+            },
+            resolve(parents, args) {
+               return Itinerary.findOneAndRemove({_id: args._id})
             }
         }
     }

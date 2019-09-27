@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const clothingSchema = new Schema ({
     name: String,
-    weight: Schema.Types.Decimal128,
+    weight: Number,
     climate: [String],
     apparel: String
 });
