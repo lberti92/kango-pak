@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import "./Packed.scss";
 import Recommendation from "../../components/Recommendation/Recommendation";
+import Packed from "../../components/Packed/Packed";
 import ClothingList from "../../components/ClothingList/ClothingList";
 import { useQuery } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
@@ -18,7 +19,7 @@ const GET_PACKINGLIST = gql`
      }
    }`
 
-export default function Packed(props) {
+export default function Packing(props) {
 
     const { loading, error, data } = useQuery(GET_PACKINGLIST, {
         variables: { _id: props.tripId }
@@ -30,7 +31,8 @@ export default function Packed(props) {
     const handleSubmit = (event) => {
         event.preventDefault();
     }
- 
+
+
     return (
         <Container className="container-packing">
             <Row>
@@ -39,25 +41,10 @@ export default function Packed(props) {
                 </Col>
                 <Col>
                 {data ? 
-                <ClothingList apparel={data.trip.apparel} climate={data.trip.climate} luggage={data.trip.luggage} />
+                <ClothingList apparel={data.trip.apparel} climate={data.trip.climate} luggage={data.trip.luggage} location={data.trip.location} />
                 : "loading..."
             }       
                 </Col>
-                {data ? 
-                <>
-                <Col className="suitcase">
-                    <Card>
-                        <Card.Body>
-                            <Card.Title>Your Packing List for: {data.trip.location} </Card.Title>
-                            <Card.Text>
-                                {Packed}
-                            </Card.Text>
-                            <Card.Link href="#">Ready to Pack!</Card.Link>
-                        </Card.Body>
-                    </Card>
-                </Col>
-                </>
-                : "loading..."}
             </Row>
         </Container>
     )

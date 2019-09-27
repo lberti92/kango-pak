@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import gql from 'graphql-tag';
 import { useQuery } from '@apollo/react-hooks';
-import { Button, ButtonGroup } from "react-bootstrap";
+import { Button, ButtonGroup, Col } from "react-bootstrap";
 import "./ClothingList.scss";
+import Packed from "../Packed";
 
 const GET_CLOTHINGLIST = gql`
     query getClothing($apparel: String!, $climate: String!) {
@@ -44,6 +45,10 @@ const ClothingList = (props) => {
               </ButtonGroup>
         </div>
       </div>
+      <Col>
+      <Packed packed={packed} location={props.location}/>
+      </Col>
+      
     </>
   )
 }

@@ -1,13 +1,5 @@
 @import "../../sass/variable.scss";
 
-.questionBox {
-    margin: 0 auto;
-    width: 600px;
-    text-align: center;
-    font-family: $text-font;
-    font-size: 1.3em;
-}
-
 .container {
     display: flex;
 }
@@ -23,7 +15,7 @@
 }
 
 .scroll-box {
-    border: 1px solid #000;
+    border: 2px solid #CE2D4F;
     border-radius: 5px;
     height: 400px;
     width: 250px;
