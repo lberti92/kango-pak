@@ -14,9 +14,16 @@ const schema =  yup.object({
   password: yup 
   .string()
   .required("Please enter a password.")
-  .matches(
-    /^(?=.*[A-Za-z])(?=.*d)(?=.*[@$!%*#?&])[A-Za-zd@$!%*#?&]{8,}$/,
-    "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and one special case Character"
+  .test(
+    "regex",
+    "Password must be min 8 characters, and have 1 Special Character, 1 Uppercase, 1 Number and 1 Lowercase",
+    val => {
+      let regExp = new RegExp(
+        "^(?=.*\\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$"
+      );
+      console.log(regExp.test(val), regExp, val);
+      return regExp.test(val);
+    }
   ),
   confirmPassword: yup
     .string()
