@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Button, Modal, Card, ListGroup } from "react-bootstrap";
 import ItineraryItem from "../ItineraryItem";
 import ItineraryForm from "../ItineraryForm";

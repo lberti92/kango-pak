@@ -1,6 +1,5 @@
 import { Container, Carousel, Button, Image, Col, Row} from "react-bootstrap"
-import React, { Component, useState } from "react";
-import API from "../../utils/API";
+import React, { useState } from "react";
 import "./Home.scss";
 
 function Home() {

@@ -21,6 +21,7 @@ const ItineraryForm = props => {
     const [startDate, setStartDate] = useState(new Date());
 
     const [addItinerary, { data }] = useMutation(ADD_ITINERARY);
+    if (data) console.log(data);
 
     const handleSubmit = e => {
         e.preventDefault();
