@@ -90,7 +90,7 @@ const PackingType = new GraphQLObjectType({
         _id: { type: new GraphQLNonNull(GraphQLString) },
         trip: { type: new GraphQLNonNull(GraphQLString) },
         items: { type: GraphQLString },
-        weight: { type: GraphQLFloat },
+        weight: { type: GraphQLString },
         notes: { type: GraphQLString }
     })
 })
@@ -265,7 +265,7 @@ const Mutation = new GraphQLObjectType({
             args: {
                 tripId: { type: GraphQLString },
                 items: { type: GraphQLString },
-                weight: { type: GraphQLFloat },
+                weight: { type: GraphQLString },
                 notes: { type: GraphQLString }
             },
             resolve: async function (parent, args) {
