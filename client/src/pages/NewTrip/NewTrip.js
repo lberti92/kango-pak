@@ -1,5 +1,4 @@
-import React, { Component, useState } from "react";
-import { Button } from "reactstrap";
+import React, { Component } from "react";
 import API from "../../utils/API";
 import Questions from "../../components/Questions/Questions"
 import "./NewTrip.scss";

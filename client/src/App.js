@@ -3,10 +3,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
 import NewTrip from "./pages/NewTrip";
 import Profile from "./pages/Profile";
-import Luggage from "./pages/Luggage";
 import Packed from "./pages/Packed";
 import Auth from "./pages/Auth";
-// import NoMatch from "./pages/NoMatch";
 import Navigation from "./components/TopNav";
 import Footer from "./components/Footer";
 import UserProvider from "./contexts/UserProvider";
@@ -26,7 +24,6 @@ function App() {
               <Route exact path="/signup" render={(props) => <Auth action="signup" />} />
               <Route exact path="/login" render={(props) => <Auth action="login" />} />
               <Route exact path="/newtrip" component={NewTrip} />
-              <Route exact path="/luggage" component={Luggage} />
               <Route exact path="/profile" component={Profile} />
               <Route path="/packed/:tripId" render={({ match }) => (
                 <Packed

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState  } from "react";
 import gql from 'graphql-tag';
 import { useQuery } from '@apollo/react-hooks';
 import { Button, ButtonGroup, Col } from "react-bootstrap";
@@ -18,21 +18,14 @@ const ClothingList = (props) => {
     variables: { apparel: props.apparel, climate: props.climate }
   });
   if (loading) console.log("Loading...")
-  console.log(props.climate)
+
   if (error) console.log(error.message)
   if (data) { console.log(data) };
   const [weight, setWeight] = useState(0);
   const [packed, setPacked] = useState([]);
-<<<<<<< HEAD
-  // const [weightAllowed, setWeightAllowed] = useState(0);
-  const [message, setMessage] = useState("")
-  console.log(weightAllowed);
-  console.log(weight);
 
   let weightAllowed = 0;
 
-  // function handleSwitch(weight) {
-    // event.preventDefault();
     let luggageType = props.luggage;
     //switch case for setting weight 
     //assume bag and what an empty bag weighs figured in 
@@ -56,7 +49,7 @@ const ClothingList = (props) => {
         weightAllowed = 20.5;
         break;
       default:
-        console.log("Not a Hacker");
+        weightAllowed = 20;
         break;
   }
 
@@ -67,9 +60,6 @@ const ClothingList = (props) => {
       setWeight(weight + item)
     }
   }
-=======
-  
->>>>>>> master
   return (
     <>
       <div className="scroll-box">
@@ -82,7 +72,7 @@ const ClothingList = (props) => {
                   key={i} value={item.weight} 
                   data-id={item.name} 
                   onClick={() => { 
-                    setPacked(packed + (" " + item.name)); 
+                    setPacked([...packed, item.name]); 
                     setMaxWeight(item.weight)}} >
                   {item.name}
                   </Button>
@@ -95,8 +85,7 @@ const ClothingList = (props) => {
         </div>
       </div>
       <Col>
-        <Packed packed={packed} location={props.location} />
-        {/* <Luggage></Luggage> */}
+        <Packed packed={packed} location={props.location} tripId={props.tripId} />
       </Col>
     </>
   )

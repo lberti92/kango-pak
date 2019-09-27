@@ -10,16 +10,14 @@ import UserProvider from "../../contexts/UserProvider";
 const Profile = () => {
     const {loggedIn, user} = useContext(UserProvider.context);
     const [ tripId, setTripId ] = useState("");
-    
-
-    console.log(tripId)
+  
     return (
         <>
             {loggedIn ? (
                 <Container id="profile-wrapper">
                 <Row>
                     <div>
-                    <h1 className="greeting">Welcome, {user.username}</h1>
+                    <h1 className="greeting">Welcome, {user.name}</h1>
                     </div>
                 </Row>
                 <Row>
