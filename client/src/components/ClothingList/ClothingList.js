@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import gql from 'graphql-tag';
 import { useQuery } from '@apollo/react-hooks';
 import { Button, ButtonGroup } from "react-bootstrap";
@@ -22,6 +22,10 @@ const ClothingList = (props) => {
   if (error) console.log(error.message)
   if (data) {console.log(data)};
 
+  const [weight, setWeight] = useState(0);
+  const [packed, setPacked] = useState([]);
+  
+  
   return (
     <>
       <div className="scroll-box">
@@ -31,7 +35,7 @@ const ClothingList = (props) => {
             {data ?
             data.clothing.map(function(item, i) {
               return (
-                <Button id="clothes-btn" key={i} value={item.weight} data-id={item.name} >{item.name}</Button>
+                <Button id="clothes-btn" key={i} value={item.weight} data-id={item.name} onClick={() => {setWeight(weight + item.weight); setPacked(packed + (" " + item.name))}} >{item.name}</Button>
               )
             })
             :

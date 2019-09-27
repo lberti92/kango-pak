@@ -39,7 +39,7 @@ export default function Packed(props) {
                 </Col>
                 <Col>
                 {data ? 
-                <ClothingList apparel={data.trip.apparel} climate={data.trip.climate} />
+                <ClothingList apparel={data.trip.apparel} climate={data.trip.climate} luggage={data.trip.luggage} />
                 : "loading..."
             }       
                 </Col>
@@ -50,8 +50,7 @@ export default function Packed(props) {
                         <Card.Body>
                             <Card.Title>Your Packing List for: {data.trip.location} </Card.Title>
                             <Card.Text>
-                                Some quick example text to build on the card title and make up the bulk of
-                                the card's content.
+                                {Packed}
                             </Card.Text>
                             <Card.Link href="#">Ready to Pack!</Card.Link>
                         </Card.Body>
