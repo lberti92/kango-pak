@@ -31,12 +31,11 @@ const ClothingList = (props) => {
     <>
       <div className="scroll-box">
         <div className="clothes-list">
-          <h6 className="tips">Click to add!</h6>
           <ButtonGroup vertical>
             {data ?
             data.clothing.map(function(item, i) {
               return (
-                <Button id="clothes-btn" key={i} value={item.weight} data-id={item.name} onClick={() => {setWeight(weight + item.weight); setPacked(packed + (" " + item.name))}} >{item.name}</Button>
+                <Button id="clothes-btn" key={i} value={item.weight} data-id={item.name} onClick={() => {setWeight(weight + item.weight); setPacked([...packed, {name: item.name, value: item.weight}])}}>{item.name}</Button>
               )
             })
             :
@@ -45,10 +44,10 @@ const ClothingList = (props) => {
               </ButtonGroup>
         </div>
       </div>
-      <Col>
-      <Packed packed={packed} location={props.location}/>
+    <Col>
+      <Packed packed={packed} location={props.location} />
       </Col>
-      
+
     </>
   )
 }

@@ -18,7 +18,9 @@ const Profile = () => {
             {loggedIn ? (
                 <Container id="profile-wrapper">
                 <Row>
-                    <h1 className="greeting">Welcome {user.username}</h1>
+                    <div>
+                    <h1 className="greeting">Welcome, {user.username}</h1>
+                    </div>
                 </Row>
                 <Row>
                  <Col>

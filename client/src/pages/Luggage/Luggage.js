@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-import ClothingList from "../../components/ClothingList";
 import Packed from "../Packed";
 
 
 
-export const TravelType=["Hacker-Packer", "Holy-Roller", "What-If", "Super-Souvenir"];
 export const Size=[15, 25, 35, 50];
 
 //function to fetch clothing items from API
@@ -21,9 +19,7 @@ function WeightAllotment() {
 
     return (
       <div>
-        <button onClick={() => setWeight(weight + 1)}> Pretend Clothing Item </button>
   
-        <Packed></Packed>
       </div>
     )
   //if TraveLType (set Hackerpacker to 15-17lbs, Holy Roller to 25lbs, What-If packer to 40lbs and Super Souvenir to 50lbs)

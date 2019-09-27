@@ -27,7 +27,6 @@ const ItineraryForm = props => {
         e.preventDefault();
         addItinerary({ variables: { title: values.title, date: startDate, notes: values.notes, tripId: props.tripId }});
     }
-    
     return (
         <>
             <Form onSubmit={e => handleSubmit(e)}>
