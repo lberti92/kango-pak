@@ -26,7 +26,6 @@ const ClothingList = (props) => {
   const [weight, setWeight] = useState(0);
   const [packed, setPacked] = useState([]);
   
-  
   return (
     <>
       <div className="scroll-box">
@@ -35,7 +34,7 @@ const ClothingList = (props) => {
             {data ?
             data.clothing.map(function(item, i) {
               return (
-                <Button id="clothes-btn" key={i} value={item.weight} data-id={item.name} onClick={() => {setWeight(weight + item.weight); setPacked([...packed, {name: item.name, value: item.weight}])}}>{item.name}</Button>
+                <Button id="clothes-btn" key={i} value={item.weight} data-id={item.name}  onClick={() => {setWeight(weight + item.weight); setPacked([...packed, {name: item.name, value: item.weight}])}}>{item.name}</Button>
               )
             })
             :
@@ -45,7 +44,7 @@ const ClothingList = (props) => {
         </div>
       </div>
     <Col>
-      <Packed packed={packed} location={props.location} />
+      <Packed packed={packed} location={props.location} tripId={props.tripId} />
       </Col>
 
     </>

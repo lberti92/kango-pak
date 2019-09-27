@@ -39,7 +39,7 @@ export default function Packing(props) {
                 </Col>
           
                 {data ? 
-                <ClothingList apparel={data.trip.apparel} climate={data.trip.climate} luggage={data.trip.luggage} location={data.trip.location} />
+                <ClothingList tripId={props.tripId} apparel={data.trip.apparel} climate={data.trip.climate} luggage={data.trip.luggage} location={data.trip.location} />
                 : "loading..."
             }       
     

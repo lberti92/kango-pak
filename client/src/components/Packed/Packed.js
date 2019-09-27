@@ -6,21 +6,23 @@ import gql from 'graphql-tag';
 
 
 const ADD_PACKINGLIST = gql`
-mutation AddPackingList($tripId: String!, $items: String!, $weight: Float!) {
-    addPackingList(tripId: $tripId, items: $items, weight: $weight) {
+mutation AddList($tripId: String!, $items: String!) {
+    addPackingList(tripId: $tripId, items: $items) {
       _id
-      items
-      weight
     }
   }
 `
 
 export default function Packed(props) {
+    console.log(props.tripId)
     const [addPackingList, { data }] = useMutation(ADD_PACKINGLIST);
     if (data) console.log(data);
+    console.log(props.tripId)
+
+    let items = props.packed.map(item => item.name).join(", ");
 
     const handleClick = () => {
-        addPackingList({ variables: { tripId: props.tripId, items: props.items, weight: props.weight  }});
+        addPackingList({ variables: { tripId: props.tripId, items: items }});
         if (data) window.location = "/profile"
     }
 
@@ -35,7 +37,7 @@ export default function Packed(props) {
                             {props ?
                                 props.packed.map(function (item, i) {
                                     return (
-                                        <ListGroupItem>{item.name}</ListGroupItem>
+                                        <ListGroupItem onClick={items}>{item.name}</ListGroupItem>
                                     )
                                 })
                                 :
