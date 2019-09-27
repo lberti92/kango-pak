@@ -72,7 +72,6 @@ const ItineraryType = new GraphQLObjectType({
     })
 })
 
-
 const ClothingType = new GraphQLObjectType({
     name: "Clothing",
     fields: () => ({
@@ -133,7 +132,10 @@ const RootQuery = new GraphQLObjectType({
                 return Itinerary.find({trip: args.tripId})
             }
         },
+<<<<<<< HEAD
+=======
 
+>>>>>>> master
         clothing: {
             type: new GraphQLList(ClothingType),
             args: {
